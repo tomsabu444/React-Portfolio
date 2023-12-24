@@ -272,26 +272,26 @@ article.active {
   border-radius: 3px;
 }
 
-.has-scrollbar::-webkit-scrollbar {
-  width: 5px;
-  /* for vertical scrollbar */
-  height: 5px;
-  /* for horizontal scrollbar */
+/* Custom scrollbar styles */
+
+::-webkit-scrollbar {
+  width: 5px; /* for vertical scrollbar */
+  height: 5px; /* for horizontal scrollbar */
 }
 
-.has-scrollbar::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: var(--onyx);
   border-radius: 5px;
 }
 
-.has-scrollbar::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: var(--orange-yellow-crayola);
   border-radius: 5px;
 }
 
-.has-scrollbar::-webkit-scrollbar-button {
+/* ::-webkit-scrollbar-button {
   width: 20px;
-}
+} */
 
 .content-card {
   position: relative;
@@ -343,117 +343,3 @@ article.active {
 }
 }
 
-
-/*-----------------------------------*\
-  #RESPONSIVE
-\*-----------------------------------*/
-
-/**
- * responsive larger than 450px screen
- */
-
-
-/* @media (min-width: 450px) {} */
-
-
-/**
- * responsive larger than 540px screen
- *
-
-@media (min-width: 540px) {}
-
-/**
- * responsive larger than 580px screen
- *
-
-@media (min-width: 580px) {
-
-  /**
-   * CUSTOM PROPERTY
-   *
-
-  :root {
-
-    /**
-     * typography
-     *
-
-    --fs-1: 32px;
-    --fs-2: 24px;
-    --fs-3: 26px;
-    --fs-4: 18px;
-    --fs-6: 15px;
-    --fs-7: 15px;
-    --fs-8: 12px;
-
-  }
-}
-
-
-/**
- * responsive larger than 768px screen
- *
-
-@media (min-width: 768px) {}
-
-
-/**
- * responsive larger than 1024px screen
- */
-
-/* @media (min-width: 1024px) {
-
-  /**
-   * CUSTOM PROPERTY
-   *
-
-  :root {
-
-    /**
-    * shadow
-    *
-
-    --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.125);
-    --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125);
-    --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
-
-  }
-
-} */
-
-
-/**
- * responsive larger than 1250px screen
- */
-
-/* @media (min-width: 1250px) {
-
-  /**
-   * RESET
-   *
-
-  body::-webkit-scrollbar {
-    width: 20px;
-  }
-
-  body::-webkit-scrollbar-track {
-    background: var(--smoky-black);
-  }
-
-  body::-webkit-scrollbar-thumb {
-    border: 5px solid var(--smoky-black);
-    background: hsla(0, 0%, 100%, 0.1);
-    border-radius: 20px;
-    box-shadow: inset 1px 1px 0 hsla(0, 100%, 54%, 0.11),
-      inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
-  }
-
-  body::-webkit-scrollbar-thumb:hover {
-    background: hsla(0, 0%, 100%, 0.11);
-  }
-
-  body::-webkit-scrollbar-button {
-    height: 60px;
-  }
-
-} */

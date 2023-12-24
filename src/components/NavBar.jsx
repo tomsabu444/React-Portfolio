@@ -1,8 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'; 
+import { Link, useLocation } from 'react-router-dom';
 
 function NavBar() {
+
+  const location = useLocation(); // used for changing then active state of the NavBar
+
   return (
 
     <Container>
@@ -17,27 +20,27 @@ function NavBar() {
           </li> */}
 
           <li className="navbar-item">
-            <Link  to="/"  className="navbar-link active">About</Link>
+            <Link to="/" className={`navbar-link ${location.pathname === '/' ? 'active' : ''}`}>About</Link>
           </li>
 
           <li className="navbar-item">
-            <Link to="/resume" className="navbar-link" >Resume</Link>
+            <Link to="/resume" className={`navbar-link ${location.pathname === '/resume' ? 'active' : ''}`}>Resume</Link>
           </li>
 
           <li className="navbar-item">
-            <Link to="/certificate" className="navbar-link" >Certificate</Link>
+            <Link to="/certificate" className={`navbar-link ${location.pathname === '/certificate' ? 'active' : ''}`}>Certificate</Link>
           </li>
 
-          
+
           {/* <li className="navbar-item">
           <Link to="/projects" className="navbar-link" data-nav-link>Projects</Link>
           </li>
            */}
-          
+
           {/* <li className="navbar-item">
           <Link className="navbar-link" data-nav-link>Contact</Link>
           </li> */}
-       
+
         </ul>
       </nav>
     </Container>
