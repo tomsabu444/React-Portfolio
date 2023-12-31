@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 import Layout from '../components/Layout';
+import { PiBookOpenThin } from "react-icons/pi";
+
 
 function Resume() {
     return (
@@ -71,7 +73,7 @@ function Resume() {
                     <section className="timeline">
                         <div className="title-wrapper">
                             <div className="icon-box">
-                                {/* <ion-icon name="book-outline"></ion-icon> */}
+                            <PiBookOpenThin />
                             </div>
 
                             <h3 className="h3">Hobbies & Passion</h3>

@@ -14,3 +14,9 @@ packages used
  react-icons 
  @svgr/webpack
 ```
+
+hooks 
+```
+useState
+useLocation
+```
