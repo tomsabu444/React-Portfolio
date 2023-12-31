@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
         <Wrapper>
 
             <SiderBar />
-            <div className="content">
+            <div className="main-content">
                 {children}
             </div>
             <NavBar />
@@ -29,4 +29,34 @@ margin: 15px 12px;
 margin-bottom: 75px;
 min-width: 259px;
 
+@media (min-width: 580px) {
+    margin-top: 60px;
+    margin-bottom: 100px;
+}
+@media (min-width: 1024px) {
+    margin-bottom: 60px;
+
+    .main-content {
+    position: relative;
+    width: max-content;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1250px) {
+    
+    max-width: 1200px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+  
+
+  .main-content {
+    min-width: 75%;
+    width: 75%;
+    margin: 0;
+  }
+}
 `;
