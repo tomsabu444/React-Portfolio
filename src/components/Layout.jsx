@@ -11,10 +11,10 @@ const Layout = ({ children }) => {
         <Wrapper>
 
             <SiderBar />
-            <div className="main-content">
-                {children}
-            </div>
+            <div className="main-content">  
+                {children} {/* Used for calling all components*/}
             <NavBar />
+            </div>
 
         </Wrapper>
     );
