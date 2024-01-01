@@ -86,4 +86,81 @@ const Container = styled.div`
 .navbar-link.active {
   color: var(--orange-yellow-crayola);
 }
+
+/**
+ * responsive larger than 580px screen
+ */
+
+@media (min-width: 580px) {
+  
+  /**
+   * #NAVBAR
+   */
+
+  .navbar {
+    border-radius: 20px 20px 0 0;
+  }
+
+  .navbar-list {
+    gap: 20px;
+  }
+
+  .navbar-link {
+    --fs-8: 14px;  //need to fix remember
+  }
+
+}
+
+/**
+ * responsive larger than 768px screen
+ */
+
+@media (min-width: 768px) {
+
+  /**
+   * NAVBAR
+   */
+
+  .navbar-link {
+    --fs-8: 15px;
+  }
+}
+
+
+/**
+ * responsive larger than 1024px screen
+ */
+
+@media (min-width: 1024px) {
+
+
+   /**
+   * NAVBAR
+   */
+
+   .navbar {
+    position: absolute;
+    bottom: auto;
+    top: 0;
+    left: auto;
+    right: 0;
+    width: max-content;
+    border-radius: 0 20px;
+    padding: 0 20px;
+    box-shadow: none;
+  }
+
+  .navbar-list {
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .navbar-link {
+    font-weight: var(--fw-500);
+  }
+
+
+}
+
+
 `;
