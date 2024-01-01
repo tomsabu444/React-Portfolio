@@ -9,7 +9,7 @@ function App() {
   return (
     <>
 
-      <div className="res">
+      <div className="dev-mod">
 
         <BrowserRouter>
           <Routes>
@@ -22,7 +22,7 @@ function App() {
 
       </div>
 
-        <Maintenance/>
+        <Maintenance/> 
 
 
     </>
