@@ -364,7 +364,61 @@ article.active {
     --fs-8: 12px;
 
   }
+
+  /**
+   * #REUSED STYLE
+   */
+
+   .sidebar,
+   article {
+     width: 520px;
+     margin-inline: auto;
+     padding: 25px;
+   }
+ 
+   .article-title {
+     font-weight: var(--fw-600);
+     padding-bottom: 15px;
+   }
+ 
+   .article-title::after {
+     width: 40px;
+     height: 5px;
+   }
+ 
+   .icon-box {
+     width: 48px;
+     height: 48px;
+     border-radius: 12px;
+     font-size: 18px;
+   }
+ 
+ 
 }
+
+/**
+ * responsive larger than 768px screen
+ */
+
+ @media (min-width: 768px) {
+   /**
+   * REUSED STYLE
+   */
+
+   .sidebar,
+   article {
+     width: 700px;
+   }
+ 
+   .has-scrollbar::-webkit-scrollbar-button {
+     width: 100px;
+   }
+ }
+
+
+ /**
+ * responsive larger than 1024px screen
+ */
 
 @media (min-width: 1024px) {
   
@@ -379,4 +433,67 @@ article.active {
     --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
 
   }
+
+   /**
+   * REUSED STYLE
+   */
+
+   .sidebar,
+   article {
+     width: 950px;
+     box-shadow: var(--shadow-5);
+   }
+ 
 }
+
+/**
+ * responsive larger than 1250px screen
+ */
+
+ @media (min-width: 1250px) {
+  
+  /**
+   * RESET
+   */
+
+   body::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: var(--smoky-black);
+  }
+
+  body::-webkit-scrollbar-thumb {
+    border: 5px solid var(--smoky-black);
+    background: hsla(0, 0%, 100%, 0.1);
+    border-radius: 20px;
+    box-shadow: inset 1px 1px 0 hsla(0, 100%, 54%, 0.11),
+      inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    background: hsla(0, 0%, 100%, 0.11);
+  }
+
+  body::-webkit-scrollbar-button {
+    height: 60px;
+  }
+
+
+
+  /**
+   * REUSED STYLE
+   */
+
+  .sidebar,
+  article {
+    width: auto;
+  }
+
+  article {
+    min-height: 100%;
+  }
+
+
+ }
