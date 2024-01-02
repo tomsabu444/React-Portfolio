@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
 
             <SiderBar />
             <div className="main-content">  
-                {children} {/* Used for calling all components*/}
+                {children} {/* Used for calling all components which as layout compontent*/}
             <NavBar />
             </div>
 

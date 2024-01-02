@@ -28,14 +28,14 @@ function NavBar() {
           </li>
 
           <li className="navbar-item">
-            <Link to="/certificate" className={`navbar-link ${location.pathname === '/certificate' ? 'active' : ''}`}>Certificate</Link>
+            <Link to="/certificat" className={`navbar-link ${location.pathname === '/certificate' ? 'active' : ''}`}>Certificate</Link>
           </li>
 
 
-          {/* <li className="navbar-item">
-          <Link to="/projects" className="navbar-link" data-nav-link>Projects</Link>
+          <li className="navbar-item">
+          <Link to="/projec" className={`navbar-link ${location.pathname === '/projects' ? 'active' : ''}`}>Projects</Link>
           </li>
-           */}
+          
 
           {/* <li className="navbar-item">
           <Link className="navbar-link" data-nav-link>Contact</Link>
