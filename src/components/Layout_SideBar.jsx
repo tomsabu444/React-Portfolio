@@ -1,10 +1,11 @@
+// 404 error to display which side Bar always
+
 import React from 'react';
 import SiderBar from './SiderBar';
-import NavBar from './NavBar';
 import styled from 'styled-components';
 
 
-const Layout = ({ children }) => {
+const Layout_SideBar = ({ children }) => {
 
 
     return (
@@ -13,14 +14,13 @@ const Layout = ({ children }) => {
             <SiderBar />
             <div className="main-content">  
                 {children} {/* Used for calling all components which as layout compontent*/}
-            <NavBar />
             </div>
 
         </Wrapper>
     );
 };
 
-export default Layout;
+export default Layout_SideBar;
 
 
 const Wrapper = styled.div`
