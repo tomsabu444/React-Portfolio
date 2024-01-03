@@ -1,20 +1,45 @@
+// const Dbms_Nptel_Certificate = require('../assets/images/Data_Base_Management_System-1.webp');
+// const Offenso_certificate = require('../assets/images/TOM_SABU_page-0001.webp');
+// const TKM_certificate = require('../assets/images/cr_5.webp');
+// const IIT_Madras_certificate1 = require('../assets/images/cr_3-1.webp');
+// const Blender_linkedin_certificate = require('../assets/images/CertificateOfCompletion_Blender_3_Essential_Training_page-0001.webp');
+// const Linux_linkedin_certificate = require('../assets/images/CertificateOfCompletion_Linux_Overview_and_Installation_page-0001.webp');
+// const IIT_Madras_certificate2 = require('../assets/images/cr_4-1.webp');
+// const Wireless_network_linkedin_certificate  = require('../assets/images/cr_1.webp');
+// const GameIndustry_linkedin_certificate = require('../assets/images/cr_2.webp');
+// const Tegmagi_Intership_certificate = require('../assets/images/TOM_SABU_1_page-0001.webp');
+// import Dbms_Nptel_Certificate from '../assets/images/Data_Base_Management_System-1.webp'
+// import Offenso_certificate from '../assets/images/TOM_SABU_page-0001.webp';
+// import TKM_certificate from '../assets/images/cr_5.webp';
+// import IIT_Madras_certificate1 from '../assets/images/cr_3-1.webp';
+// import Blender_linkedin_certificate from '../assets/images/CertificateOfCompletion_Blender_3_Essential_Training_page-0001.webp';
+// import Linux_linkedin_certificate from '../assets/images/CertificateOfCompletion_Linux_Overview_and_Installation_page-0001.webp';
+// import IIT_Madras_certificate2 from '../assets/images/cr_4-1.webp';
+// import Wireless_network_linkedin_certificate from '../assets/images/cr_1.webp';
+// import GameIndustry_linkedin_certificate from '../assets/images/cr_2.webp';
+// import Tegmagi_Intership_certificate from '../assets/images/TOM_SABU_1_page-0001.webp';
 import React from 'react';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
-import Dbms_Nptel_Certificate from '../assets/images/Data_Base_Management_System-1.webp'
-import Offenso_certificate from '../assets/images/TOM_SABU_page-0001.webp';
-import TKM_certificate from '../assets/images/cr_5.webp';
-import IIT_Madras_certificate1 from '../assets/images/cr_3-1.webp';
-import Blender_linkedin_certificate from '../assets/images/CertificateOfCompletion_Blender_3_Essential_Training_page-0001.webp';
-import Linux_linkedin_certificate from '../assets/images/CertificateOfCompletion_Linux_Overview_and_Installation_page-0001.webp';
-import IIT_Madras_certificate2 from '../assets/images/cr_4-1.webp';
-import Wireless_network_linkedin_certificate from '../assets/images/cr_1.webp';
-import GameIndustry_linkedin_certificate from '../assets/images/cr_2.webp';
-import Tegmagi_Intership_certificate from '../assets/images/TOM_SABU_1_page-0001.webp';
+import images from '../components/images-certificate';
 import { FaChevronDown } from "react-icons/fa";
 import { IoEyeOutline } from "react-icons/io5";
 
 function Certificate() {
+
+  // const images = {
+  //   Dbms_Nptel_Certificate: require('../assets/images/Data_Base_Management_System-1.webp'),
+  //   Offenso_certificate: require('../assets/images/TOM_SABU_page-0001.webp'),
+  //   TKM_certificate: require('../assets/images/cr_5.webp'),
+  //   IIT_Madras_certificate1: require('../assets/images/cr_3-1.webp'),
+  //   Blender_linkedin_certificate: require('../assets/images/CertificateOfCompletion_Blender_3_Essential_Training_page-0001.webp'),
+  //   Linux_linkedin_certificate: require('../assets/images/CertificateOfCompletion_Linux_Overview_and_Installation_page-0001.webp'),
+  //   IIT_Madras_certificate2: require('../assets/images/cr_4-1.webp'),
+  //   Wireless_network_linkedin_certificate: require('../assets/images/cr_1.webp'),
+  //   GameIndustry_linkedin_certificate: require('../assets/images/cr_2.webp'),
+  //   Tegmagi_Intership_certificate: require('../assets/images/TOM_SABU_1_page-0001.webp'),
+  // };
+
   return (
     <Layout>
 
@@ -85,7 +110,7 @@ function Certificate() {
                   </div>
 
                   <img
-                    src={Dbms_Nptel_Certificate}
+                    src={images.Dbms_Nptel_Certificate}
                     alt="Data_Base_Management_System" loading="lazy" />
                 </figure>
               </a>
@@ -99,7 +124,7 @@ function Certificate() {
                   </div>
 
                   <img
-                    src={Offenso_certificate }
+                    src={images.Offenso_certificate}
                     alt="cyber security" loading="lazy" />
                 </figure>
               </a>
@@ -112,7 +137,7 @@ function Certificate() {
                     <IoEyeOutline />
                   </div>
 
-                  <img src={TKM_certificate}
+                  <img src={images.TKM_certificate}
                     alt="web development" loading="lazy" />
                 </figure>
               </a>
@@ -125,7 +150,7 @@ function Certificate() {
                     <IoEyeOutline />
                   </div>
 
-                  <img src={IIT_Madras_certificate1}
+                  <img src={images.IIT_Madras_certificate1}
                     alt="web development" loading="lazy" />
                 </figure>
               </a>
@@ -139,7 +164,7 @@ function Certificate() {
                   </div>
 
                   <img
-                    src={Blender_linkedin_certificate}
+                    src={images.Blender_linkedin_certificate}
                     alt="linkedin" loading="lazy" />
                 </figure>
               </a>
@@ -153,7 +178,7 @@ function Certificate() {
                   </div>
 
                   <img
-                 src={Linux_linkedin_certificate}
+                 src={images.Linux_linkedin_certificate}
                     
                     alt="linkedin" loading="lazy" />
                 </figure>
@@ -167,7 +192,7 @@ function Certificate() {
                 <IoEyeOutline />
                   </div>
 
-                  <img src={IIT_Madras_certificate2}
+                  <img src={images.IIT_Madras_certificate2}
                     alt="cyber security" loading="lazy" />
                 </figure>
               </a>
@@ -180,7 +205,7 @@ function Certificate() {
                    <IoEyeOutline />
                   </div>
 
-                  <img src={Wireless_network_linkedin_certificate}
+                  <img src={images.Wireless_network_linkedin_certificate}
                     alt="linkedin" loading="lazy" />
                 </figure>
               </a>
@@ -193,7 +218,7 @@ function Certificate() {
                    <IoEyeOutline />
                   </div>
 
-                  <img src={GameIndustry_linkedin_certificate}
+                  <img src={images.GameIndustry_linkedin_certificate}
                     alt="linkedin" loading="lazy" />
                 </figure>
               </a>
@@ -207,7 +232,7 @@ function Certificate() {
                   </div>
 
                   <img
-                    src={Tegmagi_Intership_certificate}
+                    src={images.Tegmagi_Intership_certificate}
                     alt="cyber security" loading="lazy" />
                 </figure>
               </a>

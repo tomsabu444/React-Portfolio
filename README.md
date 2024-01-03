@@ -13,6 +13,7 @@ packages used
  styled-components
  react-icons 
  @svgr/webpack
+ vite-plugin-require
 ```
 
 hooks 
