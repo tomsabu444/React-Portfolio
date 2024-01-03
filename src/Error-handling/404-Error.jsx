@@ -1,19 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-
+import Layout_SideBar from "../components/Layout_SideBar";
 const NotFound = () => {
   return (
-    <Container>
-      <div className="glitch-404">
-        <div className="notfound">
-          <div className="notfound-404">
-            <h1>404</h1>
-            <h2>Page not found</h2>
+    <Layout_SideBar>
+      <Container>
+        <div className="glitch-404">
+          <div className="notfound">
+            <div className="notfound-404">
+              <h1>404</h1>
+              <h2>Page not found</h2>
+            </div>
+            <a href="/">Homepage</a>
           </div>
-          <a href="/">Homepage</a>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </Layout_SideBar>
   );
 };
 
@@ -36,6 +38,7 @@ const Container = styled.div`
   }
 
   .notfound {
+    max-height: 80%;
     max-width: 767px;
     width: 100%;
     line-height: 1.4;
@@ -59,7 +62,7 @@ const Container = styled.div`
     transform: translate(-50%, -50%);
     font-size: 224px;
     font-weight: 900;
-    margin-top: 0;
+    margin-top: 25px;
     margin-bottom: 0;
     margin-left: -12px;
     color: #030005;
@@ -97,15 +100,46 @@ const Container = styled.div`
     font-weight: 700;
     -webkit-transition: 0.2s all;
     transition: 0.2s all;
+    margin-top: 100px;
   }
 
   .notfound a:hover {
     color: var(--vegas-gold);
   }
+
+  // responsive below 1246px
+
+  @media only screen and (min-width: 1024px) and (max-width: 1246px) {
+    .notfound {
+      margin-top: 5%;
+    }
+
+
+    .notfound .notfound-404 h2 {
+
+    left: -500px;
+    right: -500px;
+    top: 110px;
+    font-size: 42px;
+    font-weight: 700;
+
+  }
+
+  .notfound a {
+   position: absolute;
+   left: -100px;
+
+   
+   
+  }
+
+  }
+
   // responsive below 767px
   @media only screen and (max-width: 767px) {
+    
     .notfound .notfound-404 h2 {
-      font-size: 24px;
+      font-size: 34px;
     }
   }
 
