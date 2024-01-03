@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
-import Tom_Photo from 'https://cdn.discordapp.com/attachments/946018559421734914/1153354479236808724/TOM.PHOTO.png?ex=65a55190&is=6592dc90&hm=3ccb9ef3c63b692b4cc81ccbdeb14f03ffa785e4740d944b2d25ce1f887754c4&'
+import Tom_Photo from '../assets/images/tom_photo.webp'
 import { FaChevronDown } from "react-icons/fa";
 import { MdMailOutline } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa6";
