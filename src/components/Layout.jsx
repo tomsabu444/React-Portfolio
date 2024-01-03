@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import SiderBar from './SiderBar';
 import NavBar from './NavBar';
 import styled from 'styled-components';
