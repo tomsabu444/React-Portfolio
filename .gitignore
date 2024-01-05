@@ -14,7 +14,7 @@ dist-ssr
 
 
 # images
-src/assets/images/
+src/assets/images/certificates
 
 # Editor directories and files
 .vscode/*
