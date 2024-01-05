@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {  HashRouter as Router , Route, Routes } from "react-router-dom";
 import Home from './pages/Home';
 // import Certificate from './pages/Certificate'
 import Projects from './pages/Projects';
@@ -12,7 +12,7 @@ function App() {
 
       <div className="dev-mod">
 
-        <BrowserRouter>
+        <Router>
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/resume" element={<Resume />} />
@@ -23,7 +23,7 @@ function App() {
             <Route path="*" element={<Error404 />} />
             
           </Routes>
-        </BrowserRouter>
+        </Router>
 
       </div>
 
