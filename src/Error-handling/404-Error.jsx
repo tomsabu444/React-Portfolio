@@ -136,8 +136,11 @@ const Container = styled.div`
   }
 
   // responsive below 767px
-  @media only screen and (max-width: 767px) {
-    
+  @media only screen and (max-width: 1024px) {
+    .notfound {
+      margin-top: 5%;
+    }
+
     .notfound .notfound-404 h2 {
       font-size: 34px;
     }

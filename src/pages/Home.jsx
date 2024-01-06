@@ -34,7 +34,7 @@ function Home() {
 
             <ul className="tool-icon-list has-scrollbar">
               {tools_Icons_1.map((icon, index) => (
-                <li className="tool-icon-item">
+                <li key={index} className="tool-icon-item">  {/* key={index} add for index error */}
                   <img
                     draggable="false"
                     src={icon.src}
@@ -54,7 +54,7 @@ function Home() {
 
             <ul className="tool-icon-list has-scrollbar">
               {tools_Icons_2.map((icon, index) => (
-                <li className="tool-icon-item">
+                <li key={index} className="tool-icon-item"> {/* key={index} add for index error */}
                   <img
                     draggable="false"
                     src={icon.src}
