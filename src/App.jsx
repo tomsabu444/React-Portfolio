@@ -6,10 +6,14 @@ import Projects from "./pages/Projects";
 import Resume from "./pages/Resume";
 import Maintenance from "./components/Maintenance";
 import Error404 from "./Error-handling/404-Error";
+import Bg_animation from "./components/Bg-animation";
+
 function App() {
   return (
     <>
+    
       <div className="dev-mod">
+      <Bg_animation/>
         <Router>
           <Routes>
             <Route exact path="/" element={<Home />} />

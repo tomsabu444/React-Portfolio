@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
-import { tools_Icons_1, tools_Icons_2 } from "../assets/Skill-Icon";
+import { tools_Icons_1, tools_Icons_2 } from "../assets/Skill-Icon.js";
+
+
 
 function Home() {
   // console.log(tools_Icons_1);
   return (
     <Layout>
+
       <Container>
         <article className="about active">
           <header>
