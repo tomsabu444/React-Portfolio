@@ -41,6 +41,7 @@ copyright 2023 @tomsabu444  */
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
   --eerie-black-2: hsl(240, 2%, 12%);
+  --eerie-black-3: hsla(240, 2%, 12%, 0.616);
   --smoky-black: #121212;
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
@@ -157,7 +158,7 @@ body {
   width: 100%;
   height: 100vh;
   position: relative;
-  background-color: #111111;
+  background-color: var(--smoky-black);;
   overflow: hidden;
 }
 
@@ -168,7 +169,9 @@ body {
 
 .sidebar,
 article {
-  background: var(--eerie-black-2);
+  /* background: var(--eerie-black-2); */
+  background-color: var(--eerie-black-3); /* changed for animated bg */ 
+  backdrop-filter: blur(100px); /* changed for animated bg*/
   border: 1px solid var(--jet);
   border-radius: 20px;
   padding: 15px;

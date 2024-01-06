@@ -55,8 +55,9 @@ const Container = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
-  backdrop-filter: blur(10px);
+  /* background: hsla(240, 1%, 17%, 0.75); */
+  background-color: var(--eerie-black-3);
+  backdrop-filter: blur(100px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
   box-shadow: var(--shadow-2);
