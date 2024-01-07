@@ -91,19 +91,19 @@ function SiderBar() {
 
           <ul className="social-list">
             <li className="social-item">
-              <a href={linkedInURL} target="_blank" className="social-link">
+              <a href={linkedInURL}  aria-label='LinkedIn' target="_blank" className="social-link">
                 <FaLinkedin className='socials-icons' />
               </a>
             </li>
 
             <li className="social-item">
-              <a href={githubURL} target="_blank" className="social-link">
+              <a href={githubURL} aria-label='github' target="_blank" className="social-link">
                 <FaGithub className='socials-icons'/>
               </a>
             </li>
 
             <li className="social-item">
-              <a href={instagramURL} target="_blank" className="social-link">
+              <a href={instagramURL} aria-label='Instagram' target="_blank" className="social-link">
                 <FaInstagram className='socials-icons'/>
               </a>
             </li>
