@@ -41,6 +41,7 @@ copyright 2023 @tomsabu444  */
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
   --eerie-black-2: hsl(240, 2%, 12%);
+  --eerie-black-3: hsla(240, 2%, 12%, 0.616);
   --smoky-black: #121212;
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
@@ -153,17 +154,34 @@ html {
 body {
   /* background: brown; */
    /* fOR tEST */
-  background: var(--smoky-black); 
+  /* background: var(--smoky-black);  */
+  /* width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: var(--smoky-black);;
+  overflow: hidden; */
 }
 
+/* main for bg animation*/
+
+main{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: var(--smoky-black);;
+  overflow: auto;
+}
 
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
 
 .sidebar,
-article {
-  background: var(--eerie-black-2);
+article,
+.glitch-404 {
+  /* background: var(--eerie-black-2); */
+  background-color: var(--eerie-black-3); /* changed for animated bg */ 
+  backdrop-filter: blur(100px); /* changed for animated bg*/
   border: 1px solid var(--jet);
   border-radius: 20px;
   padding: 15px;
@@ -370,7 +388,8 @@ article.active {
    */
 
    .sidebar,
-   article {
+   article,
+   .glitch-404 {
      width: 520px;
      margin-inline: auto;
      padding: 25px;
@@ -406,7 +425,8 @@ article.active {
    */
 
    .sidebar,
-   article {
+   article,
+   .glitch-404 {
      width: 700px;
    }
  
@@ -439,7 +459,8 @@ article.active {
    */
 
    .sidebar,
-   article {
+   article,
+   .glitch-404 {
      width: 950px;
      box-shadow: var(--shadow-5);
    }
@@ -487,7 +508,8 @@ article.active {
    */
 
   .sidebar,
-  article {
+  article,
+  .glitch-404 {
     width: auto;
   }
 

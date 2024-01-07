@@ -1,4 +1,3 @@
-
 <h3>
 UNDER PROGESS REACT PORTFOLIO
 </h3>
@@ -8,14 +7,19 @@ UNDER PROGESS REACT PORTFOLIO
 # React + Vite
 
 packages used
+
 ```
- react-router-dom 
+ react-router-dom
  styled-components
- react-icons 
+ react-icons
  @svgr/webpack
+ 
+ framer-motion
+
 ```
 
-hooks 
+hooks
+
 ```
 useState
 useLocation
