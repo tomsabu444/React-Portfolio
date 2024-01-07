@@ -22,31 +22,21 @@ const NotFound = () => {
 export default NotFound;
 
 const Container = styled.div`
-  /* .glitch-404 {
+  .glitch-404 {
     position: relative;
-    height: 100vh;
-    background: #030005
-} */
-
-  .glitch-404 .notfound {
-    position: relative;
-    margin: 100px;
-    width: 100%;
-    height: 100%;
-    right:100px
-    /* left: 5%; */
-    /* top: 50%; */
-    /* -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); */
+    height: 75vh;
+    /* background: #030005; */
   }
 
-  .notfound {
-    max-height: 80%;
-    max-width: 767px;
+  .glitch-404 .notfound {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
-    line-height: 1.4;
     text-align: center;
+    max-width: 767px;
+    margin: 0 auto;
   }
 
   .notfound .notfound-404 {
@@ -61,8 +51,6 @@ const Container = styled.div`
     position: absolute;
     left: 50%;
     top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     font-size: 224px;
     font-weight: 900;
@@ -91,7 +79,8 @@ const Container = styled.div`
   }
 
   .notfound a {
-    margin-top: 20px;
+    
+    margin-top: 50px;
     font-family: montserrat, sans-serif;
     display: inline-block;
     text-transform: uppercase;
@@ -104,7 +93,7 @@ const Container = styled.div`
     font-weight: 700;
     -webkit-transition: 0.2s all;
     transition: 0.2s all;
-    margin-top: 100px;
+
   }
 
   .notfound a:hover {
@@ -112,36 +101,23 @@ const Container = styled.div`
   }
 
   // responsive below 1246px
-
-  @media only screen and (min-width: 1024px) and (max-width: 1246px) {
+  @media (min-width: 1024px) and (max-width: 1246px) {
     .notfound {
+      right: 10px;
       margin-top: 5%;
     }
 
-
     .notfound .notfound-404 h2 {
-
       left: -500px;
       right: -500px;
       top: 110px;
       font-size: 42px;
       font-weight: 700;
-      
     }
-
-    .notfound a {
-      position: absolute;
-      left: -100px;
-
-
-
-    }
-
   }
 
   // responsive below 1024px
-  @media only screen and (max-width: 1024px) {
-    
+  @media (max-width: 1024px) {
     .notfound {
       margin-top: 5%;
     }
@@ -152,9 +128,19 @@ const Container = styled.div`
   }
 
   // responsive below 480px
-  @media only screen and (max-width: 480px) {
+  @media (max-width: 480px) {
     .notfound .notfound-404 h1 {
-      font-size: 160px;
+  
+      font-size: 180px;
+    }
+  }
+
+   // responsive below 350px
+   @media (max-width: 350px) {
+    .notfound .notfound-404 h1 {
+  
+      font-size: 150px;
     }
   }
 `;
+

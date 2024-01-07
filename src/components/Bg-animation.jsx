@@ -31,7 +31,7 @@ const StyledMotionSpan = styled(motion.span)`
   filter: blur(187px);
   width: 110px;
   height: 19px;
-  position: absolute;
+  position: fixed;
   left: -1000px;
 
   @media (min-width: 1280px) {
