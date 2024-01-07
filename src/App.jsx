@@ -11,8 +11,9 @@ import Bg_animation from "./components/Bg-animation";
 function App() {
   return (
     <>
-    
-      <div className="dev-mod">
+
+
+      <main>
       <Bg_animation/>
         <Router>
           <Routes>
@@ -25,7 +26,7 @@ function App() {
             <Route path="*" element={<Error404 />} />
           </Routes>
         </Router>
-      </div>
+      </main>
 
       {/* <Maintenance/>  */}
     </>
