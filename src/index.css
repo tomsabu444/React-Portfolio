@@ -168,7 +168,8 @@ body {
 \*-----------------------------------*/
 
 .sidebar,
-article {
+article,
+.glitch-404 {
   /* background: var(--eerie-black-2); */
   background-color: var(--eerie-black-3); /* changed for animated bg */ 
   backdrop-filter: blur(100px); /* changed for animated bg*/
@@ -378,7 +379,8 @@ article.active {
    */
 
    .sidebar,
-   article {
+   article,
+   .glitch-404 {
      width: 520px;
      margin-inline: auto;
      padding: 25px;
@@ -414,7 +416,8 @@ article.active {
    */
 
    .sidebar,
-   article {
+   article,
+   .glitch-404 {
      width: 700px;
    }
  
@@ -447,7 +450,8 @@ article.active {
    */
 
    .sidebar,
-   article {
+   article,
+   .glitch-404 {
      width: 950px;
      box-shadow: var(--shadow-5);
    }
@@ -495,7 +499,8 @@ article.active {
    */
 
   .sidebar,
-  article {
+  article,
+  .glitch-404 {
     width: auto;
   }
 

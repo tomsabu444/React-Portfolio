@@ -29,12 +29,16 @@ const Container = styled.div`
 } */
 
   .glitch-404 .notfound {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
+    position: relative;
+    margin: 100px;
+    width: 100%;
+    height: 100%;
+    right:100px
+    /* left: 5%; */
+    /* top: 50%; */
+    /* -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
   }
 
   .notfound {
@@ -117,25 +121,25 @@ const Container = styled.div`
 
     .notfound .notfound-404 h2 {
 
-    left: -500px;
-    right: -500px;
-    top: 110px;
-    font-size: 42px;
-    font-weight: 700;
+      left: -500px;
+      right: -500px;
+      top: 110px;
+      font-size: 42px;
+      font-weight: 700;
+      
+    }
+
+    .notfound a {
+      position: absolute;
+      left: -100px;
+
+
+
+    }
 
   }
 
-  .notfound a {
-   position: absolute;
-   left: -100px;
-
-   
-   
-  }
-
-  }
-
-  // responsive below 1024px 
+  // responsive below 1024px
   @media only screen and (max-width: 1024px) {
     
     .notfound {
@@ -150,7 +154,7 @@ const Container = styled.div`
   // responsive below 480px
   @media only screen and (max-width: 480px) {
     .notfound .notfound-404 h1 {
-      font-size: 182px;
+      font-size: 160px;
     }
   }
 `;
