@@ -183,8 +183,8 @@ const Container = styled.div`
   }
 
   .tool-icon-item {
-    min-width: 50%;
-    scroll-snap-align: start;
+    min-width: 25%;
+    scroll-snap-align: center;
   }
 
   /* .tool-icon-item img {
@@ -211,7 +211,7 @@ const Container = styled.div`
    */
 
     .tool-icon-item {
-      min-width: calc(33.33% - 10px);
+      min-width: calc(33.33% - 35px);
     }
   }
 
@@ -268,7 +268,7 @@ const Container = styled.div`
     }
 
     .tool-icon-item {
-      min-width: calc(33.33% - 35px);
+      min-width: calc(33.33% - 60px);
     }
   }
 
@@ -285,6 +285,10 @@ const Container = styled.div`
       grid-gap: 55px;
       grid-template-columns: 10px 10px 10px 10px 10px 10px 10px 10px 10px;
     }
+    .tool-icon-item {
+      min-width: calc(33.33% - 150px);
+    }
+    
   }
 
   @media (min-width: 1024px) {
@@ -310,7 +314,7 @@ const Container = styled.div`
      */
 
     .tool-icon-item {
-      min-width: calc(20% - 40px);
+      min-width: calc(20% - 80px);
     }
   }
   @media (min-width: 1250px) {

@@ -34,12 +34,12 @@ function SiderBar() {
 
           <div className="info-content">
             <h1 className="name" title="TOM SABU">TOM SABU</h1>
-            <p className="title">COMPUTER SCIENCE STUDENT</p>
+            <p className="title">Ethical Hacking | Web Dev</p>
           </div>
 
           <button className="info_more-btn" onClick={toggleSidebar}>
             <span>Show Contacts</span>
-            <FaChevronDown />
+            <FaChevronDown className='ion-icon' />
           </button>
 
         </div>
@@ -332,7 +332,7 @@ const Container = styled.div`
   .info_more-btn {
     top: -30px;
     right: -30px;
-    padding: 10px 15px;
+    padding: 12px 15px;
   }
 
   .info_more-btn span {
@@ -340,7 +340,7 @@ const Container = styled.div`
     font-size: var(--fs-8);
   }
 
-  .info_more-btn ion-icon {
+  .info_more-btn .ion-icon {
     display: none;
   }
 

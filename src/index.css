@@ -155,11 +155,6 @@ body {
   /* background: brown; */
    /* fOR tEST */
   /* background: var(--smoky-black);  */
-  /* width: 100%;
-  height: 100vh;
-  position: relative;
-  background-color: var(--smoky-black);;
-  overflow: hidden; */
 }
 
 /* main for bg animation*/
@@ -182,7 +177,7 @@ article,
   /* background: var(--eerie-black-2); */
   background-color: var(--eerie-black-3); /* changed for animated bg */ 
   backdrop-filter: blur(100px); /* changed for animated bg*/
-  border: 1px solid var(--jet);
+  /* border: 1px solid var(--jet); */
   border-radius: 20px;
   padding: 15px;
   box-shadow: var(--shadow-1);
