@@ -7,7 +7,7 @@ import { FaInstagram } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { IoCalendarOutline } from "react-icons/io5";
-import HackerIcon from '../assets/images/hacker.svg';
+import { LiaSkullCrossbonesSolid } from "react-icons/lia";
 
 function SiderBar() {
 
@@ -61,8 +61,8 @@ function SiderBar() {
             <li className="contact-item">
               <div className="icon-box">
                 <div className="service-icon-box">
-                  <div className="hackericon">
-                    <img src={HackerIcon} alt="hackericon" />
+                  <div className="icon-box">
+                  <LiaSkullCrossbonesSolid />
                   </div>
                 </div>
               </div>
