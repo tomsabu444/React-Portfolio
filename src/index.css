@@ -114,7 +114,7 @@ li {
 }
 
 img,
-ion-icon,
+.ion-icon,
 a,
 button,
 time,
@@ -151,11 +151,11 @@ html {
   font-family: var(--ff-poppins);
 }
 
-body {
+/* body {
   /* background: brown; */
    /* fOR tEST */
-  /* background: var(--smoky-black);  */
-}
+  /* background: var(--smoky-black);  
+} */
 
 /* main for bg animation*/
 

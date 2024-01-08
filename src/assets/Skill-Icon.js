@@ -1,12 +1,7 @@
 // tool icon url array!~
 
 const tools_Icons_1 = [
-  {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
-    alt: "figma",
-    title: "Figma",
-    height: "48",
-  },
+  
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
     alt: "HTML",
@@ -39,12 +34,12 @@ const tools_Icons_1 = [
     height: "48",
   },
 
-  {
-    src: "https://skillicons.dev/icons?i=php",
-    alt: "PHP",
-    title: "PHP",
-    height: "48",
-  },
+  // {
+  //   src: "https://skillicons.dev/icons?i=php",
+  //   alt: "PHP",
+  //   title: "PHP",
+  //   height: "48",
+  // },
 
   {
     src: "https://cdn.simpleicons.org/apache/D22128",
@@ -74,12 +69,6 @@ const tools_Icons_1 = [
     title: "Dart",
   },
 
-  {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg",
-    height: "48",
-    alt: "androidstudio logo",
-    title: "Android Studio",
-  },
 
   {
     src: "https://skillicons.dev/icons?i=nodejs",
@@ -89,16 +78,66 @@ const tools_Icons_1 = [
   },
 
   {
-    src: "https://cdn.simpleicons.org/android/3DDC84",
-    height: "48",
-    alt: "android logo",
-    title: "Android",
-  },
-  {
     src: "https://skillicons.dev/icons?i=git",
     height: "48",
     alt: "git logo",
     title: "Git",
+  },
+  {
+    src: "https://cdn.simpleicons.org/c/A8B9CC",
+    height: "48",
+    alt: "c logo",
+    title: "C Programing",
+  },
+  {
+    src: "https://skillicons.dev/icons?i=java",
+    height: "48",
+    alt: "java logo",
+    title: "Java",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    height: "48",
+    alt: "python logo",
+    title: "Python",
+  }
+
+ 
+];
+
+const tools_Icons_2 = [
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+    alt: "figma",
+    title: "Figma",
+    height: "48",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+    height: "48",
+    alt: "vscode logo",
+    title: "Visual Studio Code",
+  },
+
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg",
+    height: "48",
+    alt: "androidstudio logo",
+    title: "Android Studio",
+  },
+
+  {
+    src: "https://skillicons.dev/icons?i=discord",
+    height: "48",
+    alt: "discord logo",
+    title: "Discord",
+  },
+
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
+    height: "48",
+    alt: "googlecloud logo",
+    title: "Google Cloud",
   },
   {
     src: "https://skillicons.dev/icons?i=ae",
@@ -131,52 +170,20 @@ const tools_Icons_1 = [
     alt: "blender logo",
     title: "Blender",
   },
+  
   {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maya/maya-original.svg",
+    src: "https://cdn.simpleicons.org/android/3DDC84",
     height: "48",
-    alt: "maya logo",
-    title: "Maya",
+    alt: "android logo",
+    title: "Android",
   },
-];
+  // {
+  //   src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maya/maya-original.svg",
+  //   height: "48",
+  //   alt: "maya logo",
+  //   title: "Maya",
+  // }
 
-const tools_Icons_2 = [
-  {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
-    height: "48",
-    alt: "vscode logo",
-    title: "Visual Studio Code",
-  },
-  {
-    src: "https://skillicons.dev/icons?i=discord",
-    height: "48",
-    alt: "discord logo",
-    title: "Discord",
-  },
-
-  {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
-    height: "48",
-    alt: "googlecloud logo",
-    title: "Google Cloud",
-  },
-  {
-    src: "https://cdn.simpleicons.org/c/A8B9CC",
-    height: "48",
-    alt: "c logo",
-    title: "C Programing",
-  },
-  {
-    src: "https://skillicons.dev/icons?i=java",
-    height: "48",
-    alt: "java logo",
-    title: "Java",
-  },
-  {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-    height: "48",
-    alt: "python logo",
-    title: "Python",
-  }
 ];
 
 export { tools_Icons_1, tools_Icons_2 };

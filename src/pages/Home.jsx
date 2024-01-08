@@ -3,13 +3,10 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 import { tools_Icons_1, tools_Icons_2 } from "../assets/Skill-Icon.js";
 
-
-
 function Home() {
   // console.log(tools_Icons_1);
   return (
     <Layout>
-
       <Container>
         <article className="about active">
           <header>
@@ -33,7 +30,7 @@ function Home() {
           {/* Horizontal Scrooll 1 */}
 
           <section className="tool-icon">
-            <h3 className="h3 tool-icon-title">Tools I'm Using!</h3>
+            <h3 className="h3 tool-icon-title">Languag | Framework </h3>
 
             <ul className="tool-icon-list has-scrollbar">
               {tools_Icons_1.map((icon, index) => (
@@ -288,7 +285,6 @@ const Container = styled.div`
     .tool-icon-item {
       min-width: calc(33.33% - 150px);
     }
-    
   }
 
   @media (min-width: 1024px) {
