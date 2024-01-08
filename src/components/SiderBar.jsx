@@ -7,7 +7,7 @@ import { FaInstagram } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { IoCalendarOutline } from "react-icons/io5";
-import HackerIcon from '../assets/images/hacker.svg';
+import { LiaSkullCrossbonesSolid } from "react-icons/lia";
 
 function SiderBar() {
 
@@ -34,12 +34,12 @@ function SiderBar() {
 
           <div className="info-content">
             <h1 className="name" title="TOM SABU">TOM SABU</h1>
-            <p className="title">COMPUTER SCIENCE STUDENT</p>
+            <p className="title">Ethical Hacking | Web Dev</p>
           </div>
 
           <button className="info_more-btn" onClick={toggleSidebar}>
             <span>Show Contacts</span>
-            <FaChevronDown />
+            <FaChevronDown className='ion-icon' />
           </button>
 
         </div>
@@ -61,8 +61,8 @@ function SiderBar() {
             <li className="contact-item">
               <div className="icon-box">
                 <div className="service-icon-box">
-                  <div className="hackericon">
-                    <img src={HackerIcon} alt="hackericon" />
+                  <div className="icon-box">
+                  <LiaSkullCrossbonesSolid />
                   </div>
                 </div>
               </div>
@@ -91,19 +91,19 @@ function SiderBar() {
 
           <ul className="social-list">
             <li className="social-item">
-              <a href={linkedInURL} target="_blank" className="social-link">
+              <a href={linkedInURL}  aria-label='LinkedIn' target="_blank" className="social-link">
                 <FaLinkedin className='socials-icons' />
               </a>
             </li>
 
             <li className="social-item">
-              <a href={githubURL} target="_blank" className="social-link">
+              <a href={githubURL} aria-label='github' target="_blank" className="social-link">
                 <FaGithub className='socials-icons'/>
               </a>
             </li>
 
             <li className="social-item">
-              <a href={instagramURL} target="_blank" className="social-link">
+              <a href={instagramURL} aria-label='Instagram' target="_blank" className="social-link">
                 <FaInstagram className='socials-icons'/>
               </a>
             </li>
@@ -332,7 +332,7 @@ const Container = styled.div`
   .info_more-btn {
     top: -30px;
     right: -30px;
-    padding: 10px 15px;
+    padding: 12px 15px;
   }
 
   .info_more-btn span {
@@ -340,7 +340,7 @@ const Container = styled.div`
     font-size: var(--fs-8);
   }
 
-  .info_more-btn ion-icon {
+  .info_more-btn .ion-icon {
     display: none;
   }
 

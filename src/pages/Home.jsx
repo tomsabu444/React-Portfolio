@@ -3,13 +3,10 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 import { tools_Icons_1, tools_Icons_2 } from "../assets/Skill-Icon.js";
 
-
-
 function Home() {
   // console.log(tools_Icons_1);
   return (
     <Layout>
-
       <Container>
         <article className="about active">
           <header>
@@ -33,7 +30,7 @@ function Home() {
           {/* Horizontal Scrooll 1 */}
 
           <section className="tool-icon">
-            <h3 className="h3 tool-icon-title">Tools I'm Using!</h3>
+            <h3 className="h3 tool-icon-title">Languag | Framework </h3>
 
             <ul className="tool-icon-list has-scrollbar">
               {tools_Icons_1.map((icon, index) => (
@@ -183,8 +180,8 @@ const Container = styled.div`
   }
 
   .tool-icon-item {
-    min-width: 50%;
-    scroll-snap-align: start;
+    min-width: 25%;
+    scroll-snap-align: center;
   }
 
   /* .tool-icon-item img {
@@ -211,7 +208,7 @@ const Container = styled.div`
    */
 
     .tool-icon-item {
-      min-width: calc(33.33% - 10px);
+      min-width: calc(33.33% - 35px);
     }
   }
 
@@ -268,7 +265,7 @@ const Container = styled.div`
     }
 
     .tool-icon-item {
-      min-width: calc(33.33% - 35px);
+      min-width: calc(33.33% - 60px);
     }
   }
 
@@ -284,6 +281,9 @@ const Container = styled.div`
       justify-content: left;
       grid-gap: 55px;
       grid-template-columns: 10px 10px 10px 10px 10px 10px 10px 10px 10px;
+    }
+    .tool-icon-item {
+      min-width: calc(33.33% - 150px);
     }
   }
 
@@ -310,7 +310,7 @@ const Container = styled.div`
      */
 
     .tool-icon-item {
-      min-width: calc(20% - 40px);
+      min-width: calc(20% - 80px);
     }
   }
   @media (min-width: 1250px) {
