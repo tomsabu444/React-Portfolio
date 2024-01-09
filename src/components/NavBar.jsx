@@ -27,9 +27,9 @@ function NavBar() {
             <Link to="/resume" className={`navbar-link ${location.pathname === '/resume' ? 'active' : ''}`}>Resume</Link>
           </li>
 
-          <li className="navbar-item">
+          {/* <li className="navbar-item">
             <Link to="/certificat" className={`navbar-link ${location.pathname === '/certificate' ? 'active' : ''}`}>Certificate</Link>
-          </li>
+          </li> */}
 
 
           <li className="navbar-item">
