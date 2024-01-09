@@ -16,6 +16,9 @@ dist-ssr
 # images
 src/assets/images/certificates
 
+src/assets/pages/Certificate.jsx
+
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
