@@ -1,24 +1,35 @@
-<h3>
-UNDER PROGESS REACT PORTFOLIO
-</h3>
+# Personal portfolio - React
+
+
+#### @codewithsadee **[Orginal Repo](https://github.com/codewithsadee/vcard-personal-portfolio)**
 
 ## Optimizing | Rebuilding | Fixing || MaStErInG ReAcT~
 
-# React + Vite
+<!-- 
+<h3>
+UNDER PROGESS REACT PORTFOLIO
+</h3> -->
 
-packages used
+### Installation
+
+```bash
+git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
+cd My-React_Portfolio
+npm i
+npm run dev
+```
+
+**packages used**
 
 ```
  react-router-dom
  styled-components
  react-icons
  @svgr/webpack
- 
  framer-motion
-
 ```
 
-hooks
+**hooks**
 
 ```
 useState
