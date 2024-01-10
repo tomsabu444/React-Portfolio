@@ -13,7 +13,7 @@ UNDER PROGESS REACT PORTFOLIO
 ### Installation
 
 ```bash
-git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
+git clone https://github.com/tomsabu444/My-React_Portfolio.git
 cd My-React_Portfolio
 npm i
 npm run dev
