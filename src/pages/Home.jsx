@@ -184,6 +184,11 @@ const Container = styled.div`
     scroll-snap-align: center;
   }
 
+   
+  .has-scrollbar::-webkit-scrollbar-button {
+     width: 10%;
+   }
+
   /* .tool-icon-item img {
     width: 100%;
     filter: grayscale(1);

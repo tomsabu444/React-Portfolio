@@ -242,4 +242,32 @@ const Container = styled.div`
     height: 100%;
     border-radius: inherit;
   }
+
+  /**
+ * responsive larger than 580px screen
+ */
+
+  @media (min-width: 580px) {
+    /**
+  * #RESUME
+  */
+
+    .timeline-list {
+      margin-left: 65px;
+    }
+
+    .timeline-item:not(:last-child)::before {
+      left: -40px;
+    }
+
+    .timeline-item::after {
+      height: 8px;
+      width: 8px;
+      left: -43px;
+    }
+
+    .skills-item:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
 `;
