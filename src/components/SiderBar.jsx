@@ -37,7 +37,7 @@ function SiderBar() {
             <p className="title">Ethical Hacking | Web Dev</p>
           </div>
 
-          <button className="info_more-btn" onClick={toggleSidebar}>
+          <button className="info_more-btn"  aria-label="Show Contacts" onClick={toggleSidebar}>
             <span>Show Contacts</span>
             <FaChevronDown className='ion-icon' />
           </button>
