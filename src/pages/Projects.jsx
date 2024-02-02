@@ -3,29 +3,90 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 
 //test phase
-import dribbleimg from "../assets/projects-img/dribbble_1.gif"
-
+import dribbleimg from "../assets/projects-img/dribbble_1.gif";
+import calculatorimg from "../assets/projects-img/calculator.png";
+import todo_listimg from "../assets/projects-img/todo-list.png";
+import login_pageimg from "../assets/projects-img/login-page.png";
 function Projects() {
   return (
     <Layout>
       <Container>
-        <article className="portfolio active">
+        <article className="blog active">
           <header>
-            <h2 className="h2 article-title">Portfolio</h2>
+            <h2 className="h2 article-title">Projects</h2>
           </header>
 
-          <section className="projects">
-            <ul className="project-list">
-              <li className="project-item active">
-                <figure className="project-img">
-                  {/* <div className="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div> */}
-                  <img src={dribbleimg} />
-                </figure>
-                <h3 className="project-title">test</h3>
+          <section className="blog-posts">
+            <ul className="blog-posts-list">
+              <li className="blog-post-item">
+                <a href="https://todo.tomsabu.com" target="_blank">
+                  <figure className="blog-banner-box">
+                    <img
+                      src={todo_listimg}
+                      alt="Todo List Project"
+                      loading="lazy"
+                    />
+                  </figure>
 
-                <p className="project-category">test</p>
+                  <div className="blog-content">
+
+                    <h3 className="h3 blog-item-title">Todo List</h3>
+
+                    <p className="blog-text">
+                      A React-based to-do list app with add, edit, and delete
+                      functionality, featuring reminders and completion tracking
+                      ~!
+                    </p>
+                  </div>
+                </a>
+              </li>
+
+              <li className="blog-post-item">
+                <a href="#">
+                  <figure className="blog-banner-box">
+                    <img
+                      src={calculatorimg}
+                      alt="Best fonts every designer"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div className="blog-content">
+
+
+                    <h3 className="h3 blog-item-title">
+                      Simple Calculator App
+                    </h3>
+
+                    <p className="blog-text">description</p>
+                  </div>
+                </a>
+              </li>
+
+              <li className="blog-post-item">
+                <a href="#">
+                  <figure className="blog-banner-box">
+                    <img
+                      src={login_pageimg}
+                      alt="Design digest #80"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div className="blog-content">
+                    {/* <div className="blog-meta">
+                      <p className="blog-category">Design</p>
+
+                      <span className="dot"></span>
+
+                      <time dateTime="2022-02-23">Fab 23, 2022</time>
+                    </div> */}
+
+                    <h3 className="h3 blog-item-title">Login Page Design</h3>
+
+                    <p className="blog-text">description</p>
+                  </div>
+                </a>
               </li>
             </ul>
           </section>
@@ -38,176 +99,152 @@ function Projects() {
 export default Projects;
 
 const Container = styled.div`
-  .filter-list {
-    display: none;
+  .article-title {
+    margin-bottom: 30px;
   }
 
-  .filter-select-box {
-    position: relative;
-    margin-bottom: 25px;
-  }
-
-  .filter-select {
-    background: var(--eerie-black-2);
-    color: var(--light-gray);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 12px 16px;
-    border: 1px solid var(--jet);
-    border-radius: 14px;
-    font-size: var(--fs-6);
-    font-weight: var(--fw-300);
-  }
-
-  .filter-select.active .select-icon {
-    transform: rotate(0.5turn);
-  }
-
-  .select-list {
-    background: var(--eerie-black-2);
-    position: absolute;
-    top: calc(100% + 6px);
-    width: 100%;
-    padding: 6px;
-    border: 1px solid var(--jet);
-    border-radius: 14px;
-    z-index: 2;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: 0.15s ease-in-out;
-  }
-
-  .filter-select.active + .select-list {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-  }
-
-  .select-item button {
-    background: var(--eerie-black-2);
-    color: var(--light-gray);
-    font-size: var(--fs-6);
-    font-weight: var(--fw-300);
-    text-transform: capitalize;
-    width: 100%;
-    padding: 8px 10px;
-    border-radius: 8px;
-  }
-
-  .select-item button:hover {
-    --eerie-black-2: hsl(240, 2%, 20%);
-  }
-
-  .project-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
+  .blog-posts {
     margin-bottom: 10px;
   }
 
-  .project-item {
-    display: none;
+  .blog-posts-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .project-item.active {
-    display: block;
-    animation: scaleUp 0.25s ease forwards;
-  }
-
-  @keyframes scaleUp {
-    0% {
-      transform: scale(0.5);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  .project-item > a {
-    width: 100%;
-  }
-
-  .project-img {
+  .blog-post-item > a {
     position: relative;
-    width: 100%;
-    height: 200px;
+    background: var(--border-gradient-onyx);
+    height: 100%;
+    box-shadow: var(--shadow-4);
     border-radius: 16px;
-    overflow: hidden;
-    margin-bottom: 15px;
+    z-index: 1;
   }
 
-  .project-img::before {
+  .blog-post-item > a::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 1px;
+    border-radius: inherit;
+    background: var(--eerie-black-1);
+    z-index: -1;
+  }
+
+  .blog-banner-box {
     width: 100%;
-    height: 100%;
-    background: transparent;
-    z-index: 1;
-    transition: var(--transition-1);
-  }
-
-  .project-item > a:hover .project-img::before {
-    background: hsla(0, 0%, 0%, 0.5);
-  }
-
-  .project-item-icon-box {
-    --scale: 0.8;
-
-    background: var(--jet);
-    color: var(--orange-yellow-crayola);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(var(--scale));
-    font-size: 20px;
-    padding: 18px;
+    height: 200px;
     border-radius: 12px;
-    opacity: 0;
-    z-index: 1;
-    transition: var(--transition-1);
+    overflow: hidden;
   }
 
-  .project-item > a:hover .project-item-icon-box {
-    --scale: 1;
-    opacity: 1;
-  }
-
-  .project-item-icon-box ion-icon {
-    --ionicon-stroke-width: 50px;
-  }
-
-  .project-img img {
+  .blog-banner-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: var(--transition-1);
   }
 
-  .project-item > a:hover img {
+  .blog-post-item > a:hover .blog-banner-box img {
     transform: scale(1.1);
   }
 
-  .project-title,
-  .project-category {
-    margin-left: 10px;
+  .blog-content {
+    padding: 15px;
   }
 
-  .project-title {
-    color: var(--white-2);
-    font-size: var(--fs-5);
-    font-weight: var(--fw-400);
-    text-transform: capitalize;
-    line-height: 1.3;
+  .blog-meta {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 10px;
   }
 
-  .project-category {
+  .blog-meta :is(.blog-category, time) {
     color: var(--light-gray-70);
     font-size: var(--fs-6);
     font-weight: var(--fw-300);
+  }
+
+  .blog-meta .dot {
+    background: var(--light-gray-70);
+    width: 4px;
+    height: 4px;
+    border-radius: 4px;
+  }
+
+  .blog-item-title {
+    margin-bottom: 10px;
+    line-height: 1.3;
+    transition: var(--transition-1);
+  }
+
+  .blog-post-item > a:hover .blog-item-title {
+    color: var(--orange-yellow-crayola);
+  }
+
+  .blog-text {
+    color: var(--light-gray);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-300);
+    line-height: 1.6;
+  }
+
+  @media (min-width: 450px) {
+    /**
+ * # BLOG 
+ */
+
+    .blog-banner-box {
+      height: auto;
+    }
+
+    /**
+ * responsive larger than 580px screen
+ */
+
+    @media (min-width: 580px) {
+      /**
+   * # BLOG
+   */
+
+      .blog-banner-box {
+        border-radius: 16px;
+      }
+
+      .blog-posts-list {
+        gap: 30px;
+      }
+
+      .blog-content {
+        padding: 25px;
+      }
+    }
+
+    /**
+ * responsive larger than 768px screen
+ */
+
+    @media (min-width: 768px) {
+      /* blog grid */
+      .blog-posts-list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /**
+ * responsive larger than 1024px screen
+ */
+
+    @media (min-width: 1024px) {
+      /**
+   * BLOG
+   */
+
+      .blog-banner-box {
+        height: 230px;
+      }
+    }
   }
 `;
