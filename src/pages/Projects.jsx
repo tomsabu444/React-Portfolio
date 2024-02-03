@@ -29,7 +29,6 @@ function Projects() {
                   </figure>
 
                   <div className="blog-content">
-
                     <h3 className="h3 blog-item-title">Todo List</h3>
 
                     <p className="blog-text">
@@ -42,7 +41,7 @@ function Projects() {
               </li>
 
               <li className="blog-post-item">
-                <a href="#">
+                <a href="https://tomsabu444.github.io/FrontEnd-DEV/FuturisticCalculator/" target="_blank">
                   <figure className="blog-banner-box">
                     <img
                       src={calculatorimg}
@@ -52,19 +51,20 @@ function Projects() {
                   </figure>
 
                   <div className="blog-content">
-
-
                     <h3 className="h3 blog-item-title">
                       Simple Calculator App
                     </h3>
 
-                    <p className="blog-text">description</p>
+                    <p className="blog-text">
+                      Simple Calculator App the easy-to-use , a clean interface,
+                      large display, and memory functions for efficient. ~
+                    </p>
                   </div>
                 </a>
               </li>
 
               <li className="blog-post-item">
-                <a href="#">
+                <a href="https://tomsabu444.github.io/FrontEnd-DEV/simple-loginpage/">
                   <figure className="blog-banner-box">
                     <img
                       src={login_pageimg}
@@ -84,7 +84,11 @@ function Projects() {
 
                     <h3 className="h3 blog-item-title">Login Page Design</h3>
 
-                    <p className="blog-text">description</p>
+                    <p className="blog-text">
+                      Streamlined and stylish, our Login Page Design offers a
+                      fuss-free entry point. Experience simplicity and security
+                      seamlessly blended into one
+                    </p>
                   </div>
                 </a>
               </li>
