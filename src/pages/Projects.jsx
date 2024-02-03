@@ -24,7 +24,7 @@ function Projects() {
                 <li key={index} className="blog-post-item">
                   <a href={pro_img.link} target="_blank">
                     <figure className="blog-banner-box">
-                      <img src={pro_img.src} alt={pro_img.alt} loading="lazy"  />
+                      <img src={pro_img.src} alt={pro_img.alt} loading="lazy" />
                     </figure>
 
                     <div className="blog-content">

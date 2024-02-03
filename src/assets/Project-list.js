@@ -1,6 +1,6 @@
-import calculatorimg from "../assets/projects-img/calculator.png";
-import todo_listimg from "../assets/projects-img/todo-list.png";
-import login_pageimg from "../assets/projects-img/login-page.png";
+import calculatorimg from "../assets/projects-img/calculator.webp";
+import todo_listimg from "../assets/projects-img/todo-list.webp";
+import login_pageimg from "../assets/projects-img/login-page.webp";
 
 const Project_list_1 = [
   {
