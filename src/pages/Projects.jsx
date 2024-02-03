@@ -2,11 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 
+//maping
+import { Project_list_1 } from "../assets/Project-list";
+
 //test phase
 import dribbleimg from "../assets/projects-img/dribbble_1.gif";
-import calculatorimg from "../assets/projects-img/calculator.png";
-import todo_listimg from "../assets/projects-img/todo-list.png";
-import login_pageimg from "../assets/projects-img/login-page.png";
+
 function Projects() {
   return (
     <Layout>
@@ -18,80 +19,24 @@ function Projects() {
 
           <section className="blog-posts">
             <ul className="blog-posts-list">
-              <li className="blog-post-item">
-                <a href="https://todo.tomsabu.com" target="_blank">
-                  <figure className="blog-banner-box">
-                    <img
-                      src={todo_listimg}
-                      alt="Todo List Project"
-                      loading="lazy"
-                    />
-                  </figure>
+              {/* map through the array of project objects and create a li for each one */}
+              {Project_list_1.map((pro_img, index) => (
+                <li key={index} className="blog-post-item">
+                  <a href={pro_img.link} target="_blank">
+                    <figure className="blog-banner-box">
+                      <img src={pro_img.src} alt={pro_img.alt} loading="lazy"  />
+                    </figure>
 
-                  <div className="blog-content">
-                    <h3 className="h3 blog-item-title">Todo List</h3>
+                    <div className="blog-content">
+                      <h3 className="h3 blog-item-title">
+                        {pro_img.blog_title}
+                      </h3>
 
-                    <p className="blog-text">
-                      A React-based to-do list app with add, edit, and delete
-                      functionality, featuring reminders and completion tracking
-                      ~!
-                    </p>
-                  </div>
-                </a>
-              </li>
-
-              <li className="blog-post-item">
-                <a href="https://tomsabu444.github.io/FrontEnd-DEV/FuturisticCalculator/" target="_blank">
-                  <figure className="blog-banner-box">
-                    <img
-                      src={calculatorimg}
-                      alt="Best fonts every designer"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div className="blog-content">
-                    <h3 className="h3 blog-item-title">
-                      Simple Calculator App
-                    </h3>
-
-                    <p className="blog-text">
-                      Simple Calculator App the easy-to-use , a clean interface,
-                      large display, and memory functions for efficient. ~
-                    </p>
-                  </div>
-                </a>
-              </li>
-
-              <li className="blog-post-item">
-                <a href="https://tomsabu444.github.io/FrontEnd-DEV/simple-loginpage/">
-                  <figure className="blog-banner-box">
-                    <img
-                      src={login_pageimg}
-                      alt="Design digest #80"
-                      loading="lazy"
-                    />
-                  </figure>
-
-                  <div className="blog-content">
-                    {/* <div className="blog-meta">
-                      <p className="blog-category">Design</p>
-
-                      <span className="dot"></span>
-
-                      <time dateTime="2022-02-23">Fab 23, 2022</time>
-                    </div> */}
-
-                    <h3 className="h3 blog-item-title">Login Page Design</h3>
-
-                    <p className="blog-text">
-                      Streamlined and stylish, our Login Page Design offers a
-                      fuss-free entry point. Experience simplicity and security
-                      seamlessly blended into one
-                    </p>
-                  </div>
-                </a>
-              </li>
+                      <p className="blog-text">{pro_img.blog_text}</p>
+                    </div>
+                  </a>
+                </li>
+              ))}
             </ul>
           </section>
         </article>
