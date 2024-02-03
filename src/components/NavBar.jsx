@@ -33,7 +33,7 @@ function NavBar() {
 
 
           <li className="navbar-item">
-          <Link to="/project" className={`navbar-link ${location.pathname === '/projects' ? 'active' : ''}`}>Projects</Link>
+          <Link to="/projects" className={`navbar-link ${location.pathname === '/projects' ? 'active' : ''}`}>Projects</Link>
           </li>
           
 
