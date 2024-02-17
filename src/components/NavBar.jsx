@@ -2,49 +2,31 @@ import React from "react";
 import styled from "styled-components";
 import { Link, useLocation } from "react-router-dom";
 
+const navItems = [
+  { path: "/", label: "About" },
+  { path: "/resume", label: "Resume" },
+  { path: "/projects", label: "Projects" },
+];
+
 function NavBar() {
-  const location = useLocation(); // used for changing then active state of the NavBar
+  const location = useLocation();
 
   return (
     <Container>
       <nav className="navbar">
         <ul className="navbar-list">
-          {/* <li className="navbar-item">
-            <ion-icon className="dark-white-mode navbar-link" name="contrast-outline" id="dark-white-mode"></ion-icon>
-          </li> */}
-
-          <li className="navbar-item">
-            <Link
-              to="/"
-              className={`navbar-link ${
-                location.pathname === "/" ? "active" : ""
-              }`}
-            >
-              About
-            </Link>
-          </li>
-
-          <li className="navbar-item">
-            <Link
-              to="/resume"
-              className={`navbar-link ${
-                location.pathname === "/resume" ? "active" : ""
-              }`}
-            >
-              Resume
-            </Link>
-          </li>
-
-          <li className="navbar-item">
-            <Link
-              to="/projects"
-              className={`navbar-link ${
-                location.pathname === "/projects" ? "active" : ""
-              }`}
-            >
-              Projects
-            </Link>
-          </li>
+          {navItems.map((item, index) => (
+            <li key={index} className="navbar-item">
+              <Link
+                to={item.path}
+                className={`navbar-link ${
+                  location.pathname === item.path ? "active" : ""
+                }`}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </Container>
@@ -59,7 +41,6 @@ const Container = styled.div`
     bottom: 0;
     left: 0;
     width: 100%;
-    /* background: hsla(240, 1%, 17%, 0.75); */
     background-color: var(--eerie-black-3);
     backdrop-filter: blur(100px);
     border: 1px solid var(--jet);
@@ -110,7 +91,7 @@ const Container = styled.div`
     }
 
     .navbar-link {
-      --fs-8: 14px; //need to fix remember
+      --fs-8: 14px;
     }
   }
 

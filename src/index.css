@@ -291,8 +291,9 @@ article.active {
 /* Custom scrollbar styles */
 
 ::-webkit-scrollbar {
-  width: 5px;
-  /* for vertical scrollbar */
+  width: 0;
+  /* Remove the scrollbar space that's added by WebKit if we don't set a
+   for vertical scrollbar */
   height: 8px;
   /* for horizontal scrollbar */
 }
@@ -302,10 +303,10 @@ article.active {
   border-radius: 5px;
 }
 
-/* ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: var(--orange-yellow-crayola);
   border-radius: 5px;
-} */
+}
 
 /* ::-webkit-scrollbar-button {
   width: 20px;
