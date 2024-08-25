@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Bg_animation from "./components/Bg-animation";
 
 import Loading from "./components/Loading";
+import VisitorCount from "./utils/VisitorCount";
 
 // lazy  loading 
 const Home = lazy(() => import("./pages/Home"));
@@ -35,6 +36,9 @@ function App() {
           </Suspense>
         </Router>
       </main>
+
+      {/* Visitor Count */}
+        <VisitorCount/>
 
       {/* <Maintenance/>  */}
     </>
