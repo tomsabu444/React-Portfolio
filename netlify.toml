@@ -2,3 +2,12 @@
 from = "/*"
 to = "/index.html"
 status = 200
+[[headers]]
+for = "/*"
+[headers.values]
+Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+Content-Security-Policy = "default-src 'self'; script-src 'self' https://fonts.googleapis.com; style-src 'self' https://fonts.googleapis.com; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests; block-all-mixed-content;"
+X-Frame-Options = "SAMEORIGIN"
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "no-referrer-when-downgrade"
+Permissions-Policy = "geolocation=(), microphone=(), camera=()"
