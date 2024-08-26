@@ -44,12 +44,8 @@ const VisitorCount = () => {
   console.log(visitorCount);
   
 
-  return (
-    <>
-      {/* <h1>Welcome to My Portfolio!</h1>
-      <p>Visitor Count: {visitorCount}</p> */}
-    </>
-  );
+  // return  visitorCount
 };
 
-export default VisitorCount;
+
+export default VisitorCount
