@@ -3,7 +3,8 @@ import { database } from '../config/FirebaseConfig'; // Assume this is your init
 import { ref, get, set, update } from 'firebase/database';
 
 const VisitorCount = () => {
-  const [visitorCount, setVisitorCount] = useState(0);
+  const [visitorCount, setVisitorCount] = useState(null); // Initialize with null to indicate loading
+  const [loading, setLoading] = useState(true); // Add a loading state
 
   // Function to check if the visitor is new and increment the visitor count
   const checkAndIncrementVisitorCount = async () => {
@@ -36,16 +37,26 @@ const VisitorCount = () => {
 
   // useEffect to manage visitor count on component mount
   useEffect(() => {
-    checkAndIncrementVisitorCount().then(() => {
-      getVisitorCount().then((count) => setVisitorCount(count));
-    });
+    const fetchVisitorCount = async () => {
+      await checkAndIncrementVisitorCount();
+      const count = await getVisitorCount();
+      setVisitorCount(count);
+      setLoading(false); // Set loading to false after data is fetched
+    };
+
+    fetchVisitorCount();
   }, []);
+
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
+
 
   console.log(visitorCount);
   
 
-  // return  visitorCount
+
+  // return visitorCount
 };
 
-
-export default VisitorCount
+export default VisitorCount;
