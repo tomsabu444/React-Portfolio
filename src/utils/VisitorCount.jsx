@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { database } from "../config/FirebaseConfig"; // Assume this is your initialized Firebase configuration
-import { ref, get, set, update } from "firebase/database";
-import { VscEye } from "react-icons/vsc"; // Import the eye icon
-import "./style/VisitorCount.css"; // Import the CSS file
+import { firestore } from "../config/FirebaseConfig"; // Firestore import
+import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore"; // Firestore methods
+import { VscEye } from "react-icons/vsc";
+import "./style/VisitorCount.css";
 
 const VisitorCount = () => {
-  const [visitorCount, setVisitorCount] = useState(null); // Initialize with null
-  const [isVisible, setIsVisible] = useState(false); // State to control visibility and animation
+  const [visitorCount, setVisitorCount] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   // Function to check if the visitor is new and increment the visitor count
   const checkAndIncrementVisitorCount = async () => {
-    const visitorKey = "visitor-true";
+    const visitorKey = "unique-visitor";
 
     // Check if the visitor has already been recorded in localStorage
     if (!localStorage.getItem(visitorKey)) {
-      const counterRef = ref(database, "visitorCount");
-      const counterSnapshot = await get(counterRef);
+      const counterRef = doc(firestore, "visitors", "visitorCount");
+      const counterSnapshot = await getDoc(counterRef);
 
       if (counterSnapshot.exists()) {
-        const currentCount = counterSnapshot.val().count;
-        await update(counterRef, { count: currentCount + 1 });
+        const currentCount = counterSnapshot.data().count;
+        await updateDoc(counterRef, { count: currentCount + 1 });
       } else {
-        await set(counterRef, { count: 1 });
+        await setDoc(counterRef, { count: 1 });
       }
 
       // Mark the visitor as counted in localStorage
@@ -29,14 +29,13 @@ const VisitorCount = () => {
     }
   };
 
-  // Function to retrieve the current visitor count from Firebase
+  // Function to retrieve the current visitor count from Firestore
   const getVisitorCount = async () => {
-    const counterRef = ref(database, "visitorCount");
-    const counterSnapshot = await get(counterRef);
-    return counterSnapshot.exists() ? counterSnapshot.val().count : 0;
+    const counterRef = doc(firestore, "visitors", "visitorCount");
+    const counterSnapshot = await getDoc(counterRef);
+    return counterSnapshot.exists() ? counterSnapshot.data().count : 0;
   };
 
-  // useEffect to manage visitor count on component mount
   useEffect(() => {
     const fetchVisitorCount = async () => {
       await checkAndIncrementVisitorCount();
@@ -46,7 +45,7 @@ const VisitorCount = () => {
       // Show the visitor count after the data is set
       setIsVisible(true);
 
-      // Hide the visitor count after 15 seconds
+      // Hide the visitor count after 10 seconds
       setTimeout(() => {
         setIsVisible(false);
       }, 10000); // 10 seconds delay
@@ -55,7 +54,6 @@ const VisitorCount = () => {
     fetchVisitorCount();
   }, []);
 
-  // Apply the 'visible' class when isVisible is true
   return (
     <div className={`visitor-count-container ${isVisible ? "visible" : ""}`}>
       <div className="visitor-icon">
