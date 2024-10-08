@@ -1,0 +1,78 @@
+@keyframes swipeInAndRotate {
+    0% {
+        transform: translateX(100%) rotate(0deg);
+    }
+
+    100% {
+        transform: translateX(0) rotate(720deg);
+    }
+}
+
+@keyframes swipeOutAndReverseRotate {
+    0% {
+        opacity: 1;
+        transform: translateX(0) rotate(360deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(100%) rotate(0deg);
+
+    }
+}
+
+/* Container for the visitor count */
+.visitor-count-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    width: 70px;
+    height: 70px;
+    background-color: var(--eerie-black-3);
+    backdrop-filter: blur(100px);
+    border: 1px solid var(--jet);
+    border-radius: 10px 5px 10px 5px;
+    box-shadow: var(--shadow-2);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    visibility: hidden;
+}
+
+
+.visitor-count-container.visible {
+    visibility: visible;
+    animation: swipeInAndRotate 1s ease-out forwards;
+}
+
+.visitor-count-container:not(.visible) {
+    animation: swipeOutAndReverseRotate 1s ease-out forwards;
+}
+
+/* Counter rotation animation */
+@keyframes counterRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-720deg);
+    }
+}
+
+/* Visitor icon and count should not rotate */
+.visitor-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    animation: counterRotate 1s linear forwards;
+}
+
+.visitor-icon .count{
+    font-size: 1.2rem;
+}
