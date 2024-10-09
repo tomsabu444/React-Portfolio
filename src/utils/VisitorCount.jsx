@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { firestore } from "../config/FirebaseConfig"; // Firestore import
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore"; // Firestore methods
-import { VscEye } from "react-icons/vsc";
 import "./style/VisitorCount.css";
 
 const VisitorCount = () => {
@@ -56,8 +55,8 @@ const VisitorCount = () => {
 
   return (
     <div className={`visitor-count-container ${isVisible ? "visible" : ""}`}>
-      <div className="visitor-icon">
-        <VscEye /> <div className="count">{visitorCount}</div>
+      <div className="visitor-icon">Site Visitor:
+        <div className="count"> {visitorCount}</div>
       </div>
     </div>
   );
