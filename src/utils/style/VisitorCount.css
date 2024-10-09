@@ -8,17 +8,17 @@
       opacity: 1;
     }
 }
-  
+/*   
 @keyframes slideOutToTop {
     0% {
       transform: translateY(0) scale(1);
       opacity: 1;
     }
     100% {
-      transform: translateY(-100%) scale(0.5);
+      transform: translateY(-100%) scale(0);
       opacity: 0;
     }
-}
+} */
 
 @keyframes countIncrease {
     0% {
@@ -64,10 +64,9 @@
     animation: slideInFromTop 1s ease-out forwards;
 }
 
-.visitor-count-container:not(.visible) {
-    visibility: visible; /* Keep it visible during the animation */
+/* .visitor-count-container:not(.visible) {
     animation: slideOutToTop 1s ease-out forwards;
-}
+} */
 
 /* Visitor icon and count styling */
 .visitor-icon {
