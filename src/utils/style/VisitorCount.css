@@ -1,13 +1,15 @@
 @keyframes slideInFromTop {
     0% {
-      transform: translateY(-100%) scale(0.5);
-      opacity: 0;
+        transform: translateY(-100%) scale(0.5);
+        opacity: 0;
     }
+
     100% {
-      transform: translateY(0) scale(1);
-      opacity: 1;
+        transform: translateY(0) scale(1);
+        opacity: 1;
     }
 }
+
 /*   
 @keyframes slideOutToTop {
     0% {
@@ -25,10 +27,12 @@
         transform: scale(1);
         color: white;
     }
+
     50% {
         transform: scale(1.5);
         color: limegreen;
     }
+
     100% {
         transform: scale(1);
         color: white;
@@ -41,9 +45,9 @@
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
+    padding: 12px 20px;
     z-index: 100;
-    width: 160px;
-    height: 60px;
+    max-width: fit-content;
     background-color: var(--eerie-black-3);
     backdrop-filter: blur(100px);
     border: 1px solid var(--jet);
@@ -92,6 +96,7 @@
         height: 50px;
         font-size: 1rem;
     }
+
     .visitor-icon .count {
         font-size: 1rem;
     }
