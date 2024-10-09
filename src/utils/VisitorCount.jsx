@@ -1,51 +1,76 @@
-import React, { useEffect, useState } from 'react';
-import { database } from '../config/FirebaseConfig'; // Assume this is your initialized Firebase configuration
-import { ref, get, set, update } from 'firebase/database';
+import React, { useEffect, useState } from "react";
+import { firestore } from "../config/FirebaseConfig"; // Firestore import
+import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore"; // Firestore methods
+import "./style/VisitorCount.css";
 
 const VisitorCount = () => {
   const [visitorCount, setVisitorCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const [animatingCount, setAnimatingCount] = useState(visitorCount);
 
   // Function to check if the visitor is new and increment the visitor count
   const checkAndIncrementVisitorCount = async () => {
-    const visitorKey = 'visitor-true';
+    const visitorKey = "unique-visitor";
 
     // Check if the visitor has already been recorded in localStorage
     if (!localStorage.getItem(visitorKey)) {
-      // If the visitor is new, increment the counter in Firebase
-      const counterRef = ref(database, 'visitorCount');
-      const counterSnapshot = await get(counterRef);
+      const counterRef = doc(firestore, "visitors", "visitorCount");
+      const counterSnapshot = await getDoc(counterRef);
 
       if (counterSnapshot.exists()) {
-        const currentCount = counterSnapshot.val().count;
-        await update(counterRef, { count: currentCount + 1 });
+        const currentCount = counterSnapshot.data().count;
+        await updateDoc(counterRef, { count: currentCount + 1 });
+
+        // Set a timeout for 1 second before updating animatingCount
+        setTimeout(() => {
+          setAnimatingCount(currentCount + 1); // Set the animating count to new value after 1 second
+        }, 1000);
       } else {
-        await set(counterRef, { count: 1 });
+        await setDoc(counterRef, { count: 1 });
+        setAnimatingCount(1); // New count is 1 immediately
       }
 
-      // Store a flag in localStorage to indicate that this visitor has been counted
-      localStorage.setItem(visitorKey, 'true');
+      // Mark the visitor as counted in localStorage
+      localStorage.setItem(visitorKey, "true");
     }
   };
 
-  // Function to retrieve the current visitor count from Firebase
+  // Function to retrieve the current visitor count from Firestore
   const getVisitorCount = async () => {
-    const counterRef = ref(database, 'visitorCount');
-    const counterSnapshot = await get(counterRef);
-    return counterSnapshot.exists() ? counterSnapshot.val().count : 0;
+    const counterRef = doc(firestore, "visitors", "visitorCount");
+    const counterSnapshot = await getDoc(counterRef);
+    return counterSnapshot.exists() ? counterSnapshot.data().count : 0;
   };
 
-  // useEffect to manage visitor count on component mount
   useEffect(() => {
-    checkAndIncrementVisitorCount().then(() => {
-      getVisitorCount().then((count) => setVisitorCount(count));
-    });
+    const fetchVisitorCount = async () => {
+      const count = await getVisitorCount();
+      setVisitorCount(count); // Set visitor count after fetching
+      setAnimatingCount(count); // Set animating count to fetched count
+      setIsVisible(true); // Show the visitor count after the data is set
+
+      // Check and increment visitor count
+      await checkAndIncrementVisitorCount();
+
+      // Hide the visitor count after 10 seconds
+      setTimeout(() => {
+        setIsVisible(false);
+      }, 8000); // 8 seconds delay
+    };
+
+    fetchVisitorCount();
   }, []);
 
-  console.log(visitorCount);
-  
-
-  // return  visitorCount
+  return (
+    <div className={`visitor-count-container ${isVisible ? "visible" : ""}`}>
+      <div className="visitor-icon">
+        Visitor Count:
+        <div className={`count ${animatingCount > visitorCount ? "count-increase" : ""}`}>
+          {animatingCount}
+        </div>
+      </div>
+    </div>
+  );
 };
 
-
-export default VisitorCount
+export default VisitorCount;

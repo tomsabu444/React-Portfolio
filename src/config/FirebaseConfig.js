@@ -1,8 +1,6 @@
-// Import the functions you need from the SDKs you need
+// Import the functions you need from the Firebase SDK
 import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore } from "firebase/firestore"; // Firestore imports
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -12,11 +10,11 @@ const firebaseConfig = {
   projectId: import.meta.env.VITE_PROJECTID,
   storageBucket: import.meta.env.VITE_STORAGEBUCKET,
   messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
-  appId: import.meta.env.VITE_APPID
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const database = getDatabase(app)
+const firestore = getFirestore(app); // Firestore initialization
 
-export { database };
+export { firestore };
