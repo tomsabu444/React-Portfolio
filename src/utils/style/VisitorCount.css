@@ -7,27 +7,42 @@
       transform: translateY(0) scale(1);
       opacity: 1;
     }
-  }
+}
   
-  @keyframes contractOut {
+@keyframes slideOutToTop {
     0% {
-      transform: translateX(-50%) scale(1);
+      transform: translateY(0) scale(1);
       opacity: 1;
     }
     100% {
-      transform: translateX(-50%) scale(0.5);
+      transform: translateY(-100%) scale(0.5);
       opacity: 0;
     }
-  }
-  
-  /* Container for the visitor count */
-  .visitor-count-container {
+}
+
+@keyframes countIncrease {
+    0% {
+        transform: scale(1);
+        color: white;
+    }
+    50% {
+        transform: scale(1.5);
+        color: limegreen;
+    }
+    100% {
+        transform: scale(1);
+        color: white;
+    }
+}
+
+/* Container for the visitor count */
+.visitor-count-container {
     position: fixed;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
-    width: 160px; /* Increased width for visibility */
+    width: 160px;
     height: 60px;
     background-color: var(--eerie-black-3);
     backdrop-filter: blur(100px);
@@ -42,37 +57,43 @@
     opacity: 0;
     visibility: hidden;
     font-family: var(--ff-poppins);
-  }
-  
-  .visitor-count-container.visible {
+}
+
+.visitor-count-container.visible {
     visibility: visible;
     animation: slideInFromTop 1s ease-out forwards;
-  }
-  
-  .visitor-count-container:not(.visible) {
-    animation: contractOut 1s ease-out forwards;
-  }
-  
-  /* Visitor icon and count styling */
-  .visitor-icon {
+}
+
+.visitor-count-container:not(.visible) {
+    visibility: visible; /* Keep it visible during the animation */
+    animation: slideOutToTop 1s ease-out forwards;
+}
+
+/* Visitor icon and count styling */
+.visitor-icon {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 7px;
     position: relative;
-  }
-  
-  .visitor-icon .count {
+}
+
+.visitor-icon .count {
     font-size: 1.2rem;
-  }
-  
-  @media (max-width: 600px) {
+    transition: all 0.5s ease;
+}
+
+.count-increase {
+    animation: countIncrease 0.5s ease forwards;
+}
+
+@media (max-width: 600px) {
     .visitor-count-container {
-      width: 130px;
-      height: 50px;
-      font-size: 1rem;
+        width: 130px;
+        height: 50px;
+        font-size: 1rem;
     }
     .visitor-icon .count {
-      font-size: 1rem;
+        font-size: 1rem;
     }
-  }
+}

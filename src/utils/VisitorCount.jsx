@@ -4,8 +4,9 @@ import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore"; // Firestor
 import "./style/VisitorCount.css";
 
 const VisitorCount = () => {
-  const [visitorCount, setVisitorCount] = useState(null);
+  const [visitorCount, setVisitorCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [animatingCount, setAnimatingCount] = useState(visitorCount);
 
   // Function to check if the visitor is new and increment the visitor count
   const checkAndIncrementVisitorCount = async () => {
@@ -19,8 +20,14 @@ const VisitorCount = () => {
       if (counterSnapshot.exists()) {
         const currentCount = counterSnapshot.data().count;
         await updateDoc(counterRef, { count: currentCount + 1 });
+
+        // Set a timeout for 1 second before updating animatingCount
+        setTimeout(() => {
+          setAnimatingCount(currentCount + 1); // Set the animating count to new value after 1 second
+        }, 1000);
       } else {
         await setDoc(counterRef, { count: 1 });
+        setAnimatingCount(1); // New count is 1 immediately
       }
 
       // Mark the visitor as counted in localStorage
@@ -37,17 +44,18 @@ const VisitorCount = () => {
 
   useEffect(() => {
     const fetchVisitorCount = async () => {
-      await checkAndIncrementVisitorCount();
       const count = await getVisitorCount();
       setVisitorCount(count); // Set visitor count after fetching
+      setAnimatingCount(count); // Set animating count to fetched count
+      setIsVisible(true); // Show the visitor count after the data is set
 
-      // Show the visitor count after the data is set
-      setIsVisible(true);
+      // Check and increment visitor count
+      await checkAndIncrementVisitorCount();
 
       // Hide the visitor count after 10 seconds
       setTimeout(() => {
         setIsVisible(false);
-      }, 10000); // 10 seconds delay
+      }, 8000); // 8 seconds delay
     };
 
     fetchVisitorCount();
@@ -55,8 +63,11 @@ const VisitorCount = () => {
 
   return (
     <div className={`visitor-count-container ${isVisible ? "visible" : ""}`}>
-      <div className="visitor-icon">Site Visitor:
-        <div className="count"> {visitorCount}</div>
+      <div className="visitor-icon">
+        Site Visitor:
+        <div className={`count ${animatingCount > visitorCount ? "count-increase" : ""}`}>
+          {animatingCount}
+        </div>
       </div>
     </div>
   );
