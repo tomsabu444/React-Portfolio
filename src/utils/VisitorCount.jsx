@@ -62,7 +62,7 @@ const VisitorCount = () => {
   return (
     <div className={`visitor-count-container ${isVisible ? "visible" : ""}`}>
       <div className="visitor-icon">
-        Visitor Count:
+        Visitor Count
         <div className={`count ${animatingCount > visitorCount ? "count-increase" : ""}`}>
           {animatingCount}
         </div>
