@@ -42,9 +42,10 @@
 /* Container for the visitor count */
 .visitor-count-container {
     position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     padding: 12px 20px;
     z-index: 100;
     max-width: fit-content;
@@ -63,14 +64,16 @@
     font-family: var(--ff-poppins);
 }
 
+/* Make the container visible with animation */
 .visitor-count-container.visible {
     visibility: visible;
     animation: slideInFromTop 1s ease-out forwards;
 }
 
-/* .visitor-count-container:not(.visible) {
-    animation: slideOutToTop 1s ease-out forwards;
-} */
+/* Animation for the count increase effect */
+.count-increase {
+    animation: countIncrease 0.5s ease forwards;
+}
 
 /* Visitor icon and count styling */
 .visitor-icon {
@@ -86,18 +89,24 @@
     transition: all 0.5s ease;
 }
 
-.count-increase {
-    animation: countIncrease 0.5s ease forwards;
-}
-
+/* Media queries for responsiveness */
 @media (max-width: 600px) {
     .visitor-count-container {
-        width: 130px;
         height: 50px;
         font-size: 1rem;
     }
 
     .visitor-icon .count {
         font-size: 1rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .visitor-count-container {
+        font-size: 0.9rem;
+    }
+
+    .visitor-icon .count {
+        font-size: 0.9rem;
     }
 }
