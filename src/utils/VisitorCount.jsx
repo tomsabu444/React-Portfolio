@@ -8,34 +8,33 @@ const VisitorCount = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [animatingCount, setAnimatingCount] = useState(visitorCount);
 
-  // Function to check if the visitor is new and increment the visitor count
+  // Check if visitor is new and increment the visitor count if necessary
   const checkAndIncrementVisitorCount = async () => {
     const visitorKey = "unique-visitor";
 
-    // Check if the visitor has already been recorded in localStorage
-    if (!localStorage.getItem(visitorKey)) {
-      const counterRef = doc(firestore, "visitors", "visitorCount");
-      const counterSnapshot = await getDoc(counterRef);
+    // Return early if the visitor has already been counted
+    if (localStorage.getItem(visitorKey)) return;
 
-      if (counterSnapshot.exists()) {
-        const currentCount = counterSnapshot.data().count;
-        await updateDoc(counterRef, { count: currentCount + 1 });
+    const counterRef = doc(firestore, "visitors", "visitorCount");
+    const counterSnapshot = await getDoc(counterRef);
 
-        // Set a timeout for 1 second before updating animatingCount
-        setTimeout(() => {
-          setAnimatingCount(currentCount + 1); // Set the animating count to new value after 1 second
-        }, 1000);
-      } else {
-        await setDoc(counterRef, { count: 1 });
-        setAnimatingCount(1); // New count is 1 immediately
-      }
+    if (counterSnapshot.exists()) {
+      const currentCount = counterSnapshot.data().count;
+      await updateDoc(counterRef, { count: currentCount + 1 });
 
-      // Mark the visitor as counted in localStorage
-      localStorage.setItem(visitorKey, "true");
+      setTimeout(() => {
+        setAnimatingCount(currentCount + 1); // Animate count after a short delay
+      }, 1000);
+    } else {
+      await setDoc(counterRef, { count: 1 });
+      setAnimatingCount(1);
     }
+
+    // Mark the visitor in localStorage to prevent future increments
+    localStorage.setItem(visitorKey, "true");
   };
 
-  // Function to retrieve the current visitor count from Firestore
+  // Retrieve the current visitor count from Firestore
   const getVisitorCount = async () => {
     const counterRef = doc(firestore, "visitors", "visitorCount");
     const counterSnapshot = await getDoc(counterRef);
@@ -45,17 +44,16 @@ const VisitorCount = () => {
   useEffect(() => {
     const fetchVisitorCount = async () => {
       const count = await getVisitorCount();
-      setVisitorCount(count); // Set visitor count after fetching
-      setAnimatingCount(count); // Set animating count to fetched count
-      setIsVisible(true); // Show the visitor count after the data is set
+      setVisitorCount(count);
+      setAnimatingCount(count);
+      setIsVisible(true);
 
-      // Check and increment visitor count
       await checkAndIncrementVisitorCount();
 
-      // Hide the visitor count after 10 seconds
+      // Hide the visitor count after 8 seconds
       setTimeout(() => {
         setIsVisible(false);
-      }, 8000); // 8 seconds delay
+      }, 8000);
     };
 
     fetchVisitorCount();
