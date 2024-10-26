@@ -15,7 +15,7 @@ UNDER PROGESS REACT PORTFOLIO
 ```bash
 git clone https://github.com/tomsabu444/My-React_Portfolio.git
 cd My-React_Portfolio
-npm i
+npm ci
 npm run dev
 ```
 
