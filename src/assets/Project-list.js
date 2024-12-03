@@ -2,8 +2,17 @@ import calculatorimg from "../assets/projects-img/calculator.webp";
 import todo_listimg from "../assets/projects-img/todo-list.webp";
 import login_pageimg from "../assets/projects-img/login-page.webp";
 import s6miniproject from "../assets/projects-img/s6miniproject-img.webp";
-
+import palamarathonImg from "../assets/projects-img/palamarathonImg.png";
 const Project_list_1 = [
+  {
+    link: "https://palamarathon.efpala.org",
+    src: palamarathonImg,
+    title: "PALA Marathon",
+    alt: "PALA Marathon Project",
+    blog_title: "PALA Marathon Website",
+    blog_text:
+      "Developed for the annual PALA Marathon, this website facilitates participant registration, payment processing via Razorpay, and email confirmations. It features user-friendly forms, club membership validation with discount codes, and an admin panel for organizers to manage registrations.",
+  },
   {
     link: "https://miniproject.tomsabu.com",
     src: s6miniproject,
