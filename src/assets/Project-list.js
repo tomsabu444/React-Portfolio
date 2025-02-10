@@ -12,7 +12,7 @@ const Project_list_1 = [
     alt: "PALA Marathon Project",
     blog_title: "PALA Marathon Website",
     blog_text:
-      "Developed for the annual PALA Marathon, this website facilitates participant registration, payment processing via Razorpay, and email confirmations. It features user-friendly forms, club membership validation with discount codes, and an admin panel for organizers to manage registrations.",
+      "Developed for the annual PALA Marathon, this website facilitates participant registration, payment processing via Razorpay, and email confirmations. It features user-friendly forms.",
   },
   {
     "link": "https://communets.com",
