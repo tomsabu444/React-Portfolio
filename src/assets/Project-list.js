@@ -3,6 +3,7 @@ import todo_listimg from "../assets/projects-img/todo-list.webp";
 import login_pageimg from "../assets/projects-img/login-page.webp";
 import s6miniproject from "../assets/projects-img/s6miniproject-img.webp";
 import palamarathonImg from "../assets/projects-img/palamarathonImg.png";
+import communets from "../assets/projects-img/communets.png";
 const Project_list_1 = [
   {
     link: "https://palamarathon.efpala.org",
@@ -12,6 +13,14 @@ const Project_list_1 = [
     blog_title: "PALA Marathon Website",
     blog_text:
       "Developed for the annual PALA Marathon, this website facilitates participant registration, payment processing via Razorpay, and email confirmations. It features user-friendly forms, club membership validation with discount codes, and an admin panel for organizers to manage registrations.",
+  },
+  {
+    "link": "https://communets.com",
+    "src": communets,
+    "title": "Communet E-Commerce",
+    "alt": "Communet E-Commerce Project",
+    "blog_title": "Communet E-Commerce Platform",
+    "blog_text": "Developed for Communet, this e-commerce platform enables seamless online shopping with a robust admin panel for inventory and product management. Built using the MERN stack, it ensures a dynamic and efficient user experience. The platform leverages Tailwind CSS for modern UI design, AWS Lightsail & S3 Bucket for scalable hosting and storage, and Firebase Authentication for secure user login."
   },
   {
     link: "https://miniproject.tomsabu.com",

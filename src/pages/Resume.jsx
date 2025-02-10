@@ -19,13 +19,13 @@ function Resume() {
                 <li className="skills-item">
                   <div className="title-wrapper">
                     <h5 className="h5">Web Development</h5>
-                    <data value="80">50%</data>
+                    <data value="80">75%</data>
                   </div>
 
                   <div className="skill-progress-bg">
                     <div
                       className="skill-progress-fill"
-                      style={{ width: "50%" }}
+                      style={{ width: "75%" }}
                     ></div>
                   </div>
                 </li>
@@ -33,13 +33,13 @@ function Resume() {
                 <li className="skills-item">
                   <div className="title-wrapper">
                     <h5 className="h5">Ethical Hacking</h5>
-                    <data value="70">80%</data>
+                    <data value="70">60%</data>
                   </div>
 
                   <div className="skill-progress-bg">
                     <div
                       className="skill-progress-fill"
-                      style={{ width: "80%" }}
+                      style={{ width: "60%" }}
                     ></div>
                   </div>
                 </li>
@@ -47,20 +47,34 @@ function Resume() {
                 <li className="skills-item">
                   <div className="title-wrapper">
                     <h5 className="h5">Editing</h5>
-                    <data value="90">70%</data>
+                    <data value="90">30%</data>
                   </div>
 
                   <div className="skill-progress-bg">
                     <div
                       className="skill-progress-fill"
-                      style={{ width: "70%" }}
+                      style={{ width: "30%" }}
                     ></div>
                   </div>
                 </li>
 
                 <li className="skills-item">
                   <div className="title-wrapper">
-                    <h5 className="h5">App Development</h5>
+                    <h5 className="h5">DevOps and System Design</h5>
+                    <data value="50">35%</data>
+                  </div>
+
+                  <div className="skill-progress-bg">
+                    <div
+                      className="skill-progress-fill"
+                      style={{ width: "35%" }}
+                    ></div>
+                  </div>
+                </li>
+
+                <li className="skills-item">
+                  <div className="title-wrapper">
+                    <h5 className="h5">Game Development</h5>
                     <data value="50">10%</data>
                   </div>
 

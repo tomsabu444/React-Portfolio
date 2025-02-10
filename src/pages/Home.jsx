@@ -50,7 +50,7 @@ function Home() {
           {/* Horizontal Scrooll 2*/}
 
           <section className="tool-icon">
-            <h3 className="h3 tool-icon-title">Software I'm Using!</h3>
+            <h3 className="h3 tool-icon-title">Technologies I'm Using!</h3>
 
             <ul className="tool-icon-list has-scrollbar">
               {tools_Icons_2.map((icon, index) => (
