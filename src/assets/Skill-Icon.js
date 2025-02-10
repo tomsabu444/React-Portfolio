@@ -1,7 +1,6 @@
 // tool icon url array!~
 
 const tools_Icons_1 = [
-  
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
     alt: "HTML",
@@ -28,24 +27,29 @@ const tools_Icons_1 = [
     title: "React",
   },
   {
-    src: "https://skillicons.dev/icons?i=bootstrap",
-    alt: "Bootstrap",
-    title: "Bootstrap",
+    src: "https://cdn.simpleicons.org/tailwindcss/06B6D4",
+    alt: "tailwindcss",
+    title: "tailwindcss",
+    height: "48",
+  },
+  {
+    src: "https://skillicons.dev/icons?i=express",
+    alt: "express",
+    title: "Express js",
+    height: "48",
+  },
+  {
+    src: "https://skillicons.dev/icons?i=mongodb",
+    alt: "mongodb",
+    title: "Mongodb",
     height: "48",
   },
 
-  // {
-  //   src: "https://skillicons.dev/icons?i=php",
-  //   alt: "PHP",
-  //   title: "PHP",
-  //   height: "48",
-  // },
-
   {
-    src: "https://cdn.simpleicons.org/apache/D22128",
+    src: "https://skillicons.dev/icons?i=flask",
     height: "48",
-    title: "Apache",
-    alt: "apache logo",
+    title: "Flask",
+    alt: "flask logo",
   },
 
   {
@@ -56,19 +60,17 @@ const tools_Icons_1 = [
   },
 
   {
-    src: "https://skillicons.dev/icons?i=flutter",
+    src: "https://skillicons.dev/icons?i=electron",
     height: "48",
-    alt: "flutter logo",
-    title: "Flutter",
+    alt: "Electron",
+    title: "Electron",
   },
-
   {
-    src: "https://skillicons.dev/icons?i=dart",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
     height: "48",
-    alt: "dart logo",
-    title: "Dart",
+    alt: "firebase",
+    title: "Firebase",
   },
-
 
   {
     src: "https://skillicons.dev/icons?i=nodejs",
@@ -90,22 +92,74 @@ const tools_Icons_1 = [
     title: "C Programing",
   },
   {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    height: "48",
+    alt: "python logo",
+    title: "Python",
+  },
+  {
     src: "https://skillicons.dev/icons?i=java",
     height: "48",
     alt: "java logo",
     title: "Java",
   },
-  {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-    height: "48",
-    alt: "python logo",
-    title: "Python",
-  }
-
- 
 ];
 
 const tools_Icons_2 = [
+  {
+    src: "https://skillicons.dev/icons?i=aws",
+    alt: "amazonwebservices",
+    title: "AWS",
+    height: "48",
+  },
+  {
+    src: "https://cdn.simpleicons.org/nginx/009639",
+    alt: "nginx",
+    title: "nginx",
+    height: "48",
+  },
+  {
+    src: "https://skillicons.dev/icons?i=cloudflare",
+    alt: "cloudflare",
+    title: "Cloudflare",
+    height: "48",
+  },
+  {
+    src: "https://skillicons.dev/icons?i=postman",
+    alt: "postman",
+    title: "Postman",
+    height: "48",
+  },
+  {
+    src: "https://cdn.simpleicons.org/netlify/00C7B7",
+    alt: "netlify",
+    title: "Netlify",
+    height: "48",
+  },
+  {
+    src: "https://skillicons.dev/icons?i=vercel",
+    alt: "vercel",
+    title: "Vercel",
+    height: "48",
+  },
+  {
+    src: "https://skillicons.dev/icons?i=github",
+    alt: "github",
+    title: "Github",
+    height: "48",
+  },
+  {
+    src: "https://cdn.simpleicons.org/githubactions/2088FF",
+    alt: "githubactions",
+    title: "Github Actions",
+    height: "48",
+  },
+  {
+    src: "https://skillicons.dev/icons?i=docker",
+    alt: "docker",
+    title: "Docker",
+    height: "48",
+  },
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
     alt: "figma",
@@ -132,12 +186,17 @@ const tools_Icons_2 = [
     alt: "discord logo",
     title: "Discord",
   },
-
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
     height: "48",
     alt: "googlecloud logo",
     title: "Google Cloud",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+    height: "48",
+    alt: "linux logo",
+    title: "Linux",
   },
   {
     src: "https://skillicons.dev/icons?i=ae",
@@ -170,7 +229,7 @@ const tools_Icons_2 = [
     alt: "blender logo",
     title: "Blender",
   },
-  
+
   {
     src: "https://cdn.simpleicons.org/android/3DDC84",
     height: "48",
@@ -183,15 +242,12 @@ const tools_Icons_2 = [
   //   alt: "maya logo",
   //   title: "Maya",
   // }
-
 ];
 
 export { tools_Icons_1, tools_Icons_2 };
 
-
-
-
-          {/*        <section className="service">
+{
+  /*        <section className="service">
             <h3 className="h3 service-title"> Tools i'm Using!</h3>
 
             <ul className="service-list">
@@ -263,8 +319,10 @@ export { tools_Icons_1, tools_Icons_2 };
                     />
                   </div>
                 </div>
-              </li> */}
-          {/* 
+              </li> */
+}
+{
+  /* 
               <li className="service-item">
                 <div className="service-content-box">
                   <div className="service-item-text">
@@ -312,8 +370,10 @@ export { tools_Icons_1, tools_Icons_2 };
                     />
                   </div>
                 </div>
-              </li> */}
-          {/* 
+              </li> */
+}
+{
+  /* 
               <li className="service-item">
                 <div className="service-content-box">
                   <div className="service-item-text">
@@ -406,10 +466,11 @@ export { tools_Icons_1, tools_Icons_2 };
                 </div>
               </li>
             </ul>
-          </section> */}
+          </section> */
+}
 
-
-          {/* <img
+{
+  /* <img
   draggable="false"
   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
   alt="figma"
@@ -590,4 +651,5 @@ export { tools_Icons_1, tools_Icons_2 };
   height="48"
   alt="maya logo"
   title="Maya"
-/> */}
+/> */
+}
