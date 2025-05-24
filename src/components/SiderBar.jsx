@@ -78,7 +78,7 @@ function SiderBar() {
               </div>
             </li>
 
-            <li className="contact-item">
+            {/* <li className="contact-item">
               <div className="icon-box">
                 <div className="service-icon-box">
                   <div className="icon-box">
@@ -88,7 +88,7 @@ function SiderBar() {
               </div>
 
               <div className="contact-info">
-                {/* <p className="contact-title">Download My CV</p> */}
+                {/* <p className="contact-title">Download My CV</p> 
 
                 <a
                   href="resume/TomSabuResume.pdf" // Ensure the CV file is placed in the public folder
@@ -111,7 +111,7 @@ function SiderBar() {
                   </button>
                 </a>
               </div>
-            </li>
+            </li> */}
             
           </ul>
 
