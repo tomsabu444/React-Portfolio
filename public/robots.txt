@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://tomsabu.com/sitemap.xml
+
+# Crawl-delay (optional - helps prevent server overload)
+# Crawl-delay: 1
+
+# Popular search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
