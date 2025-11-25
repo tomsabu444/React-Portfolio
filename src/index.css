@@ -47,3 +47,26 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Custom Loader */
+.loader {
+  width: 80px;
+  aspect-ratio: 1;
+  border: 10px solid #000;
+  box-sizing: border-box;
+  background: 
+    radial-gradient(farthest-side,#0f0 98%,#0000) 50%/20px 20px,
+    radial-gradient(farthest-side,#0f0 98%,#0000) 50%/20px 20px,
+    radial-gradient(farthest-side,#0f0 98%,#0000) 50%/20px 20px,
+    radial-gradient(farthest-side,#0f0 98%,#0000) 50%/20px 20px,
+    radial-gradient(farthest-side,#0f0 98%,#0000) 50%/20px 20px,
+    linear-gradient(#0f0 0 0) 50%/100% 10px,
+    linear-gradient(#0f0 0 0) 50%/10px 100%,
+    #000;
+  background-repeat: no-repeat;
+  filter: blur(4px) contrast(10);
+  animation: l13 0.8s infinite;
+}
+@keyframes l13 {
+  100%  {background-position:50% -20px,-20px 50%,60px 50%,50% 60px,50%,50%,50%}
+}

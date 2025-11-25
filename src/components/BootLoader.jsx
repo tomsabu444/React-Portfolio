@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 const BootLoader = ({ onComplete }) => {
   const [text, setText] = useState([]);
+  const [currentLine, setCurrentLine] = useState("");
   const [progress, setProgress] = useState(0);
+  const hasRun = useRef(false);
 
   const bootSequence = [
     "Initializing Kernel...",
@@ -15,19 +17,29 @@ const BootLoader = ({ onComplete }) => {
   ];
 
   useEffect(() => {
-    let currentIndex = 0;
-    const interval = setInterval(() => {
-      if (currentIndex < bootSequence.length) {
-        setText(prev => [...prev, bootSequence[currentIndex]]);
-        currentIndex++;
-        setProgress(prev => prev + (100 / bootSequence.length));
-      } else {
-        clearInterval(interval);
-        setTimeout(onComplete, 1000);
-      }
-    }, 800);
+    if (hasRun.current) return;
+    hasRun.current = true;
 
-    return () => clearInterval(interval);
+    const runBootSequence = async () => {
+      const totalSteps = bootSequence.length;
+      
+      for (let i = 0; i < totalSteps; i++) {
+        const line = bootSequence[i];
+        setCurrentLine(line);
+        
+        // Wait for a bit to simulate processing
+        await new Promise(r => setTimeout(r, 1500));
+
+        // Step complete
+        setText(prev => [...prev, line]);
+        setCurrentLine("");
+        setProgress(((i + 1) / totalSteps) * 100);
+      }
+
+      setTimeout(onComplete, 1000);
+    };
+
+    runBootSequence();
   }, []);
 
   return (
@@ -43,6 +55,18 @@ const BootLoader = ({ onComplete }) => {
             <span className="text-blue-500">[OK]</span> {line}
           </motion.div>
         ))}
+        
+        {/* Current processing line with custom loader */}
+        {currentLine && (
+          <div className="flex items-center space-x-2">
+            <div className="relative w-10 h-10">
+              <div className="loader scale-45 origin-top-left absolute top-0 left-0"></div>
+            </div>
+            <div className="text-lg text-yellow-500">
+              {currentLine}
+            </div>
+          </div>
+        )}
       </div>
       
       <div className="w-full max-w-md mx-auto">
@@ -53,7 +77,9 @@ const BootLoader = ({ onComplete }) => {
             animate={{ width: `${progress}%` }}
           />
         </div>
-        <p className="text-center mt-2 text-sm animate-pulse">System Booting...</p>
+        <p className="text-center mt-2 text-sm animate-pulse">
+          {progress < 100 ? "System Booting..." : "System Ready"}
+        </p>
       </div>
     </div>
   );
