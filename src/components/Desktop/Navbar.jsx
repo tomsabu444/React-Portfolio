@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Wifi, Battery, Search } from 'lucide-react';
+import { Wifi, Battery, Search, Command } from 'lucide-react';
 import VisitorCount from '../../utils/VisitorCount';
 
 const Navbar = () => {
@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <div className="h-8 bg-black/80 backdrop-blur-md text-white flex items-center justify-between px-4 text-sm fixed top-0 w-full z-40 border-b border-white/10">
       <div className="flex items-center space-x-4">
-        <span className="font-bold text-lg"></span>
+        <Command size={18} className="text-white hover:text-green-400 transition-colors cursor-pointer" />
         <span className="hidden sm:inline font-semibold">Finder</span>
         <span className="hidden sm:inline">File</span>
         <span className="hidden sm:inline">Edit</span>
