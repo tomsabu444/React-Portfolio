@@ -111,7 +111,7 @@ const Navbar = () => {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -10, scale: 0.95 }}
                 transition={{ duration: 0.2 }}
-                className="absolute right-0 top-10 w-80 bg-[#1a1b26]/95 backdrop-blur-xl rounded-xl shadow-2xl border border-white/10 overflow-hidden"
+                className="fixed sm:absolute top-10 left-1/2 -translate-x-1/2 sm:left-auto sm:right-0 sm:translate-x-0 w-80 max-w-[calc(100vw-2rem)] bg-[#1a1b26]/95 backdrop-blur-xl rounded-xl shadow-2xl border border-white/10 overflow-hidden"
               >
                 <div className="p-4 space-y-4">
                   {/* Header */}
@@ -201,7 +201,7 @@ const Navbar = () => {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -10, scale: 0.95 }}
                 transition={{ duration: 0.2 }}
-                className="absolute right-0 top-10 w-72 bg-[#1a1b26]/95 backdrop-blur-xl rounded-xl shadow-2xl border border-white/10 overflow-hidden"
+                className="absolute right-0 top-10 w-72 max-w-[calc(100vw-2rem)] bg-[#1a1b26]/95 backdrop-blur-xl rounded-xl shadow-2xl border border-white/10 overflow-hidden"
               >
                 <div className="p-4">
                   {/* Calendar Header */}
