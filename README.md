@@ -1,16 +1,21 @@
-# Personal portfolio - React
+# React Portfolio
 
+Modern portfolio website with a desktop OS interface and hacker aesthetic.
 
-#### @codewithsadee **[Orginal Repo](https://github.com/codewithsadee/vcard-personal-portfolio)**
+## Features
 
-## Optimizing | Rebuilding | Fixing || MaStErInG ReAcT~
+- Desktop OS experience with draggable windows
+- Interactive terminal with commands
+- Auto-hiding dock on maximized windows
+- Settings panel with theme toggle
+- Calendar and visitor counter
+- Fully responsive design
 
-<!-- 
-<h3>
-UNDER PROGESS REACT PORTFOLIO
-</h3> -->
+## Tech Stack
 
-### Installation
+React 19 • Vite • Tailwind CSS • Framer Motion • Firebase
+
+## Installation
 
 ```bash
 git clone https://github.com/tomsabu444/My-React_Portfolio.git
@@ -19,19 +24,14 @@ npm ci
 npm run dev
 ```
 
-**packages used**
+## Scripts
 
-```
- react-router-dom
- styled-components
- react-icons
- @svgr/webpack
- framer-motion
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run preview  # Preview production build
 ```
 
-**hooks**
+## License
 
-```
-useState
-useLocation
-```
+MIT
