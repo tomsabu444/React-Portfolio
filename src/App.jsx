@@ -24,11 +24,18 @@ function App() {
   };
 
   const openApp = (appId) => {
-    if (!openApps.includes(appId)) {
+    if (openApps.includes(appId)) {
+      if (activeApp === appId && !minimizedApps.includes(appId)) {
+        setMinimizedApps([...minimizedApps, appId]);
+        setActiveApp(null);
+      } else {
+        setMinimizedApps(minimizedApps.filter(id => id !== appId));
+        setActiveApp(appId);
+      }
+    } else {
       setOpenApps([...openApps, appId]);
+      setActiveApp(appId);
     }
-    setMinimizedApps(minimizedApps.filter(id => id !== appId)); // Restore if minimized
-    setActiveApp(appId);
   };
 
   const closeApp = (appId) => {

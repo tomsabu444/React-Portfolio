@@ -53,22 +53,21 @@ const Terminal = () => {
             )}
           </div>
         ))}
+        <div className="flex items-center mt-2">
+          <span className="text-green-500 mr-2">root@kali:~#</span>
+          <input
+            ref={inputRef}
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            className="flex-1 bg-transparent outline-none text-white border-none p-0 focus:ring-0"
+            autoFocus
+            spellCheck="false"
+            autoComplete="off"
+          />
+        </div>
         <div ref={bottomRef} />
-      </div>
-      
-      <div className="flex items-center mt-2">
-        <span className="text-green-500 mr-2">root@kali:~#</span>
-        <input
-          ref={inputRef}
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={handleKeyDown}
-          className="flex-1 bg-transparent outline-none text-white border-none p-0 focus:ring-0"
-          autoFocus
-          spellCheck="false"
-          autoComplete="off"
-        />
       </div>
     </div>
   );
