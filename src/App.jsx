@@ -4,6 +4,9 @@ import Navbar from './components/Desktop/Navbar';
 import Dock from './components/Desktop/Dock';
 import Window from './components/Desktop/Window';
 import Terminal from './components/Terminal/Terminal';
+import AboutApp from './components/Apps/AboutApp';
+import ProjectsApp from './components/Apps/ProjectsApp';
+import SkillsApp from './components/Apps/SkillsApp';
 import { AnimatePresence } from 'framer-motion';
 
 function App() {
@@ -36,40 +39,11 @@ function App() {
       case 'terminal':
         return <Terminal />;
       case 'about':
-        return (
-          <div className="p-4">
-            <h2 className="text-2xl font-bold mb-4 text-green-400">About Me</h2>
-            <p>I am a passionate developer building the future of the web.</p>
-            <p className="mt-2">Welcome to my digital workspace.</p>
-          </div>
-        );
+        return <AboutApp />;
       case 'projects':
-        return (
-          <div className="p-4">
-            <h2 className="text-2xl font-bold mb-4 text-yellow-400">Projects</h2>
-            <div className="grid grid-cols-1 gap-4">
-              <div className="bg-white/10 p-4 rounded border border-white/20">
-                <h3 className="font-bold">Portfolio V2</h3>
-                <p className="text-sm text-gray-400">React + Tailwind HackerOS</p>
-              </div>
-              <div className="bg-white/10 p-4 rounded border border-white/20">
-                <h3 className="font-bold">Project Alpha</h3>
-                <p className="text-sm text-gray-400">Secure Chat App</p>
-              </div>
-            </div>
-          </div>
-        );
+        return <ProjectsApp />;
       case 'skills':
-        return (
-          <div className="p-4">
-             <h2 className="text-2xl font-bold mb-4 text-purple-400">Skills</h2>
-             <div className="flex flex-wrap gap-2">
-               {['React', 'Node.js', 'Python', 'Cybersecurity', 'Linux', 'Git'].map(skill => (
-                 <span key={skill} className="bg-purple-900/50 px-3 py-1 rounded-full text-sm border border-purple-500/30">{skill}</span>
-               ))}
-             </div>
-          </div>
-        );
+        return <SkillsApp />;
       case 'contact':
          return (
            <div className="p-4">
