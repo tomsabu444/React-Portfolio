@@ -40,10 +40,10 @@ const VisitorCount = () => {
 
   useEffect(() => {
     const fetchVisitorCount = async () => {
+      await checkAndIncrementVisitorCount();
       const count = await getVisitorCount();
       setVisitorCount(count);
       setIsVisible(true);
-      await checkAndIncrementVisitorCount();
     };
 
     fetchVisitorCount();
