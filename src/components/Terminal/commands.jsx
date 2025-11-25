@@ -13,7 +13,7 @@ const fileSystem = {
       'ctf': {
         type: 'dir',
         children: {
-          'flag.txt': { type: 'file', content: 'CTF{h4ck3r_0s_v2_1s_aw3s0m3}' }
+          'readme.txt': { type: 'file', content: 'Ctf Challenges Coming soon...' }
         }
       }
     }
