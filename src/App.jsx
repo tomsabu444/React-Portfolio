@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import BootLoader from './components/BootLoader';
 import Navbar from './components/Desktop/Navbar';
 import Dock from './components/Desktop/Dock';
 import Window from './components/Desktop/Window';
-import Terminal from './components/Terminal/Terminal';
-import AboutApp from './components/Apps/AboutApp';
-import ProjectsApp from './components/Apps/ProjectsApp';
-import SkillsApp from './components/Apps/SkillsApp';
-import ContactApp from './components/Apps/ContactApp';
+import Loader from './components/Loader';
 import { AnimatePresence } from 'framer-motion';
+
+// Lazy load applications
+const Terminal = React.lazy(() => import('./components/Terminal/Terminal'));
+const AboutApp = React.lazy(() => import('./components/Apps/AboutApp'));
+const ProjectsApp = React.lazy(() => import('./components/Apps/ProjectsApp'));
+const SkillsApp = React.lazy(() => import('./components/Apps/SkillsApp'));
+const ContactApp = React.lazy(() => import('./components/Apps/ContactApp'));
 
 function App() {
   const [booted, setBooted] = useState(false);
@@ -105,7 +108,9 @@ function App() {
                   isActive={activeApp === appId}
                   onFocus={() => setActiveApp(appId)}
                 >
-                  {renderAppContent(appId)}
+                  <Suspense fallback={<Loader />}>
+                    {renderAppContent(appId)}
+                  </Suspense>
                 </Window>
               ))}
             </AnimatePresence>
