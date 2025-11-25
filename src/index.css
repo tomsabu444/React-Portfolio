@@ -70,3 +70,48 @@ body {
 @keyframes l13 {
   100%  {background-position:50% -20px,-20px 50%,60px 50%,50% 60px,50%,50%,50%}
 }
+
+/* Custom Range Slider */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #0f0;
+  cursor: pointer;
+  border: 2px solid #000;
+  transition: all 0.15s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: #00ff00;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  transform: scale(1.1);
+}
+
+.slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #0f0;
+  cursor: pointer;
+  border: 2px solid #000;
+  transition: all 0.15s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+  background: #00ff00;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  transform: scale(1.1);
+}
+
+.slider::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 4px;
+}
+
+.slider::-moz-range-track {
+  height: 8px;
+  border-radius: 4px;
+}
