@@ -1,47 +1,136 @@
-import React, { Suspense, lazy } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import Home from "./pages/Home";
-// import Projects from "./pages/Projects";
-// import Resume from "./pages/Resume";
-// import Maintenance from "./components/Maintenance";
-// import Error404 from "./Error-handling/404-Error";
-import Bg_animation from "./components/Bg-animation";
+import React, { useState, Suspense } from 'react';
+import BootLoader from './components/BootLoader';
+import Navbar from './components/Desktop/Navbar';
+import Dock from './components/Desktop/Dock';
+import Window from './components/Desktop/Window';
+import Loader from './components/Loader';
+import { AnimatePresence } from 'framer-motion';
 
-import Loading from "./components/Loading";
-import VisitorCount from "./utils/VisitorCount";
-
-// lazy  loading 
-const Home = lazy(() => import("./pages/Home"));
-const Projects = lazy(() => import("./pages/Projects"));
-const Resume = lazy(() => import("./pages/Resume"));
-const Error404 = lazy(() => import("./Error-handling/404-Error"));
-
-
+// Lazy load applications
+const Terminal = React.lazy(() => import('./components/Terminal/Terminal'));
+const AboutApp = React.lazy(() => import('./components/Apps/AboutApp'));
+const ProjectsApp = React.lazy(() => import('./components/Apps/ProjectsApp'));
+const SkillsApp = React.lazy(() => import('./components/Apps/SkillsApp'));
+const ContactApp = React.lazy(() => import('./components/Apps/ContactApp'));
 
 function App() {
+  const [booted, setBooted] = useState(false);
+  const [openApps, setOpenApps] = useState([]);
+  const [activeApp, setActiveApp] = useState(null);
+  const [maximizedApps, setMaximizedApps] = useState([]);
+  const [minimizedApps, setMinimizedApps] = useState([]);
+
+  const handleBootComplete = () => {
+    setBooted(true);
+    // Auto open terminal on boot
+    setTimeout(() => openApp('terminal'), 500);
+  };
+
+  const openApp = (appId) => {
+    if (openApps.includes(appId)) {
+      if (activeApp === appId && !minimizedApps.includes(appId)) {
+        setMinimizedApps([...minimizedApps, appId]);
+        setActiveApp(null);
+      } else {
+        setMinimizedApps(minimizedApps.filter(id => id !== appId));
+        setActiveApp(appId);
+      }
+    } else {
+      setOpenApps([...openApps, appId]);
+      setActiveApp(appId);
+    }
+  };
+
+  const closeApp = (appId) => {
+    setOpenApps(openApps.filter(id => id !== appId));
+    setMinimizedApps(minimizedApps.filter(id => id !== appId));
+    setMaximizedApps(maximizedApps.filter(id => id !== appId));
+    if (activeApp === appId) {
+      setActiveApp(openApps[openApps.length - 2] || null);
+    }
+  };
+
+  const toggleMinimize = (appId) => {
+    if (minimizedApps.includes(appId)) {
+      setMinimizedApps(minimizedApps.filter(id => id !== appId));
+      setActiveApp(appId);
+    } else {
+      setMinimizedApps([...minimizedApps, appId]);
+      setMaximizedApps(maximizedApps.filter(id => id !== appId));
+      setActiveApp(null);
+    }
+  };
+
+  const handleMaximizeChange = (appId, isMaximized) => {
+    if (isMaximized && !minimizedApps.includes(appId)) {
+      setMaximizedApps([...maximizedApps.filter(id => id !== appId), appId]);
+    } else {
+      setMaximizedApps(maximizedApps.filter(id => id !== appId));
+    }
+  };
+
+  const renderAppContent = (appId) => {
+    switch (appId) {
+      case 'terminal':
+        return <Terminal />;
+      case 'about':
+        return <AboutApp />;
+      case 'projects':
+        return <ProjectsApp />;
+      case 'skills':
+        return <SkillsApp />;
+      case 'contact':
+         return <ContactApp />;
+      default:
+        return <div>App not found</div>;
+    }
+  };
+
+  const getAppTitle = (appId) => {
+    const titles = {
+      terminal: 'Terminal - root@kali',
+      about: 'About Me',
+      projects: 'Projects Explorer',
+      skills: 'Skill Matrix',
+      contact: 'Contact Channel'
+    };
+    return titles[appId] || 'Application';
+  };
+
   return (
-    <>
-      <main>
-        <Bg_animation />
-        <Router>
-          <Suspense fallback={<Loading/>}>
-            <Routes>
-              <Route exact path="/" element={<Home />} />
-              <Route exact path="/resume" element={<Resume />} />
-              <Route exact path="/projects" element={<Projects />} />
+    <div className="h-screen w-screen overflow-hidden bg-[url('https://images.unsplash.com/photo-1510511459019-5dda7724fd82?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center">
+      {!booted ? (
+        <BootLoader onComplete={handleBootComplete} />
+      ) : (
+        <>
+          <Navbar />
+          
+          <div className="relative h-full w-full pt-8 pb-20">
+            <AnimatePresence>
+              {openApps.map(appId => (
+                <Window
+                  key={appId}
+                  id={appId}
+                  title={getAppTitle(appId)}
+                  onClose={() => closeApp(appId)}
+                  onMinimize={() => toggleMinimize(appId)}
+                  isMinimized={minimizedApps.includes(appId)}
+                  isActive={activeApp === appId}
+                  onFocus={() => setActiveApp(appId)}
+                  onMaximizeChange={(isMax) => handleMaximizeChange(appId, isMax)}
+                >
+                  <Suspense fallback={<Loader />}>
+                    {renderAppContent(appId)}
+                  </Suspense>
+                </Window>
+              ))}
+            </AnimatePresence>
+          </div>
 
-              {/* Route for 404 Not Found */}
-              <Route path="*" element={<Error404 />} />
-            </Routes>
-          </Suspense>
-        </Router>
-      </main>
-
-      {/* Visitor Count */}
-        <VisitorCount/>
-
-      {/* <Maintenance/>  */}
-    </>
+          <Dock onOpenApp={openApp} hasMaximizedWindow={maximizedApps.length > 0} />
+        </>
+      )}
+    </div>
   );
 }
 
