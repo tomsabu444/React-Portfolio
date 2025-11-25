@@ -8,6 +8,17 @@ const Window = ({ id, title, onClose, children, isActive, onFocus, onMinimize, i
   const windowRef = useRef(null);
   const dragControls = useDragControls();
 
+  useEffect(() => {
+    const checkScreenSize = () => {
+      const isSmallScreen = window.innerWidth < 768;
+      setIsMaximized(isSmallScreen);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
   // If minimized, don't render (or render hidden)
   if (isMinimized) return null;
 
@@ -66,7 +77,7 @@ const Window = ({ id, title, onClose, children, isActive, onFocus, onMinimize, i
           </button>
           <button 
             onClick={toggleMaximize}
-            className="w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 flex items-center justify-center group"
+            className="hidden md:flex w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 items-center justify-center group"
           >
             {isMaximized ? (
               <Minimize2 size={8} className="opacity-0 group-hover:opacity-100 text-black" />

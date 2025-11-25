@@ -44,7 +44,7 @@ const ContactApp = () => {
         </button>
 
         <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-          <div className="p-4 pt-0 space-y-4 border-t border-white/10">
+          <div className="p-4 pt-0 space-y-4">
             <div className="flex items-center space-x-3 text-left">
               <div className="p-2 bg-white/10 rounded-lg">
                 <Mail className="text-yellow-400" size={20} />
