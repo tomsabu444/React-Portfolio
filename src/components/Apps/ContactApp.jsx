@@ -14,7 +14,7 @@ const ContactApp = () => {
   return (
     <div className="p-6 h-full flex flex-col items-center justify-center text-center space-y-6">
       <div className="relative group">
-        <div className="w-32 h-32 rounded-2xl overflow-hidden border-2 border-green-500/50 shadow-[0_0_20px_rgba(0,255,0,0.2)]">
+        <div className="w-32 h-40 rounded-xl overflow-hidden border-2 border-green-500/50 shadow-[0_0_20px_rgba(0,255,0,0.2)]">
           <img 
             src={Tom_Photo} 
             alt="Tom Sabu" 
