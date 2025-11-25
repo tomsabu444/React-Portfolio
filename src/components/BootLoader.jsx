@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import DigitalRain from './DigitalRain';
 
 const BootLoader = ({ onComplete }) => {
   const [text, setText] = useState([]);
@@ -43,8 +44,13 @@ const BootLoader = ({ onComplete }) => {
   }, []);
 
   return (
-    <div className="fixed inset-0 bg-black text-green-500 font-mono p-10 flex flex-col justify-between z-50">
-      <div className="space-y-2">
+    <div className="fixed inset-0 bg-black text-green-500 font-mono p-10 flex flex-col justify-between z-50 overflow-hidden">
+      {/* Background Rain Effect */}
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+        <DigitalRain />
+      </div>
+
+      <div className="space-y-2 z-10 relative">
         {text.map((line, index) => (
           <motion.div
             key={index}
