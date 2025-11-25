@@ -17,7 +17,7 @@ function App() {
   const [booted, setBooted] = useState(false);
   const [openApps, setOpenApps] = useState([]);
   const [activeApp, setActiveApp] = useState(null);
-
+  const [maximizedApps, setMaximizedApps] = useState([]);
   const [minimizedApps, setMinimizedApps] = useState([]);
 
   const handleBootComplete = () => {
@@ -44,6 +44,7 @@ function App() {
   const closeApp = (appId) => {
     setOpenApps(openApps.filter(id => id !== appId));
     setMinimizedApps(minimizedApps.filter(id => id !== appId));
+    setMaximizedApps(maximizedApps.filter(id => id !== appId));
     if (activeApp === appId) {
       setActiveApp(openApps[openApps.length - 2] || null);
     }
@@ -55,7 +56,16 @@ function App() {
       setActiveApp(appId);
     } else {
       setMinimizedApps([...minimizedApps, appId]);
+      setMaximizedApps(maximizedApps.filter(id => id !== appId));
       setActiveApp(null);
+    }
+  };
+
+  const handleMaximizeChange = (appId, isMaximized) => {
+    if (isMaximized && !minimizedApps.includes(appId)) {
+      setMaximizedApps([...maximizedApps.filter(id => id !== appId), appId]);
+    } else {
+      setMaximizedApps(maximizedApps.filter(id => id !== appId));
     }
   };
 
@@ -107,6 +117,7 @@ function App() {
                   isMinimized={minimizedApps.includes(appId)}
                   isActive={activeApp === appId}
                   onFocus={() => setActiveApp(appId)}
+                  onMaximizeChange={(isMax) => handleMaximizeChange(appId, isMax)}
                 >
                   <Suspense fallback={<Loader />}>
                     {renderAppContent(appId)}
@@ -116,7 +127,7 @@ function App() {
             </AnimatePresence>
           </div>
 
-          <Dock onOpenApp={openApp} />
+          <Dock onOpenApp={openApp} hasMaximizedWindow={maximizedApps.length > 0} />
         </>
       )}
     </div>

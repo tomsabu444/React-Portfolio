@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Terminal, User, Folder, Code, Mail } from 'lucide-react';
 
-const Dock = ({ onOpenApp }) => {
+const Dock = ({ onOpenApp, hasMaximizedWindow }) => {
+  const [isHovered, setIsHovered] = useState(false);
   const apps = [
     { id: 'terminal', icon: Terminal, label: 'Terminal', color: 'bg-black border-green-500 border' },
     { id: 'about', icon: User, label: 'About', color: 'bg-blue-600' },
@@ -12,7 +13,16 @@ const Dock = ({ onOpenApp }) => {
   ];
 
   return (
-    <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
+    <motion.div 
+      className="fixed left-1/2 transform -translate-x-1/2 z-50"
+      initial={{ bottom: 16 }}
+      animate={{ 
+        bottom: hasMaximizedWindow && !isHovered ? -48 : 16
+      }}
+      transition={{ duration: 0.3, ease: 'easeInOut' }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className="flex items-end space-x-2 bg-white/10 backdrop-blur-xl p-2 rounded-2xl border border-white/20">
         {apps.map((app) => (
           <motion.button
@@ -31,7 +41,7 @@ const Dock = ({ onOpenApp }) => {
           </motion.button>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

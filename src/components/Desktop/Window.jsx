@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, useDragControls } from 'framer-motion';
 import { X, Minus, Maximize2, Minimize2 } from 'lucide-react';
 
-const Window = ({ id, title, onClose, children, isActive, onFocus, onMinimize, isMinimized }) => {
+const Window = ({ id, title, onClose, children, isActive, onFocus, onMinimize, isMinimized, onMaximizeChange }) => {
   const [isMaximized, setIsMaximized] = useState(false);
   const [size, setSize] = useState({ width: 800, height: 600 });
   const windowRef = useRef(null);
@@ -19,12 +19,22 @@ const Window = ({ id, title, onClose, children, isActive, onFocus, onMinimize, i
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
-  // If minimized, don't render (or render hidden)
-  if (isMinimized) return null;
-
   const toggleMaximize = () => {
-    setIsMaximized(!isMaximized);
+    const newMaximizedState = !isMaximized;
+    setIsMaximized(newMaximizedState);
+    if (onMaximizeChange) {
+      onMaximizeChange(newMaximizedState);
+    }
   };
+
+  useEffect(() => {
+    if (onMaximizeChange) {
+      onMaximizeChange(isMaximized);
+    }
+  }, [isMaximized]);
+
+  // If minimized, don't render (moved after all hooks)
+  if (isMinimized) return null;
 
   return (
     <motion.div
