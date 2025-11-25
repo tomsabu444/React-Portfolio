@@ -7,12 +7,15 @@ import Terminal from './components/Terminal/Terminal';
 import AboutApp from './components/Apps/AboutApp';
 import ProjectsApp from './components/Apps/ProjectsApp';
 import SkillsApp from './components/Apps/SkillsApp';
+import ContactApp from './components/Apps/ContactApp';
 import { AnimatePresence } from 'framer-motion';
 
 function App() {
   const [booted, setBooted] = useState(false);
   const [openApps, setOpenApps] = useState([]);
   const [activeApp, setActiveApp] = useState(null);
+
+  const [minimizedApps, setMinimizedApps] = useState([]);
 
   const handleBootComplete = () => {
     setBooted(true);
@@ -24,13 +27,25 @@ function App() {
     if (!openApps.includes(appId)) {
       setOpenApps([...openApps, appId]);
     }
+    setMinimizedApps(minimizedApps.filter(id => id !== appId)); // Restore if minimized
     setActiveApp(appId);
   };
 
   const closeApp = (appId) => {
     setOpenApps(openApps.filter(id => id !== appId));
+    setMinimizedApps(minimizedApps.filter(id => id !== appId));
     if (activeApp === appId) {
       setActiveApp(openApps[openApps.length - 2] || null);
+    }
+  };
+
+  const toggleMinimize = (appId) => {
+    if (minimizedApps.includes(appId)) {
+      setMinimizedApps(minimizedApps.filter(id => id !== appId));
+      setActiveApp(appId);
+    } else {
+      setMinimizedApps([...minimizedApps, appId]);
+      setActiveApp(null);
     }
   };
 
@@ -45,13 +60,7 @@ function App() {
       case 'skills':
         return <SkillsApp />;
       case 'contact':
-         return (
-           <div className="p-4">
-             <h2 className="text-2xl font-bold mb-4 text-red-400">Contact</h2>
-             <p>Email: user@example.com</p>
-             <p>GitHub: github.com/user</p>
-           </div>
-         );
+         return <ContactApp />;
       default:
         return <div>App not found</div>;
     }
@@ -84,6 +93,8 @@ function App() {
                   id={appId}
                   title={getAppTitle(appId)}
                   onClose={() => closeApp(appId)}
+                  onMinimize={() => toggleMinimize(appId)}
+                  isMinimized={minimizedApps.includes(appId)}
                   isActive={activeApp === appId}
                   onFocus={() => setActiveApp(appId)}
                 >

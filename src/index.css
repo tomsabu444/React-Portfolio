@@ -12,3 +12,38 @@ body {
   font-family: 'Courier New', Courier, monospace;
   overflow: hidden; /* For OS feel */
 }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+  border: 1px solid #333;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0f0;
+  border-radius: 2px;
+  border: 1px solid #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cc00;
+}
+
+::-webkit-scrollbar-corner {
+  background: #000;
+}
+
+/* Utility for hiding scrollbar but keeping functionality if needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
