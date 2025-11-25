@@ -29,6 +29,8 @@ const Window = ({ id, title, onClose, children, isActive, onFocus, onMinimize, i
         height: isMaximized ? 'calc(100vh - 32px)' : size.height,
         top: isMaximized ? '32px' : undefined,
         left: isMaximized ? 0 : undefined,
+        x: isMaximized ? 0 : undefined,
+        y: isMaximized ? 0 : undefined,
         position: isMaximized ? 'fixed' : 'absolute'
       }}
       exit={{ scale: 0.9, opacity: 0 }}

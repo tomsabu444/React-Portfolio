@@ -7,6 +7,7 @@ const Terminal = () => {
     { type: 'output', content: "Type 'help' to see available commands." }
   ]);
   const [input, setInput] = useState('');
+  const [path, setPath] = useState('~');
   const bottomRef = useRef(null);
   const inputRef = useRef(null);
 
@@ -27,11 +28,11 @@ const Terminal = () => {
         return;
       }
 
-      const output = executeCommand(cmd);
+      const output = executeCommand(cmd, path, setPath);
       
       setHistory(prev => [
         ...prev,
-        { type: 'input', content: cmd },
+        { type: 'input', content: cmd, path },
         { type: 'output', content: output }
       ]);
       setInput('');
@@ -45,7 +46,7 @@ const Terminal = () => {
           <div key={i} className={`${entry.type === 'input' ? 'text-white' : 'text-green-400'}`}>
             {entry.type === 'input' ? (
               <div className="flex items-center">
-                <span className="text-green-500 mr-2">root@kali:~#</span>
+                <span className="text-green-500 mr-2">root@kali:{entry.path}#</span>
                 <span>{entry.content}</span>
               </div>
             ) : (
@@ -54,7 +55,7 @@ const Terminal = () => {
           </div>
         ))}
         <div className="flex items-center mt-2">
-          <span className="text-green-500 mr-2">root@kali:~#</span>
+          <span className="text-green-500 mr-2">root@kali:{path}#</span>
           <input
             ref={inputRef}
             type="text"
