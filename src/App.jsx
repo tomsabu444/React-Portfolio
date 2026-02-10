@@ -4,6 +4,7 @@ import Navbar from './components/Desktop/Navbar';
 import Dock from './components/Desktop/Dock';
 import Window from './components/Desktop/Window';
 import Loader from './components/Loader';
+import LaserFlow from './components/LaserFlow';
 import { AnimatePresence } from 'framer-motion';
 
 // Lazy load applications
@@ -98,38 +99,63 @@ function App() {
   };
 
   return (
-    <div className="h-screen w-screen overflow-hidden bg-[url('https://images.unsplash.com/photo-1510511459019-5dda7724fd82?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center">
-      {!booted ? (
-        <BootLoader onComplete={handleBootComplete} />
-      ) : (
-        <>
-          <Navbar />
-          
-          <div className="relative h-full w-full pt-8 pb-20">
-            <AnimatePresence>
-              {openApps.map(appId => (
-                <Window
-                  key={appId}
-                  id={appId}
-                  title={getAppTitle(appId)}
-                  onClose={() => closeApp(appId)}
-                  onMinimize={() => toggleMinimize(appId)}
-                  isMinimized={minimizedApps.includes(appId)}
-                  isActive={activeApp === appId}
-                  onFocus={() => setActiveApp(appId)}
-                  onMaximizeChange={(isMax) => handleMaximizeChange(appId, isMax)}
-                >
-                  <Suspense fallback={<Loader />}>
-                    {renderAppContent(appId)}
-                  </Suspense>
-                </Window>
-              ))}
-            </AnimatePresence>
-          </div>
+    <div className="h-screen w-screen overflow-hidden relative bg-black">
+      {/* LaserFlow Background */}
+      <div className="absolute inset-0 z-0">
+        <LaserFlow
+          color="#00ff00"
+          wispDensity={1}
+          horizontalBeamOffset={0}
+          verticalBeamOffset={-0.5}
+          flowSpeed={0.35}
+          verticalSizing={4.9}
+          horizontalSizing={0.8}
+          fogIntensity={0.25}
+          fogScale={0.1}
+          wispSpeed={15}
+          wispIntensity={5.5}
+          flowStrength={0.2}
+          decay={3}
+        />
+      </div>
+      
+      {/* Overlay gradient for better readability */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/30 via-transparent to-black/40 pointer-events-none" />
+      
+      {/* Main content */}
+      <div className="relative z-[2] h-full w-full">
+        {!booted ? (
+          <BootLoader onComplete={handleBootComplete} />
+        ) : (
+          <>
+            <Navbar />
+            
+            <div className="relative h-full w-full pt-8 pb-20">
+              <AnimatePresence>
+                {openApps.map(appId => (
+                  <Window
+                    key={appId}
+                    id={appId}
+                    title={getAppTitle(appId)}
+                    onClose={() => closeApp(appId)}
+                    onMinimize={() => toggleMinimize(appId)}
+                    isMinimized={minimizedApps.includes(appId)}
+                    isActive={activeApp === appId}
+                    onFocus={() => setActiveApp(appId)}
+                    onMaximizeChange={(isMax) => handleMaximizeChange(appId, isMax)}
+                  >
+                    <Suspense fallback={<Loader />}>
+                      {renderAppContent(appId)}
+                    </Suspense>
+                  </Window>
+                ))}
+              </AnimatePresence>
+            </div>
 
-          <Dock onOpenApp={openApp} hasMaximizedWindow={maximizedApps.length > 0} />
-        </>
-      )}
+            <Dock onOpenApp={openApp} hasMaximizedWindow={maximizedApps.length > 0} />
+          </>
+        )}
+      </div>
     </div>
   );
 }
