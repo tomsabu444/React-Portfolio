@@ -1,49 +1,5 @@
 import React from 'react';
-
-const fileSystem = {
-  '~': {
-    type: 'dir',
-    children: {
-      'Downloads': {
-        type: 'dir',
-        children: {
-          'resume.pdf': { type: 'file', content: 'Binary file not shown.' }
-        }
-      },
-      'ctf.tomsabu.com': {
-        type: 'dir',
-        children: {
-          'readme.txt': { type: 'file', content: 'Coming soon... Check out ctf.tomsabu.com' }
-        }
-      },
-      'play.tomsabu.com': {
-        type: 'dir',
-        children: {
-          'readme.txt': { type: 'file', content: 'Coming soon... Check out play.tomsabu.com' }
-        }
-      }
-    }
-  }
-};
-
-const getDir = (path) => {
-  const parts = path.split('/').filter(p => p);
-  let current = fileSystem['~'];
-  
-  // Handle absolute path starting with ~
-  if (parts[0] === '~') {
-    parts.shift();
-  }
-
-  for (const part of parts) {
-    if (current.type === 'dir' && current.children[part]) {
-      current = current.children[part];
-    } else {
-      return null;
-    }
-  }
-  return current;
-};
+import { fileSystem, getDir } from '../../utils/fileSystem';
 
 export const executeCommand = (input, currentPath, setPath) => {
   const [cmd, ...args] = input.trim().split(' ');

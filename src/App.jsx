@@ -9,6 +9,7 @@ import { AnimatePresence } from 'framer-motion';
 
 // Lazy load applications
 const Terminal = React.lazy(() => import('./components/Terminal/Terminal'));
+const FileExploiterApp = React.lazy(() => import('./components/Apps/FileExplorerApp'));
 const AboutApp = React.lazy(() => import('./components/Apps/AboutApp'));
 const ProjectsApp = React.lazy(() => import('./components/Apps/ProjectsApp'));
 const SkillsApp = React.lazy(() => import('./components/Apps/SkillsApp'));
@@ -74,6 +75,8 @@ function App() {
     switch (appId) {
       case 'terminal':
         return <Terminal />;
+      case 'files':
+        return <FileExploiterApp />;
       case 'about':
         return <AboutApp />;
       case 'projects':
@@ -90,6 +93,7 @@ function App() {
   const getAppTitle = (appId) => {
     const titles = {
       terminal: 'Terminal - root@kali',
+      files: 'File Exploiter - /home/kali',
       about: 'About Me',
       projects: 'Projects Explorer',
       skills: 'Skill Matrix',
@@ -128,7 +132,7 @@ function App() {
           <BootLoader onComplete={handleBootComplete} />
         ) : (
           <>
-            <Navbar />
+            <Navbar onOpenApp={openApp} />
             
             <div className="relative h-full w-full pt-8 pb-20">
               <AnimatePresence>
