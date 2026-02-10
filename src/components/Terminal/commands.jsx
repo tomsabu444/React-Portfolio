@@ -10,10 +10,16 @@ const fileSystem = {
           'resume.pdf': { type: 'file', content: 'Binary file not shown.' }
         }
       },
-      'ctf': {
+      'ctf.tomsabu.com': {
         type: 'dir',
         children: {
-          'readme.txt': { type: 'file', content: 'Ctf Challenges Coming soon...' }
+          'readme.txt': { type: 'file', content: 'Coming soon... Check out ctf.tomsabu.com' }
+        }
+      },
+      'play.tomsabu.com': {
+        type: 'dir',
+        children: {
+          'readme.txt': { type: 'file', content: 'Coming soon... Check out play.tomsabu.com' }
         }
       }
     }
