@@ -5,6 +5,7 @@ import Dock from './components/Desktop/Dock';
 import Window from './components/Desktop/Window';
 import Loader from './components/Loader';
 import LaserFlow from './components/LaserFlow';
+import ContextMenu from './components/ContextMenu';
 import { AnimatePresence } from 'framer-motion';
 
 // Lazy load applications
@@ -21,11 +22,25 @@ function App() {
   const [activeApp, setActiveApp] = useState(null);
   const [maximizedApps, setMaximizedApps] = useState([]);
   const [minimizedApps, setMinimizedApps] = useState([]);
+  const [contextMenu, setContextMenu] = useState({ show: false, x: 0, y: 0 });
 
   const handleBootComplete = () => {
     setBooted(true);
     // Auto open terminal on boot
     setTimeout(() => openApp('terminal'), 500);
+  };
+
+  const handleContextMenu = (e) => {
+    e.preventDefault();
+    setContextMenu({
+      show: true,
+      x: e.clientX,
+      y: e.clientY
+    });
+  };
+
+  const closeContextMenu = () => {
+    setContextMenu({ show: false, x: 0, y: 0 });
   };
 
   const openApp = (appId) => {
@@ -103,7 +118,7 @@ function App() {
   };
 
   return (
-    <div className="h-screen w-screen overflow-hidden relative bg-black">
+    <div className="h-screen w-screen overflow-hidden relative bg-black" onContextMenu={handleContextMenu}>
       {/* LaserFlow Background */}
       <div className="absolute inset-0 z-0">
         <LaserFlow
@@ -158,6 +173,16 @@ function App() {
 
             <Dock onOpenApp={openApp} hasMaximizedWindow={maximizedApps.length > 0} />
           </>
+        )}
+
+        {/* Custom Context Menu */}
+        {contextMenu.show && (
+          <ContextMenu
+            x={contextMenu.x}
+            y={contextMenu.y}
+            onClose={closeContextMenu}
+            onOpenApp={openApp}
+          />
         )}
       </div>
     </div>
