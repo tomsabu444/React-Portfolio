@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import BootLoader from './components/BootLoader';
 import Navbar from './components/Desktop/Navbar';
 import Dock from './components/Desktop/Dock';
@@ -17,14 +17,30 @@ const SkillsApp = React.lazy(() => import('./components/Apps/SkillsApp'));
 const ContactApp = React.lazy(() => import('./components/Apps/ContactApp'));
 
 function App() {
-  const [booted, setBooted] = useState(false);
+  // Check session storage to see if boot loader has already been shown
+  const [booted, setBooted] = useState(() => {
+    return sessionStorage.getItem('bootCompleted') === 'true';
+  });
   const [openApps, setOpenApps] = useState([]);
   const [activeApp, setActiveApp] = useState(null);
   const [maximizedApps, setMaximizedApps] = useState([]);
   const [minimizedApps, setMinimizedApps] = useState([]);
   const [contextMenu, setContextMenu] = useState({ show: false, x: 0, y: 0 });
 
+  // Auto-open terminal if boot was skipped
+  useEffect(() => {
+    const bootSkipped = sessionStorage.getItem('bootCompleted') === 'true';
+    if (bootSkipped) {
+      setTimeout(() => {
+        setOpenApps(['terminal']);
+        setActiveApp('terminal');
+      }, 500);
+    }
+  }, []);
+
   const handleBootComplete = () => {
+    // Save boot completion to session storage
+    sessionStorage.setItem('bootCompleted', 'true');
     setBooted(true);
     // Auto open terminal on boot
     setTimeout(() => openApp('terminal'), 500);
