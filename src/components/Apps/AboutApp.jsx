@@ -7,15 +7,15 @@ const AboutApp = () => {
       <section>
         <h2 className="text-2xl font-bold text-green-400 mb-4 border-b border-green-500/30 pb-2">About Me</h2>
         <p className="leading-relaxed">
-          As an engineering student, I have a deep passion for becoming a
-          Developer. I am eager to expand my knowledge and explore new
-          technologies, with a strong willingness to apply what I have
-          learned. I am actively seeking opportunities where I can
-          demonstrate my acquired skills and contribute to the achievement
-          of organizational goals. With a comprehensive approach, I aim to
-          provide a detailed understanding of my abilities and aspirations
-          in an informal tone. By delving in-depth into my passion for
-          development and my commitment.
+          B.Tech graduate in Computer Science and Engineering with a deep 
+          passion for full-stack development and cybersecurity. Currently 
+          working as a Junior Software Engineer, I 
+          specialize in building high-performance web applications using the 
+          PERN stack, Next.js, and AWS. My expertise spans across modern web 
+          frameworks, cloud technologies, and DevOps practices, with a strong 
+          focus on implementing CI/CD pipelines and SecOps workflows. I thrive 
+          on creating scalable software solutions and continuously exploring 
+          innovative technologies to solve real-world problems.
         </p>
       </section>
 
