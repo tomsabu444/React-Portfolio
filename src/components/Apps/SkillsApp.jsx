@@ -1,5 +1,5 @@
 import React from 'react';
-import { tools_Icons_1, tools_Icons_2 } from '../../assets/Skill-Icon.js';
+import IconCloud from '../ui/IconCloud';
 
 const SkillsApp = () => {
   const skillsData = [
@@ -8,6 +8,57 @@ const SkillsApp = () => {
     { name: "Editing", percent: 30 },
     { name: "DevOps and System Design", percent: 35 },
     { name: "Game Development", percent: 10 }
+  ];
+
+  const languageSlugs = [
+    "html5",
+    "css3",
+    "javascript",
+    "react",
+    "flutter",
+    "tailwindcss",
+    "express",
+    "mongodb",
+    "flask",
+    "mysql",
+    "electron",
+    "firebase",
+    "nodedotjs",
+    "git",
+    "c",
+    "python",
+    "java",
+  ];
+
+  const technologySlugs = [
+    "prisma",
+    "postgresql",
+    "amazonaws",
+    "awslambda",
+    "amazons3",
+    "amazonrds",
+    "nginx",
+    "cloudflare",
+    "postman",
+    "jira",
+    "bitbucket",
+    "netlify",
+    "vercel",
+    "github",
+    "githubactions",
+    "docker",
+    "figma",
+    "visualstudiocode",
+    "androidstudio",
+    "discord",
+    "googlecloud",
+    "linux",
+    "adobeaftereffects",
+    "adobepremierepro",
+    "adobephotoshop",
+    "adobeillustrator",
+    "blender",
+    "android",
   ];
 
   return (
@@ -32,27 +83,21 @@ const SkillsApp = () => {
         </div>
       </section>
 
-      <section>
-        <h3 className="text-xl font-bold text-white mb-4">Languages | Frameworks</h3>
-        <div className="flex flex-wrap gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
-          {tools_Icons_1.map((icon, index) => (
-            <div key={index} className="w-16 h-16 p-2 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors" title={icon.title}>
-              <img src={icon.src} alt={icon.alt} className="max-w-full max-h-full" />
-            </div>
-          ))}
-        </div>
-      </section>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <section>
+          <h3 className="text-xl font-bold text-white mb-4 text-center">Languages | Frameworks</h3>
+          <div className="relative flex h-full max-w-lg items-center justify-center overflow-hidden rounded-lg  pb-20 pt-8">
+            <IconCloud iconSlugs={languageSlugs} />
+          </div>
+        </section>
 
-      <section>
-        <h3 className="text-xl font-bold text-white mb-4">Technologies I'm Using</h3>
-        <div className="flex flex-wrap gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
-          {tools_Icons_2.map((icon, index) => (
-            <div key={index} className="w-16 h-16 p-2 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors" title={icon.title}>
-              <img src={icon.src} alt={icon.alt} className="max-w-full max-h-full" />
-            </div>
-          ))}
-        </div>
-      </section>
+        <section>
+          <h3 className="text-xl font-bold text-white mb-4 text-center">Technologies I'm Using</h3>
+          <div className="relative flex h-full max-w-lg items-center justify-center overflow-hidden rounded-lg pb-20 pt-8">
+            <IconCloud iconSlugs={technologySlugs} />
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

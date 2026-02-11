@@ -33,7 +33,6 @@ My-React_Portfolio/
 ├── src/
 │   ├── assets/
 │   │   ├── Project-list.js      # Project data array
-│   │   ├── Skill-Icon.js        # Technology icons array
 │   │   ├── certificates/        # Certificate images
 │   │   ├── images/             # General images
 │   │   └── projects-img/       # Project screenshots
