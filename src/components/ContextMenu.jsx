@@ -92,7 +92,7 @@ const ContextMenu = ({ x, y, onClose, onOpenApp }) => {
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.9 }}
         transition={{ duration: 0.15 }}
-        className="min-w-[200px] bg-black/95 border-2 border-[#0f0] rounded-lg p-1 shadow-[0_8px_32px_rgba(0,255,0,0.3),0_0_20px_rgba(0,255,0,0.1)] backdrop-blur-lg font-mono"
+        className="min-w-[200px] bg-black/95 border-1 border-[#0f0] rounded-lg p-1 font-mono"
         style={{
           position: 'fixed',
           left: `${x}px`,
