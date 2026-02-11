@@ -4,7 +4,17 @@ import login_pageimg from "../assets/projects-img/login-page.webp";
 import s6miniproject from "../assets/projects-img/s6miniproject-img.webp";
 import palamarathonImg from "../assets/projects-img/palamarathonImg.png";
 import communets from "../assets/projects-img/communets.png";
+import reactv1 from "../assets/projects-img/dribbble_1.gif";
 const Project_list_1 = [
+  {
+    link: "https://react-v1.tomsabu.com/",
+    src: reactv1,
+    title: "React Portfolio v1",
+    alt: "React Portfolio v1",
+    blog_title: "Legacy Portfolio",
+    blog_text:
+      "The first version of my personal portfolio website, showcasing my early React projects and design evolution.",
+  },
   {
     link: "https://palamarathon.efpala.org",
     src: palamarathonImg,
