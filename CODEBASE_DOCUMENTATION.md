@@ -49,6 +49,8 @@ My-React_Portfolio/
 │   │   ├── Terminal/
 │   │   │   ├── commands.jsx    # Terminal command logic
 │   │   │   └── Terminal.jsx    # Terminal UI
+│   │   ├── ui/
+│   │   │   └── IconCloud.jsx   # 3D interactive icon cloud
 │   │   ├── BootLoader.jsx      # Boot sequence animation
 │   │   ├── DigitalRain.jsx     # Matrix rain effect
 │   │   └── Loader.jsx          # Loading spinner
@@ -77,7 +79,7 @@ My-React_Portfolio/
 
 **Key Features**:
 - **State Management**:
-  - `booted`: Controls boot sequence display
+  - `booted`: Controls boot sequence display (Check sessionStorage)
   - `openApps`: Array of currently open applications
   - `activeApp`: Currently focused application
   - `maximizedApps`: Array of maximized windows
@@ -287,11 +289,10 @@ My-React_Portfolio/
    - Git, C, Python
 
 3. **Technologies I'm Using**:
-   - 40+ technology icons
-   - Hover effects
-   - Icon grid layout
+   - **Interactive 3D Tag Cloud**: Rotating sphere of tool icons
+   - Powered by `react-icon-cloud`
 
-**Icon Sources**: CDN-hosted icons (devicons, skillicons, simpleicons)
+**Icon Sources**: SimpleIcons slugs via CDN
 
 #### ContactApp.jsx
 **Personal contact information**
@@ -438,6 +439,7 @@ VITE_APPID=your_app_id
   "lucide-react": "^0.554.0",
   "react": "^19.2.0",
   "react-dom": "^19.2.0",
+  "react-icon-cloud": "^4.1.4",
   "react-icons": "^5.5.0",
   "react-router-dom": "^7.9.6",
   "tailwind-merge": "^3.4.0",
