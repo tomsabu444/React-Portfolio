@@ -6,7 +6,7 @@ const Dock = ({ onOpenApp, hasMaximizedWindow }) => {
   const [isHovered, setIsHovered] = useState(false);
   const apps = [
     { id: 'terminal', icon: Terminal, label: 'Terminal', color: 'bg-black border-green-500 border' },
-    { id: 'files', icon: FolderOpen, label: 'Explorer', color: 'bg-gray-700 border-green-400 border' },
+    // { id: 'files', icon: FolderOpen, label: 'Explorer', color: 'bg-gray-700 border-green-400 border' },
     { id: 'about', icon: User, label: 'About', color: 'bg-blue-600' },
     { id: 'projects', icon: Folder, label: 'Projects', color: 'bg-yellow-500' },
     { id: 'skills', icon: Code, label: 'Skills', color: 'bg-purple-600' },
