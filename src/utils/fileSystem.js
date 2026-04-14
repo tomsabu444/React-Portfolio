@@ -1,4 +1,4 @@
-// Shared virtual file system for Terminal and File Exploiter
+// Shared virtual file system for Terminal and File Explorer
 export const fileSystem = {
   '~': {
     type: 'dir',

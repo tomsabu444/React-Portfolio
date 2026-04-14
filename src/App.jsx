@@ -18,9 +18,7 @@ const ContactApp = React.lazy(() => import('./components/Apps/ContactApp'));
 
 function App() {
   // Check session storage to see if boot loader has already been shown
-  const [booted, setBooted] = useState(() => {
-    return sessionStorage.getItem('bootCompleted') === 'true';
-  });
+  const [booted, setBooted] = useState(sessionStorage.getItem('bootCompleted') === 'true');
   const [openApps, setOpenApps] = useState([]);
   const [activeApp, setActiveApp] = useState(null);
   const [maximizedApps, setMaximizedApps] = useState([]);
