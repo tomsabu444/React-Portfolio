@@ -18,17 +18,17 @@ export const fileSystem = {
           }
         }
       },
-      'ctf.tomsabu.com': {
+      'blog.tomsabu.com': {
         type: 'dir',
         children: {
           'readme.txt': { 
             type: 'file', 
-            content: 'Coming soon... Check out ctf.tomsabu.com',
+            content: 'Coming soon... Check out blog.tomsabu.com',
             metadata: {
               fileType: 'txt',
               externalLink: {
-                url: 'https://ctf.tomsabu.com',
-                label: 'Visit ctf.tomsabu.com'
+                url: 'https://blog.tomsabu.com',
+                label: 'Visit blog.tomsabu.com'
               }
             }
           }
