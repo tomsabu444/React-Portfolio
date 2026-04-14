@@ -3,7 +3,7 @@ import { Search, Command, Settings, Volume2, Sun, Moon, MapPin, ChevronLeft, Che
 import VisitorCount from '../../utils/VisitorCount';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const Navbar = () => {
+const Navbar = ({ onOpenApp }) => {
   const [time, setTime] = useState(new Date());
   const [showSettings, setShowSettings] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
@@ -82,7 +82,13 @@ const Navbar = () => {
       <div className="flex items-center space-x-4">
         <Command size={18} className="text-white hover:text-green-400 transition-colors cursor-pointer" />
         <span className="hidden sm:inline font-semibold">Finder</span>
-        <span className="hidden sm:inline">File</span>
+        <span 
+          className="hidden sm:inline cursor-pointer hover:text-green-400 transition-colors"
+          onClick={() => onOpenApp && onOpenApp('files')}
+          title="Open File Exploiter"
+        >
+          File
+        </span>
         <span className="hidden sm:inline">Edit</span>
         <span className="hidden sm:inline">View</span>
         <span className="hidden sm:inline">Go</span>
