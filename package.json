@@ -20,7 +20,7 @@
     "react-dom": "^19.2.0",
     "react-icon-cloud": "^4.1.7",
     "react-icons": "^5.5.0",
-    "react-router-dom": "^7.9.6",
+    "react-router-dom": "^7.12.0",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.17",
     "three": "^0.182.0"
@@ -33,7 +33,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
-    "vite": "^7.2.2",
+    "vite": "^7.3.2",
     "vite-plugin-pwa": "^1.2.0"
   }
 }
