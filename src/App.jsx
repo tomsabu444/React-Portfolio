@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect, useCallback, Suspense } from 'react';
 import BootLoader from './components/BootLoader';
 import Navbar from './components/Desktop/Navbar';
 import Dock from './components/Desktop/Dock';
@@ -92,13 +92,19 @@ function App() {
     }
   };
 
-  const handleMaximizeChange = (appId, isMaximized) => {
-    if (isMaximized && !minimizedApps.includes(appId)) {
-      setMaximizedApps([...maximizedApps.filter(id => id !== appId), appId]);
-    } else {
-      setMaximizedApps(maximizedApps.filter(id => id !== appId));
-    }
-  };
+  const handleMaximizeChange = useCallback((appId, isMaximized) => {
+    setMaximizedApps((currentMaximizedApps) => {
+      const isAlreadyMaximized = currentMaximizedApps.includes(appId);
+
+      if (isMaximized) {
+        return isAlreadyMaximized ? currentMaximizedApps : [...currentMaximizedApps, appId];
+      }
+
+      return isAlreadyMaximized
+        ? currentMaximizedApps.filter((id) => id !== appId)
+        : currentMaximizedApps;
+    });
+  }, []);
 
   const renderAppContent = (appId) => {
     switch (appId) {
@@ -175,7 +181,7 @@ function App() {
                     isMinimized={minimizedApps.includes(appId)}
                     isActive={activeApp === appId}
                     onFocus={() => setActiveApp(appId)}
-                    onMaximizeChange={(isMax) => handleMaximizeChange(appId, isMax)}
+                    onMaximizeChange={handleMaximizeChange}
                     enableMaximizedContentConstraint={appId === 'skills' || appId === 'projects' || appId === 'about'}
                     maximizedContentClassName="xl:max-w-[75%] xl:mx-auto"
                   >

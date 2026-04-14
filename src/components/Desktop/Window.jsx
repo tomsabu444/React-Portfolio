@@ -42,13 +42,13 @@ const Window = ({
     const newMaximizedState = !isMaximized;
     setIsMaximized(newMaximizedState);
     if (onMaximizeChange) {
-      onMaximizeChange(newMaximizedState);
+      onMaximizeChange(id, newMaximizedState);
     }
   };
 
   useEffect(() => {
     if (onMaximizeChange) {
-      onMaximizeChange(isMaximized);
+      onMaximizeChange(id, isMaximized);
     }
   }, [isMaximized, onMaximizeChange]);
 
