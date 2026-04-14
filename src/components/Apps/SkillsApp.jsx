@@ -62,7 +62,7 @@ const SkillsApp = () => {
   ];
 
   return (
-    <div className="p-6 space-y-8">
+    <div className="p-6 space-y-8 ">
       <section>
         <h2 className="text-2xl font-bold text-purple-400 mb-6 border-b border-purple-500/30 pb-2">Technical Skills</h2>
         <div className="space-y-4">

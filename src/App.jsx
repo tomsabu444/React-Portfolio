@@ -178,6 +178,8 @@ function App() {
                     isActive={activeApp === appId}
                     onFocus={() => setActiveApp(appId)}
                     onMaximizeChange={(isMax) => handleMaximizeChange(appId, isMax)}
+                    enableMaximizedContentConstraint={appId === 'skills' || appId === 'projects' || appId === 'about'}
+                    maximizedContentClassName="xl:max-w-[75%] xl:mx-auto"
                   >
                     <Suspense fallback={<Loader />}>
                       {renderAppContent(appId)}
