@@ -365,10 +365,13 @@ export const LaserFlow = ({
 
     const mouseTarget = new THREE.Vector2(0, 0);
     const mouseSmooth = new THREE.Vector2(0, 0);
+    let initialSizeRaf1 = 0;
+    let initialSizeRaf2 = 0;
 
     const setSizeNow = () => {
-      const w = mount.clientWidth || 1;
-      const h = mount.clientHeight || 1;
+      const rect = mount.getBoundingClientRect();
+      const w = rect.width || mount.clientWidth || 1;
+      const h = rect.height || mount.clientHeight || 1;
       const pr = currentDprRef.current;
 
       const last = lastSizeRef.current;
@@ -395,7 +398,9 @@ export const LaserFlow = ({
       resizeRaf = requestAnimationFrame(setSizeNow);
     };
 
-    setSizeNow();
+    initialSizeRaf1 = requestAnimationFrame(() => {
+      initialSizeRaf2 = requestAnimationFrame(setSizeNow);
+    });
     const ro = new ResizeObserver(scheduleResize);
     ro.observe(mount);
 
@@ -517,6 +522,9 @@ export const LaserFlow = ({
     animate();
 
     return () => {
+      cancelAnimationFrame(initialSizeRaf1);
+      cancelAnimationFrame(initialSizeRaf2);
+      cancelAnimationFrame(resizeRaf);
       cancelAnimationFrame(raf);
       ro.disconnect();
       io.disconnect();
