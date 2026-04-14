@@ -14,11 +14,13 @@ This portfolio is a **modern, immersive desktop OS-inspired website** with a **h
 - **Firebase Firestore** for visitor tracking
 - **Lucide React** & **React Icons** for icons
 - **React Router DOM v7** for navigation
+- **PWA Support** via `vite-plugin-pwa` for offline functionality & service workers
 
 ### Development Tools
 - **ESLint** for code quality
 - **Vite SWC Plugin** for fast refresh
 - **TypeScript types** for React
+- **Vite Plugin PWA** for service worker generation and caching strategy
 
 ---
 
@@ -407,6 +409,22 @@ VITE_APPID
 - **WebP Images**: Optimized image format
 - **Lazy Image Loading**: Images load as needed
 
+### Browser Caching Strategy
+- **Vite Asset Hashing**: Content-based hashes for bundled files (auto-cache busting)
+- **HTTP Headers (Netlify)**:
+  - `/assets/*`: Cached 1 year (immutable) - only downloads on code changes
+  - `/*.html`: No cache (must-revalidate) - checks for new asset hashes
+  - `/images/*`, `/favicon/*`: Cached 30 days
+- **Service Worker**: PWA caching with auto-update on deployment
+- **Offline Support**: Cached assets available offline via service worker
+
+### PWA Features
+- **Service Worker**: Automatically registered via `vite-plugin-pwa`
+- **Manifest Integration**: Uses existing `site.webmanifest` for app metadata
+- **Workbox Caching**: Automatically caches JS, CSS, HTML, images, and fonts
+- **Installable App**: Users can install as standalone app from browser
+- **Auto-Update**: Service worker updates in background on new deployments
+
 ---
 
 ## 🔐 Environment Setup
@@ -457,7 +475,8 @@ VITE_APPID=your_app_id
   "eslint-plugin-react": "^7.37.5",
   "eslint-plugin-react-hooks": "^7.0.1",
   "eslint-plugin-react-refresh": "^0.4.24",
-  "vite": "^7.2.2"
+  "vite": "^7.2.2",
+  "vite-plugin-pwa": "^latest"
 }
 ```
 
@@ -480,6 +499,115 @@ cd React-Portfolio
 npm ci           # Clean install
 npm run dev      # Start development
 ```
+
+---
+
+## 🌍 PWA & Caching Configuration
+
+### Service Worker Setup (vite-plugin-pwa)
+**File**: `src/main.jsx`
+
+```javascript
+import { registerSW } from 'virtual:pwa-register'
+
+// Register service worker for offline support and caching
+registerSW({ immediate: true })
+```
+
+**Features**:
+- Auto-registers service worker on app load
+- Automatically detects and applies updates
+- Enables offline browsing with cached content
+- Users can install as standalone app
+
+### Vite PWA Plugin Configuration
+**File**: `vite.config.js`
+
+```javascript
+VitePWA({
+  registerType: 'autoUpdate',
+  includeAssets: ['favicon.ico', 'robots.txt', 'sitemap.xml', 'favicon/**/*'],
+  manifest: false, // Uses existing site.webmanifest
+  workbox: {
+    globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,woff,woff2,ttf,eot}']
+  }
+})
+```
+
+**Key Settings**:
+- `registerType: 'autoUpdate'`: Automatically updates SW on deployment
+- `includeAssets`: Specifies which static assets to cache
+- `manifest: false`: Reuses existing `site.webmanifest` instead of generating new one
+- `workbox.globPatterns`: Pattern for Workbox to cache all web assets
+
+### Netlify Cache Headers (netlify.toml)
+
+```toml
+# Cache hashed assets for 1 year (cache-busting via content hash)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Don't cache HTML - always check for new asset hashes
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Cache images and favicon for 30 days
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/favicon/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+```
+
+### Caching Strategy Overview
+
+| Asset | Cache Duration | Strategy | Notes |
+|-------|---|---|---|
+| `app-abc123.js` (hashed assets) | 1 year | Immutable | Only re-downloads on code changes |
+| `index.html` | No cache | Must-revalidate | Always checks for new hashes |
+| Images & Favicon | 30 days | Public cache | Reduces server load |
+| Service Worker | Auto-update | On deployment | Detects changes intelligently |
+
+### How It Works
+
+1. **First Visit**:
+   - Browser downloads hashed JS/CSS files (e.g., `app-abc123.js`)
+   - Service worker caches all assets
+   - HTML is cached temporarily
+
+2. **Subsequent Visits**:
+   - Browser loads hashed assets from cache (instant load)
+   - Service worker checks for SW updates in background
+   - If new deployment exists, updates cache automatically
+
+3. **After Deployment**:
+   - Vite generates new hashes for changed files
+   - User requests `index.html` (no cache)
+   - New hashes trigger download of only changed files
+   - Old files remain cached (same hash)
+
+### Offline Experience
+
+- Portfolio fully accessible offline with service worker
+- Cached pages load instantly
+- Firebase features (visitor count, contact form) show offline status
+- Users can install as standalone PWA app
+
+### Testing PWA Locally
+
+1. Build production: `npm run build`
+2. Preview: `npm run preview`
+3. Open Chrome DevTools → Application tab
+4. Check Service Workers and Cache Storage
+5. Go offline (DevTools Network tab) and refresh
 
 ---
 
@@ -518,7 +646,9 @@ npm run dev      # Start development
 7. **Performance**: Lazy loading, code splitting, optimized rendering
 8. **Accessibility**: Semantic HTML, ARIA labels, keyboard navigation
 9. **SEO Optimized**: Meta tags, Open Graph, sitemap, robots.txt
-10. **Modern Stack**: Latest React 19, Vite 7, Tailwind CSS 4
+10. **PWA Support**: Service worker, offline browsing, installable app
+11. **Smart Caching**: HTTP headers + service worker for instant loads
+12. **Modern Stack**: Latest React 19, Vite 7, Tailwind CSS 4, PWA enabled
 
 ---
 
