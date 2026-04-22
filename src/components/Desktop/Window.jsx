@@ -1,12 +1,31 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useDragControls } from 'framer-motion';
 import { X, Minus, Maximize2, Minimize2 } from 'lucide-react';
+import useWindowContentClass from '../../hooks/useWindowContentClass';
 
-const Window = ({ id, title, onClose, children, isActive, onFocus, onMinimize, isMinimized, onMaximizeChange }) => {
+const Window = ({
+  id,
+  title,
+  onClose,
+  children,
+  isActive,
+  onFocus,
+  onMinimize,
+  isMinimized,
+  onMaximizeChange,
+  enableMaximizedContentConstraint = false,
+  maximizedContentClassName
+}) => {
   const [isMaximized, setIsMaximized] = useState(false);
   const [size, setSize] = useState({ width: 800, height: 600 });
   const windowRef = useRef(null);
   const dragControls = useDragControls();
+  const contentClassName = useWindowContentClass({
+    baseClassName: 'flex-1 overflow-auto p-0 text-gray-300 font-mono relative w-full',
+    isMaximized,
+    enableMaximizedConstraint: enableMaximizedContentConstraint,
+    maximizedClassName: maximizedContentClassName
+  });
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -23,15 +42,15 @@ const Window = ({ id, title, onClose, children, isActive, onFocus, onMinimize, i
     const newMaximizedState = !isMaximized;
     setIsMaximized(newMaximizedState);
     if (onMaximizeChange) {
-      onMaximizeChange(newMaximizedState);
+      onMaximizeChange(id, newMaximizedState);
     }
   };
 
   useEffect(() => {
     if (onMaximizeChange) {
-      onMaximizeChange(isMaximized);
+      onMaximizeChange(id, isMaximized);
     }
-  }, [isMaximized]);
+  }, [id, isMaximized, onMaximizeChange]);
 
   // If minimized, don't render (moved after all hooks)
   if (isMinimized) return null;
@@ -101,7 +120,7 @@ const Window = ({ id, title, onClose, children, isActive, onFocus, onMinimize, i
       </div>
 
       {/* Content */}
-      <div className="flex-1 overflow-auto p-0 text-gray-300 font-mono relative">
+      <div className={contentClassName}>
         {children}
       </div>
       

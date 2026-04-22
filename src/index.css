@@ -11,6 +11,11 @@ body {
   color: #0f0;
   font-family: 'Courier New', Courier, monospace;
   overflow: hidden; /* For OS feel */
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%230f0' stroke='%23000' stroke-width='1.5' d='M2 2 L2 16 L6 12 L9 18 L11 17 L8 11 L14 11 Z'/%3E%3C/svg%3E") 2 2, auto;
+}
+
+* {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%230f0' stroke='%23000' stroke-width='1.5' d='M2 2 L2 16 L6 12 L9 18 L11 17 L8 11 L14 11 Z'/%3E%3C/svg%3E") 2 2, auto !important;
 }
 
 /* Custom Scrollbar */
