@@ -50,7 +50,7 @@ const Window = ({
     if (onMaximizeChange) {
       onMaximizeChange(id, isMaximized);
     }
-  }, [isMaximized, onMaximizeChange]);
+  }, [id, isMaximized, onMaximizeChange]);
 
   // If minimized, don't render (moved after all hooks)
   if (isMinimized) return null;

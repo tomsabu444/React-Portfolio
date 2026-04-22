@@ -85,7 +85,7 @@ const Navbar = ({ onOpenApp }) => {
         <span 
           className="hidden sm:inline cursor-pointer hover:text-green-400 transition-colors"
           onClick={() => onOpenApp && onOpenApp('files')}
-          title="Open File Exploiter"
+          title="Open File Explorer"
         >
           File
         </span>

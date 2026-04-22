@@ -39,7 +39,7 @@ const ContextMenu = ({ x, y, onClose, onOpenApp }) => {
     },
     { 
       id: 'files', 
-      label: 'File Exploiter', 
+      label: 'File Explorer', 
       icon: FolderOpen,
       action: () => {
         onOpenApp && onOpenApp('files');

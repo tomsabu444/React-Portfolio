@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Folder, File, Home, ChevronRight, FileText, Download, ExternalLink } from 'lucide-react';
 import { fileSystem, getDir as getDirFromPath } from '../../utils/fileSystem';
 
-const FileExploiterApp = () => {
+const FileExplorerApp = () => {
   const [currentPath, setCurrentPath] = useState('~');
   const [selectedFile, setSelectedFile] = useState(null);
   const [fileContent, setFileContent] = useState('');
@@ -194,4 +194,4 @@ const FileExploiterApp = () => {
   );
 };
 
-export default FileExploiterApp;
+export default FileExplorerApp;
