@@ -9,10 +9,10 @@ function App() {
   return (
     <Layout>
       <HomePage />
-      <AboutPage />
+      {/* <AboutPage />
       <TimelinePage />
       <ProjectsPage />
-      <ContactPage />
+      <ContactPage /> */}
     </Layout>
   );
 }

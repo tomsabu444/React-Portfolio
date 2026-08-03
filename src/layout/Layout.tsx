@@ -14,8 +14,8 @@ function Layout({ children }: LayoutProps) {
         aria-hidden="true"
       >
         <DotField
-          dotRadius={1.5}
-          dotSpacing={14}
+          dotRadius={1}
+          dotSpacing={15}
           cursorRadius={0}
           cursorForce={0}
           bulgeOnly={false}

@@ -15,7 +15,7 @@
 
 @theme inline {
     --font-heading: 'Comic Roasting', sans-serif;
-    --font-sans: 'Comic Roasting', sans-serif;
+    --font-secondary: 'Bubblegum Sans', cursive;
     --font-tertiary: 'Comic Relief', cursive;
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
@@ -62,7 +62,7 @@
     --font-secondary: 'Bubblegum Sans', cursive;
     --font-tertiary: 'Comic Relief', cursive;
     --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
+    --foreground: #151414;
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.145 0 0);
     --popover: oklch(1 0 0);
