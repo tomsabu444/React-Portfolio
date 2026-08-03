@@ -5,6 +5,8 @@
     { "path": "./tsconfig.node.json" }
   ],
    "compilerOptions": {
+    "ignoreDeprecations": "6.0", // ignore deprecation warnings
+
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
