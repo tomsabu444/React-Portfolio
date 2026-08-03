@@ -1,8 +1,6 @@
 import Layout from "@/layout/Layout";
 import AboutPage from "@/pages/AboutPage";
-import ContactPage from "@/pages/ContactPage";
 import HomePage from "@/pages/HomePage";
-import ProjectsPage from "@/pages/ProjectsPage";
 import TimelinePage from "@/pages/TimelinePage";
 
 function App() {
@@ -10,8 +8,8 @@ function App() {
     <Layout>
       <HomePage />
       <AboutPage />
-      {/* <TimelinePage />
-      <ProjectsPage />
+      <TimelinePage />
+      {/* <ProjectsPage />
       <ContactPage /> */}
     </Layout>
   );
