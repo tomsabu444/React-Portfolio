@@ -61,7 +61,7 @@
     --font-heading: 'Comic Roasting', sans-serif;
     --font-secondary: 'Bubblegum Sans', cursive;
     --font-tertiary: 'Comic Relief', cursive;
-    --background: oklch(1 0 0);
+    --background: #F1F1F1;
     --foreground: #151414;
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.145 0 0);

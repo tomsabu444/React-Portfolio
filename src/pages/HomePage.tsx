@@ -25,7 +25,7 @@ function HomePage() {
             {/* //? Morphing text */}
             <MorphingText
               texts={["Software Engineer", "Security Enthusiast"]}
-              className=" text-right font-secondary "
+              className=" text-right font-secondary text-foreground "
             />
           </div>
 

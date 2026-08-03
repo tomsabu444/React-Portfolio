@@ -10,7 +10,7 @@ function Layout({ children }: LayoutProps) {
   return (
     <div className="relative min-h-screen">
       <div
-        className="pointer-events-none fixed inset-0 z-0 bg-[#F1F1F1]"
+        className="pointer-events-none fixed inset-0 z-0 bg-background"
         aria-hidden="true"
       >
         <DotField
