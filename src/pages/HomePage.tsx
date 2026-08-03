@@ -1,5 +1,6 @@
 import GithubIcon from "@iconify-react/mdi/github";
 import LinkedinIcon from "@iconify-react/mdi/linkedin";
+import { MorphingText } from "../components/ui/morphing-text";
 import tom_sabu from "../assets/tom_sabu.png";
 
 function HomePage() {
@@ -19,9 +20,13 @@ function HomePage() {
       </div>
       <div className="flex flex-col  gap-6">
         <div className="flex justify-between ">
-          <div className="flex flex-col justify-center my-auto gap-10">
+          <div className="flex flex-col justify-center my-auto gap-8">
             <h1 className="font-heading text-9xl">TOM SABU.</h1>
-            <h2 className="text-5xl font-secondary">Full-Stack Developer</h2>
+            {/* //? Morphing text */}
+            <MorphingText
+              texts={["Software Engineer", "Security Enthusiast"]}
+              className=" text-right font-secondary "
+            />
           </div>
 
           {/* img */}
