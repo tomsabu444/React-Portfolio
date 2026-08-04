@@ -80,7 +80,7 @@ function ContactPage() {
                 </div>
 
                 <div className="mb-6 border-l-4 border-foreground pl-4 py-2 bg-background/50">
-                  <span className="font-secondary text-xl md:text-2xl font-bold tracking-wide text-foreground block break-all">
+                  <span className="font-tertiary text-xl font-bold tracking-wide text-foreground block break-all">
                     {email}
                   </span>
                 </div>
@@ -157,14 +157,14 @@ function ContactPage() {
                   </a>
 
                   <a
-                    href="https://linkedin.com/in/tomsabu"
+                    href="https://linkedin.com/in/tomsabu444"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-between border-2 border-foreground bg-background p-3 font-tertiary text-sm font-bold text-foreground shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:bg-foreground hover:text-background transition-all group"
                   >
                     <span className="flex items-center gap-2.5">
                       <LinkedinIcon className="w-5 h-5" />
-                      LINKEDIN // TOM SABU
+                      LINKEDIN // @tomsabu444
                     </span>
                     <span className="text-xs group-hover:translate-x-1 transition-transform">
                       &rarr;
