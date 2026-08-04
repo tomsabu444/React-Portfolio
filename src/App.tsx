@@ -1,14 +1,14 @@
 import Layout from "@/layout/Layout";
 import AboutPage from "@/pages/AboutPage";
 import HomePage from "@/pages/HomePage";
-import TimelinePage from "@/pages/TimelinePage";
+import TimelineSkillsPage from "@/pages/TimelineSkillsPage";
 
 function App() {
   return (
     <Layout>
       <HomePage />
       <AboutPage />
-      <TimelinePage />
+      <TimelineSkillsPage />
       {/* <ProjectsPage />
       <ContactPage /> */}
     </Layout>
