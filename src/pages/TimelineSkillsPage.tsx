@@ -103,13 +103,13 @@ function TimelineSkillsPage() {
           </motion.div>
 
           <div className="mt-3 inline-block -rotate-1 border-2 border-foreground bg-background px-4 py-1 font-tertiary text-xs font-bold tracking-widest text-foreground shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] uppercase">
-            CLASSIFIED DOSSIER // MISSION LOG
+            CLASSIFIED DOSSIER
           </div>
         </div>
 
         {/* Part 1: Career Journey Timeline */}
         <div className="mb-20 w-full">
-          <div className="mb-10 flex items-center justify-between border-b-4 border-foreground pb-3">
+          <div className="mb-10 flex items-center justify-between pb-3">
             <h2 className="font-secondary text-4xl text-foreground md:text-5xl flex items-center gap-3">
               <TerminalIcon className="w-8 h-8 text-foreground" />
               Career Journey
@@ -189,7 +189,7 @@ function TimelineSkillsPage() {
 
         {/* Part 2: Skills Section */}
         <div className="w-full">
-          <div className="mb-10 flex items-center justify-between border-b-4 border-foreground pb-3">
+          <div className="mb-10 flex items-center justify-between pb-3">
             <h2 className="font-secondary text-4xl text-foreground md:text-5xl flex items-center gap-3">
               <WrenchIcon className="w-8 h-8 text-foreground" />
               Skill Inventory

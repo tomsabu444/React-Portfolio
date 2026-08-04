@@ -36,7 +36,7 @@ function AboutPage() {
         }}
       />
 
-      <div className="flex flex-col gap-6 w-full h-[85vh] justify-center items-center">
+      <div className="flex flex-col gap-6 w-full h-[80vh] justify-center items-center">
         <h2 className="font-secondary text-background text-7xl ">About Me</h2>
 
         <p className="font-tertiary text-background text-lg font-medium w-3/4 text-center">
