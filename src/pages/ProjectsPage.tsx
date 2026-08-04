@@ -23,9 +23,9 @@ function ProjectsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
           >
-            <h1 className="font-secondary text-5xl font-bold uppercase tracking-tight md:text-7xl">
+            <h2 className="font-secondary text-5xl font-bold uppercase tracking-tight md:text-7xl">
               PROJECTS
-            </h1>
+            </h2>
           </motion.div>
 
           <div className="mt-3 inline-block -rotate-1 border-2 border-foreground bg-background px-4 py-1 font-tertiary text-xs font-bold tracking-widest text-foreground shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] uppercase">
@@ -35,10 +35,10 @@ function ProjectsPage() {
 
         {/* Section Title Bar */}
         <div className="mb-10 w-full flex items-center justify-between pb-3">
-          <h2 className="font-secondary text-4xl text-foreground md:text-5xl flex items-center gap-3">
+          <h3 className="font-secondary text-4xl text-foreground md:text-5xl flex items-center gap-3">
             <FolderIcon className="w-8 h-8 text-foreground" />
             Selected Projects
-          </h2>
+          </h3>
           <span className="font-tertiary text-xs font-bold uppercase tracking-wider text-foreground/70 hidden sm:inline-block">
             [ CLASSIFIED_ARCHIVE ]
           </span>
@@ -81,9 +81,9 @@ function ProjectsPage() {
 
                   <div className="w-full md:w-1/2 flex flex-col justify-between">
                     <div>
-                      <h3 className="font-secondary text-2xl md:text-3xl font-bold text-foreground mb-2">
+                      <h4 className="font-secondary text-2xl md:text-3xl font-bold text-foreground mb-2">
                         {projects[0].blog_title}
-                      </h3>
+                      </h4>
                       <p className="font-tertiary text-xs leading-relaxed text-foreground/80 border-l-4 border-foreground pl-3 mb-4">
                         {projects[0].blog_text}
                       </p>
@@ -137,9 +137,9 @@ function ProjectsPage() {
                         className="w-full h-full object-cover grayscale contrast-125 transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
-                    <h3 className="font-secondary text-2xl font-bold text-foreground mb-2">
+                    <h4 className="font-secondary text-2xl font-bold text-foreground mb-2">
                       {projects[1].blog_title}
-                    </h3>
+                    </h4>
                     <p className="font-tertiary text-xs leading-relaxed text-foreground/80 mb-4">
                       {projects[1].blog_text}
                     </p>
@@ -192,9 +192,9 @@ function ProjectsPage() {
                         className="w-full h-full object-cover grayscale contrast-125 transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
-                    <h3 className="font-secondary text-2xl font-bold text-foreground mb-2">
+                    <h4 className="font-secondary text-2xl font-bold text-foreground mb-2">
                       {projects[2].blog_title}
-                    </h3>
+                    </h4>
                     <p className="font-tertiary text-xs leading-relaxed text-foreground/80 mb-4">
                       {projects[2].blog_text}
                     </p>
@@ -247,9 +247,9 @@ function ProjectsPage() {
                         className="w-full h-full object-cover grayscale contrast-125 transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
-                    <h3 className="font-secondary text-2xl font-bold text-foreground mb-2">
+                    <h4 className="font-secondary text-2xl font-bold text-foreground mb-2">
                       {projects[3].blog_title}
-                    </h3>
+                    </h4>
                     <p className="font-tertiary text-xs leading-relaxed text-foreground/80 mb-4">
                       {projects[3].blog_text}
                     </p>
@@ -309,9 +309,9 @@ function ProjectsPage() {
                         className="w-full h-full object-cover grayscale contrast-125 transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
-                    <h3 className="font-secondary text-xl font-bold text-foreground mb-1">
+                    <h4 className="font-secondary text-xl font-bold text-foreground mb-1">
                       {project.blog_title}
-                    </h3>
+                    </h4>
                     <p className="font-tertiary text-[11px] leading-relaxed text-foreground/80 mb-3 line-clamp-3">
                       {project.blog_text}
                     </p>
@@ -345,9 +345,9 @@ function ProjectsPage() {
           transition={{ duration: 0.4, delay: 0.3 }}
         >
           <div className="relative border-4 border-foreground bg-background p-4 text-center shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] -rotate-2">
-            <h3 className="font-secondary text-2xl font-extrabold uppercase text-foreground md:text-3xl">
+            <div className="font-secondary text-2xl font-extrabold uppercase text-foreground md:text-3xl">
               END OF LOG // NO FURTHER RECORDS
-            </h3>
+            </div>
           </div>
         </motion.div> */}
 

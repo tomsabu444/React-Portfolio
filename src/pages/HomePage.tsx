@@ -98,8 +98,8 @@ function HomePage() {
 
           {/* Location & Birthdate info (Elevated upper on right) */}
           <div className="font-tertiary flex flex-col items-center sm:items-end text-center sm:text-right text-base md:text-lg font-medium text-foreground sm:-mt-12">
-            <h3>April 19, 2003</h3>
-            <h4>Kottayam, Kerala, India</h4>
+            <p>April 19, 2003</p>
+            <span>Kottayam, Kerala, India</span>
           </div>
         </motion.div>
       </div>

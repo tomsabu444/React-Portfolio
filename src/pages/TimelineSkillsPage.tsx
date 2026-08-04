@@ -97,9 +97,9 @@ function TimelineSkillsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
           >
-            <h1 className="font-secondary text-5xl font-bold uppercase tracking-tight md:text-7xl">
+            <h2 className="font-secondary text-5xl font-bold uppercase tracking-tight md:text-7xl">
               CAREER & SKILLS
-            </h1>
+            </h2>
           </motion.div>
 
           <div className="mt-3 inline-block -rotate-1 border-2 border-foreground bg-background px-4 py-1 font-tertiary text-xs font-bold tracking-widest text-foreground shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] uppercase">
@@ -110,10 +110,10 @@ function TimelineSkillsPage() {
         {/* Part 1: Career Journey Timeline */}
         <div className="mb-20 w-full">
           <div className="mb-10 flex items-center justify-between pb-3">
-            <h2 className="font-secondary text-4xl text-foreground md:text-5xl flex items-center gap-3">
+            <h3 className="font-secondary text-4xl text-foreground md:text-5xl flex items-center gap-3">
               <TerminalIcon className="w-8 h-8 text-foreground" />
               Career Journey
-            </h2>
+            </h3>
             <span className="font-tertiary text-xs font-bold uppercase tracking-wider text-foreground/70 hidden sm:inline-block">
               [ CHRONOLOGY ]
             </span>
@@ -168,9 +168,9 @@ function TimelineSkillsPage() {
                       </span>
                     </div>
 
-                    <h3 className="font-secondary text-2xl font-bold text-foreground md:text-3xl">
+                    <h4 className="font-secondary text-2xl font-bold text-foreground md:text-3xl">
                       {job.title}
-                    </h3>
+                    </h4>
                     <p className="mt-1 font-tertiary text-sm font-semibold uppercase text-foreground/80">
                       @{job.company}
                     </p>
@@ -190,10 +190,10 @@ function TimelineSkillsPage() {
         {/* Part 2: Skills Section */}
         <div className="w-full">
           <div className="mb-10 flex items-center justify-between pb-3">
-            <h2 className="font-secondary text-4xl text-foreground md:text-5xl flex items-center gap-3">
+            <h3 className="font-secondary text-4xl text-foreground md:text-5xl flex items-center gap-3">
               <WrenchIcon className="w-8 h-8 text-foreground" />
               Skill Inventory
-            </h2>
+            </h3>
             <span className="font-tertiary text-xs font-bold uppercase tracking-wider text-foreground/70 hidden sm:inline-block">
               [ TECHNICAL_LOADOUT ]
             </span>
@@ -209,10 +209,10 @@ function TimelineSkillsPage() {
               transition={{ duration: 0.4 }}
             >
               <div className="absolute -top-3 left-4 z-10 -rotate-1 border-2 border-foreground bg-foreground px-4 py-1 text-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                <h3 className="font-secondary text-xl font-bold uppercase tracking-wider flex items-center gap-2">
+                <h4 className="font-secondary text-xl font-bold uppercase tracking-wider flex items-center gap-2">
                   <WebIcon className="w-5 h-5" />
                   CORE_SKILLS
-                </h3>
+                </h4>
               </div>
 
               <div
@@ -248,10 +248,10 @@ function TimelineSkillsPage() {
               transition={{ duration: 0.4, delay: 0.1 }}
             >
               <div className="absolute -top-3 right-4 z-10 rotate-2 border-2 border-foreground bg-background px-4 py-1 text-foreground shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                <h3 className="font-secondary text-xl font-bold uppercase tracking-wider flex items-center gap-2">
+                <h4 className="font-secondary text-xl font-bold uppercase tracking-wider flex items-center gap-2">
                   <MonitorIcon className="w-5 h-5" />
                   FIELD_GEAR & TOOLS
-                </h3>
+                </h4>
               </div>
 
               <div
@@ -290,9 +290,9 @@ function TimelineSkillsPage() {
           transition={{ duration: 0.4, delay: 0.2 }}
         >
           <div className="relative border-4 border-foreground bg-background p-4 text-center shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] -rotate-3">
-            <h3 className="font-secondary text-2xl font-extrabold uppercase text-foreground md:text-3xl">
+            <div className="font-secondary text-2xl font-extrabold uppercase text-foreground md:text-3xl">
               MISSION_READY // SYSTEMS ONLINE
-            </h3>
+            </div>
           </div>
         </motion.div> */}
 

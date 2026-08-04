@@ -34,9 +34,9 @@ function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
           >
-            <h1 className="font-secondary text-5xl font-bold uppercase tracking-tight md:text-7xl">
+            <h2 className="font-secondary text-5xl font-bold uppercase tracking-tight md:text-7xl">
               CONTACT
-            </h1>
+            </h2>
           </motion.div>
 
           <div className="mt-3 inline-block -rotate-1 border-2 border-foreground bg-background px-4 py-1 font-tertiary text-xs font-bold tracking-widest text-foreground shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] uppercase">
