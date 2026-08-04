@@ -302,7 +302,7 @@ function ProjectsPage() {
                   }}
                 >
                   <div>
-                    <div className="w-full h-32 border-2 border-foreground overflow-hidden mb-3 bg-foreground relative group">
+                    <div className="w-full h-40 border-2 border-foreground overflow-hidden mb-3 bg-foreground relative group">
                       <img
                         src={project.src}
                         alt={project.alt}

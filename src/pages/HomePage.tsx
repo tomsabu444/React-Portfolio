@@ -17,7 +17,7 @@ function HomePage() {
     >
       {/* Year display badge with inverted colors */}
       <div className="absolute right-4 top-6 z-10 flex flex-col items-end sm:right-8 lg:right-12">
-        <div className="border-2 border-foreground bg-background px-3  font-tertiary text-2xl font-bold text-foreground shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] -rotate-3 sm:text-3xl text-center flex flex-col">
+        <div className="border-2 border-foreground bg-background px-3  font-heading text-2xl text-foreground shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] -rotate-3 sm:text-3xl text-center flex flex-col">
           <span>{currentYear.slice(0, 2)}</span>
           <span>{currentYear.slice(2)}</span>
         </div>
@@ -39,7 +39,7 @@ function HomePage() {
               PORTFOLIO
             </div>
 
-            <h1 className="font-heading text-5xl font-extrabold uppercase sm:text-7xl md:text-8xl lg:text-9xl ">
+            <h1 className="font-heading text-5xl uppercase sm:text-7xl md:text-8xl lg:text-9xl ">
               TOM SABU.
             </h1>
 
