@@ -338,7 +338,7 @@ function ProjectsPage() {
         </div>
 
         {/* End of Log Stamp Badge */}
-        <motion.div
+        {/* <motion.div
           className="mt-16 flex items-center justify-center"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -349,7 +349,7 @@ function ProjectsPage() {
               END OF LOG // NO FURTHER RECORDS
             </h3>
           </div>
-        </motion.div>
+        </motion.div> */}
 
       </div>
     </section>

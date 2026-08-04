@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import DotField from "@/components/ui/DotField/DotField";
+import Footer from "@/components/Footer";
 
 interface LayoutProps {
   children: ReactNode;
@@ -30,6 +31,7 @@ function Layout({ children }: LayoutProps) {
         />
       </div>
       <main className="relative z-10">{children}</main>
+      <Footer />
     </div>
   );
 }

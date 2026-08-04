@@ -283,7 +283,7 @@ function TimelineSkillsPage() {
         </div>
 
         {/* Mission Status Stamp Badge at Bottom */}
-        <motion.div
+        {/* <motion.div
           className="mt-16 flex items-center justify-center"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -294,7 +294,7 @@ function TimelineSkillsPage() {
               MISSION_READY // SYSTEMS ONLINE
             </h3>
           </div>
-        </motion.div>
+        </motion.div> */}
 
       </div>
     </section>
