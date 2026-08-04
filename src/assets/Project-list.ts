@@ -47,7 +47,7 @@ const Project_list_1: ProjectItem[] = [
       "The Automated River Monitoring and Flood Prediction System for the Meenachil River is a solution designed to continuously monitor water levels and predict potential flood events in real-time. This system aims to mitigate the risks of flooding by providing early warnings, enabling timely action to protect communities living along the river. The system integrates IoT sensors, machine learning models and web technologies to deliver accurate real-time predictions.",
     badge: "PROJECT: FLOODWATCH",
     icon: WaterIcon,
-    status: "STATUS: COMPLETED",
+    status: "COMPLETED",
     rotate: "-rotate-1",
   },
   {
@@ -60,7 +60,7 @@ const Project_list_1: ProjectItem[] = [
       "BullyBarrier is a proactive solution against cyberbullying, leveraging advanced technologies to identify and mitigate bullying comments in real-time. With automatic detection and user alerts,",
     badge: "PROJECT: FIREWALL",
     icon: ShieldIcon,
-    status: "STATUS: COMPLETED",
+    status: "COMPLETED",
     rotate: "rotate-2",
   },
   {
@@ -73,7 +73,7 @@ const Project_list_1: ProjectItem[] = [
       "Cultural Fest exclusively for the students of SAINTGITS College of Engineering",
     badge: "PROJECT: UPRISING",
     icon: PartyIcon,
-    status: "STATUS: COMPLETED",
+    status: "COMPLETED",
     rotate: "-rotate-2",
   },
   {
@@ -86,7 +86,7 @@ const Project_list_1: ProjectItem[] = [
       "Connect with golf enthusiasts near you. Golf Meet helps you find players, arrange games, and improve your golf experience.",
     badge: "PROJECT: GREEN",
     icon: GolfIcon,
-    status: "STATUS: COMPLETED",
+    status: "COMPLETED",
     rotate: "rotate-1",
   },
   {
@@ -99,7 +99,7 @@ const Project_list_1: ProjectItem[] = [
       "The first version of my personal portfolio website, showcasing my early React projects and design evolution.",
     badge: "PROJECT: ARCHIVE",
     icon: HistoryIcon,
-    status: "STATUS: COMPLETED",
+    status: "COMPLETED",
     rotate: "-rotate-2",
   },
   {
@@ -112,7 +112,7 @@ const Project_list_1: ProjectItem[] = [
       "Developed for the annual PALA Marathon, this website facilitates participant registration, payment processing via Razorpay, and email confirmations. It features user-friendly forms.",
     badge: "PROJECT: SPRINT",
     icon: RunIcon,
-    status: "STATUS: COMPLETED",
+    status: "COMPLETED",
     rotate: "rotate-2",
   },
   {
@@ -123,9 +123,9 @@ const Project_list_1: ProjectItem[] = [
     blog_title: "Communet E-Commerce Platform",
     blog_text:
       "Developed for Communet, this e-commerce platform enables seamless online shopping with a robust admin panel for inventory and product management. Built using the MERN stack, it ensures a dynamic and efficient user experience. The platform leverages Tailwind CSS for modern UI design, AWS Lightsail & S3 Bucket for scalable hosting and storage, and Firebase Authentication for secure user login.",
-    badge: "PROJECT: TRADE",
+    badge: "PROJECT: SHOP",
     icon: CartIcon,
-    status: "STATUS: COMPLETED",
+    status: "COMPLETED",
     rotate: "-rotate-1",
   },
   {
@@ -138,7 +138,7 @@ const Project_list_1: ProjectItem[] = [
       "A React-based to-do list app with add, edit, and delete functionality, featuring reminders and completion tracking ~!",
     badge: "PROJECT: ORDER",
     icon: ListIcon,
-    status: "STATUS: COMPLETED",
+    status: "COMPLETED",
     rotate: "rotate-1",
   },
   {
@@ -151,7 +151,7 @@ const Project_list_1: ProjectItem[] = [
       "Simple Calculator App the easy-to-use , a clean interface, large display, and memory functions for efficient. ~",
     badge: "PROJECT: MATH",
     icon: CalcIcon,
-    status: "STATUS: COMPLETED",
+    status: "COMPLETED",
     rotate: "-rotate-2",
   },
   {
@@ -164,7 +164,7 @@ const Project_list_1: ProjectItem[] = [
       "Streamlined and stylish, our Login Page Design offers a fuss-free entry point. Experience simplicity and security seamlessly blended into one",
     badge: "PROJECT: GATEWAY",
     icon: LoginIcon,
-    status: "STATUS: COMPLETED",
+    status: "COMPLETED",
     rotate: "rotate-2",
   },
 ];

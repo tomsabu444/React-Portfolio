@@ -99,7 +99,7 @@ function ProjectsPage() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 border-2 border-foreground bg-foreground px-3 py-1 font-tertiary text-xs font-bold text-background shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-background hover:text-foreground transition-colors"
                       >
-                        VIEW REPO <OpenInNewIcon className="w-3.5 h-3.5" />
+                        VIEW <OpenInNewIcon className="w-3.5 h-3.5" />
                       </a>
                     </div>
                   </div>
@@ -118,7 +118,7 @@ function ProjectsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
               >
-                <div className={`absolute -top-3 right-4 z-10 ${projects[1].rotate} border-2 border-foreground bg-foreground px-3 py-1 text-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
+                <div className={`absolute -top-3 right-4 z-10 ${projects[1].rotate} border-2 border-foreground bg-white px-3 py-1 text-foreground shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
                   <span className="font-tertiary text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
                     <Icon1 className="w-4 h-4" />
                     {projects[1].badge}
@@ -155,7 +155,7 @@ function ProjectsPage() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 border-2 border-foreground bg-foreground px-3 py-1 font-tertiary text-xs font-bold text-background shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-background hover:text-foreground transition-colors"
                     >
-                      VIEW REPO <OpenInNewIcon className="w-3.5 h-3.5" />
+                      VIEW <OpenInNewIcon className="w-3.5 h-3.5" />
                     </a>
                   </div>
                 </div>
@@ -210,7 +210,7 @@ function ProjectsPage() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 border-2 border-foreground bg-foreground px-3 py-1 font-tertiary text-xs font-bold text-background shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-background hover:text-foreground transition-colors"
                     >
-                      VISIT SITE <OpenInNewIcon className="w-3.5 h-3.5" />
+                      VIEW <OpenInNewIcon className="w-3.5 h-3.5" />
                     </a>
                   </div>
                 </div>
@@ -228,7 +228,7 @@ function ProjectsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
               >
-                <div className={`absolute -top-3 right-4 z-10 ${projects[3].rotate} border-2 border-foreground bg-background px-3 py-1 text-foreground shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
+                <div className={`absolute -top-3 right-4 z-10 ${projects[3].rotate} border-2 border-foreground bg-white px-3 py-1 text-foreground shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
                   <span className="font-tertiary text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
                     <Icon3 className="w-4 h-4" />
                     {projects[3].badge}
@@ -265,7 +265,7 @@ function ProjectsPage() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 border-2 border-foreground bg-foreground px-3 py-1 font-tertiary text-xs font-bold text-background shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-background hover:text-foreground transition-colors"
                     >
-                      VISIT SITE <OpenInNewIcon className="w-3.5 h-3.5" />
+                      VIEW <OpenInNewIcon className="w-3.5 h-3.5" />
                     </a>
                   </div>
                 </div>
@@ -276,6 +276,7 @@ function ProjectsPage() {
           {/* Remaining Projects (5–10, 4 cols each) */}
           {projects.slice(4).map((project: ProjectItem, index: number) => {
             const BadgeIcon = project.icon;
+            const isLightBadge = index % 2 === 1; // Alternating badge background
             return (
               <motion.div
                 key={project.title}
@@ -284,7 +285,7 @@ function ProjectsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 * index }}
               >
-                <div className={`absolute -top-3 left-4 z-10 ${project.rotate} border-2 border-foreground bg-foreground px-3 py-1 text-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
+                <div className={`absolute -top-3 left-4 z-10 ${project.rotate} border-2 border-foreground ${isLightBadge ? "bg-white text-foreground" : "bg-foreground text-background"} px-3 py-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
                   <span className="font-tertiary text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
                     <BadgeIcon className="w-4 h-4" />
                     {project.badge}
@@ -326,7 +327,7 @@ function ProjectsPage() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 border-2 border-foreground bg-foreground px-2.5 py-0.5 font-tertiary text-[11px] font-bold text-background shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-background hover:text-foreground transition-colors"
                     >
-                      OPEN <OpenInNewIcon className="w-3 h-3" />
+                      VIEW <OpenInNewIcon className="w-3 h-3" />
                     </a>
                   </div>
                 </div>
