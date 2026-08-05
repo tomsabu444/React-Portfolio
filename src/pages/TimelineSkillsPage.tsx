@@ -19,7 +19,8 @@ import VsCodeIcon from "@iconify-react/mdi/microsoft-visual-studio-code";
 import PromptIcon from "@iconify-react/mdi/auto-fix";
 import PostmanIcon from "@iconify-react/mdi/api";
 import CloudflareIcon from "@iconify-react/mdi/cloud-outline";
-import GcpIcon from "@iconify-react/mdi/google-cloud";
+import KaliIcon from "@iconify-react/mdi/shield-lock-outline";
+import AfterEffectsIcon from "@iconify-react/mdi/movie-edit-outline";
 import FirebaseIcon from "@iconify-react/mdi/firebase";
 import TerminalIcon from "@iconify-react/mdi/terminal";
 import WrenchIcon from "@iconify-react/mdi/hammer-wrench";
@@ -72,7 +73,8 @@ function TimelineSkillsPage() {
     { name: "Linux", icon: LinuxIcon, bg: "bg-foreground text-background", rotate: "rotate-2" },
     { name: "VS Code", icon: VsCodeIcon, bg: "bg-background text-foreground", rotate: "-rotate-1" },
     { name: "Prompt Engineering", icon: PromptIcon, bg: "bg-foreground text-background", rotate: "rotate-3" },
-    { name: "GCP", icon: GcpIcon, bg: "bg-background text-foreground", rotate: "-rotate-1" },
+    { name: "Kali Linux", icon: KaliIcon, bg: "bg-background text-foreground", rotate: "-rotate-1" },
+    { name: "Adobe After Effects", icon: AfterEffectsIcon, bg: "bg-foreground text-background", rotate: "rotate-2" },
     { name: "Firebase", icon: FirebaseIcon, bg: "bg-foreground text-background", rotate: "rotate-3" },
     { name: "Cloudflare", icon: CloudflareIcon, bg: "bg-background text-foreground", rotate: "-rotate-2" },
     { name: "API Tools", icon: PostmanIcon, bg: "bg-foreground text-background", rotate: "rotate-1" },
