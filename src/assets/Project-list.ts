@@ -1,8 +1,8 @@
 import type { ElementType } from "react";
 
-import calculatorimg from "../assets/projects-img/calculator.webp";
-import todo_listimg from "../assets/projects-img/todo-list.webp";
-import login_pageimg from "../assets/projects-img/login-page.webp";
+// import calculatorimg from "../assets/projects-img/calculator.webp";
+// import todo_listimg from "../assets/projects-img/todo-list.webp";
+// import login_pageimg from "../assets/projects-img/login-page.webp";
 import s6miniproject from "../assets/projects-img/s6miniproject-img.webp";
 import palamarathonImg from "../assets/projects-img/palamarathonImg.webp";
 import communets from "../assets/projects-img/communets.webp";
@@ -18,9 +18,9 @@ import GolfIcon from "@iconify-react/mdi/golf";
 import HistoryIcon from "@iconify-react/mdi/history";
 import RunIcon from "@iconify-react/mdi/directions-run";
 import CartIcon from "@iconify-react/mdi/shopping-outline";
-import ListIcon from "@iconify-react/mdi/format-list-checks";
-import CalcIcon from "@iconify-react/mdi/calculator";
-import LoginIcon from "@iconify-react/mdi/login";
+// import ListIcon from "@iconify-react/mdi/format-list-checks";
+// import CalcIcon from "@iconify-react/mdi/calculator";
+// import LoginIcon from "@iconify-react/mdi/login";
 
 export interface ProjectItem {
   link: string;
@@ -128,6 +128,7 @@ const Project_list_1: ProjectItem[] = [
     status: "COMPLETED",
     rotate: "-rotate-1",
   },
+  /*
   {
     link: "https://todo.tomsabu.com",
     src: todo_listimg,
@@ -167,6 +168,7 @@ const Project_list_1: ProjectItem[] = [
     status: "COMPLETED",
     rotate: "rotate-2",
   },
+  */
 ];
 
 export { Project_list_1 };
