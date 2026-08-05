@@ -77,7 +77,7 @@ function HomePage() {
             transition={{ duration: 0.4, delay: 0.3 }}
           >
             {/* Social Icons in separate rows on Left */}
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 max-[425px]:absolute max-[425px]:-bottom-26 max-[425px]:left-1">
               <a
                 href={githubUrl}
                 target="_blank"
@@ -85,7 +85,7 @@ function HomePage() {
                 aria-label="GitHub profile"
                 className="inline-flex text-foreground transition hover:text-neutral-700"
               >
-                <GithubIcon className="h-8 w-8 xs:h-9 xs:w-9" />
+                <GithubIcon className="h-10 w-10 xs:h-11 xs:w-11 max-[320px]:h-8 max-[320px]:w-8" />
               </a>
               <a
                 href={linkedinUrl}
@@ -94,12 +94,12 @@ function HomePage() {
                 aria-label="LinkedIn profile"
                 className="inline-flex text-foreground transition hover:text-neutral-700"
               >
-                <LinkedinIcon className="h-8 w-8 xs:h-9 xs:w-9" />
+                <LinkedinIcon className="h-10 w-10 xs:h-11 xs:w-11 max-[320px]:h-8 max-[320px]:w-8" />
               </a>
             </div>
 
             {/* Location & Birthdate info on Right */}
-            <div className="font-tertiary flex flex-col items-end text-right text-xs xs:text-sm font-medium text-foreground">
+            <div className="font-tertiary flex flex-col items-end text-right text-xs xs:text-sm font-medium text-foreground ml-auto">
               <p>April 19, 2003</p>
               <span>Kottayam, Kerala, India</span>
             </div>
@@ -184,7 +184,7 @@ function HomePage() {
               aria-label="GitHub profile"
               className="inline-flex text-foreground transition hover:text-neutral-700"
             >
-              <GithubIcon className="h-10 w-10" />
+              <GithubIcon className="h-12 w-12" />
             </a>
             <a
               href={linkedinUrl}
@@ -193,7 +193,7 @@ function HomePage() {
               aria-label="LinkedIn profile"
               className="inline-flex text-foreground transition hover:text-neutral-700"
             >
-              <LinkedinIcon className="h-10 w-10" />
+              <LinkedinIcon className="h-12 w-12" />
             </a>
           </div>
 

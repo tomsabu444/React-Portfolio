@@ -10,9 +10,9 @@ function Footer() {
 
   return (
     <footer className="relative z-10 w-full border-t-4 border-foreground bg-white text-foreground py-5 px-4 md:px-8">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 md:flex-row">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-y-4 gap-x-2 md:flex-nowrap md:gap-6">
         {/* Left: Brand / Title Stamp */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left gap-1">
+        <div className="flex flex-col items-start text-left gap-1 order-1 md:order-1">
           <div className="inline-block -rotate-2 border-2 border-foreground bg-foreground px-3 py-1 font-heading text-xl tracking-widest text-background shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
             TOM SABU.
           </div>
@@ -22,7 +22,7 @@ function Footer() {
         </div>
 
         {/* Center: Copyright & Status Stamp */}
-        <div className="flex flex-col items-center text-center gap-1.5">
+        <div className="flex flex-col items-center text-center gap-1.5 w-full md:w-auto order-3 md:order-2 mt-2 md:mt-0">
           <div className="inline-block rotate-1 border-2 border-foreground bg-background px-3 py-0.5 font-tertiary text-[11px] font-bold tracking-widest text-foreground shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase">
             END OF FILE
           </div>
@@ -32,8 +32,9 @@ function Footer() {
         </div>
 
         {/* Right: Social Links & Back-To-Top Button */}
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4 order-2 md:order-3">
+          {/* Social Links (Hidden on Mobile) */}
+          <div className="hidden md:flex items-center gap-2">
             <a
               href="https://github.com/tomsabu444"
               target="_blank"
@@ -63,10 +64,11 @@ function Footer() {
             </a>
           </div>
 
+          {/* Back-To-Top Button */}
           <button
             onClick={scrollToTop}
             aria-label="Back to top"
-            className="flex items-center gap-1.5 border-2 border-foreground bg-foreground px-3 py-1.5 font-tertiary text-xs font-bold text-background shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:bg-background hover:text-foreground transition-all -rotate-2 cursor-pointer uppercase"
+            className="flex items-center gap-1.5 border-2 border-foreground bg-foreground px-3 py-1.5 font-tertiary text-xs font-bold text-background shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:bg-background hover:text-foreground transition-all rotate-2 cursor-pointer uppercase"
           >
             TOP <ArrowUpIcon className="w-4 h-4" />
           </button>
