@@ -17,29 +17,33 @@ export default defineConfig({
       includeAssets: ['favicon/favicon.ico', 'favicon/favicon.svg', 'favicon/favicon-96x96.png', 'favicon/apple-touch-icon.png', 'og-image.png'],
       manifest: {
         name: 'TOM SABU PORTFOLIO',
-        short_name: 'TomSabu',
+        short_name: 'Tom Sabu',
         description: 'Tom Sabu - Full Stack Developer & Software Engineer Portfolio',
-        theme_color: '#0f172a',
-        background_color: '#0f172a',
+        theme_color: '#151414',
+        background_color: '#151414',
         display: 'standalone',
         start_url: '/',
+        scope: '/',
+        id: '/',
         orientation: 'portrait',
         icons: [
           {
             src: 'favicon/pwa-192x192.png',
             sizes: '192x192',
-            type: 'image/png'
-          },
-          {
-            src: 'favicon/pwa-512x512.png',
-            sizes: '512x512',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'any'
           },
           {
             src: 'favicon/pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
-            purpose: 'any maskable'
+            purpose: 'any'
+          },
+          {
+            src: 'favicon/pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable'
           }
         ]
       },
@@ -53,4 +57,9 @@ export default defineConfig({
       "@": path.resolve(import.meta.dirname, "./src"),
     },
   },
+  server: {
+    allowedHosts: [
+      '.ngrok-free.app'
+    ]
+  }
 })
