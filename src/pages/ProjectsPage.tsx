@@ -72,6 +72,8 @@ function ProjectsPage() {
                     <img
                       src={projects[0].src}
                       alt={projects[0].alt}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover grayscale contrast-125 transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute bottom-2 left-2 border-2 border-foreground bg-background px-2 py-0.5 font-tertiary text-[10px] font-bold uppercase">
@@ -134,6 +136,8 @@ function ProjectsPage() {
                       <img
                         src={projects[1].src}
                         alt={projects[1].alt}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover grayscale contrast-125 transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
@@ -189,6 +193,8 @@ function ProjectsPage() {
                       <img
                         src={projects[2].src}
                         alt={projects[2].alt}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover grayscale contrast-125 transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
@@ -244,6 +250,8 @@ function ProjectsPage() {
                       <img
                         src={projects[3].src}
                         alt={projects[3].alt}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover grayscale contrast-125 transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
@@ -306,6 +314,8 @@ function ProjectsPage() {
                       <img
                         src={project.src}
                         alt={project.alt}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover grayscale contrast-125 transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>

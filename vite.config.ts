@@ -61,5 +61,27 @@ export default defineConfig({
     allowedHosts: [
       '.ngrok-free.app'
     ]
-  }
+  },
+  build: {
+    rolldownOptions: {
+      output: {
+        codeSplitting: {
+          groups: [
+            {
+              name: 'vendor-react',
+              test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+            },
+            {
+              name: 'vendor-motion',
+              test: /[\\/]node_modules[\\/](motion|framer-motion)[\\/]/,
+            },
+            {
+              name: 'vendor-icons',
+              test: /[\\/]node_modules[\\/]@iconify-react[\\/]/,
+            },
+          ],
+        },
+      },
+    },
+  },
 })

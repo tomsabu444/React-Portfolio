@@ -6,7 +6,7 @@ import type { ElementType } from "react";
 import s6miniproject from "../assets/projects-img/s6miniproject-img.webp";
 import palamarathonImg from "../assets/projects-img/palamarathonImg.webp";
 import communets from "../assets/projects-img/communets.webp";
-import reactv1 from "../assets/projects-img/dribbble_1.gif";
+import reactv1 from "../assets/projects-img/dribbble_1.webp";
 import mrrm_img from "../assets/projects-img/mrrm.webp";
 import pratitya from "../assets/projects-img/pratitya.webp";
 import golf from "../assets/projects-img/golf.webp";

@@ -3,7 +3,7 @@ import GithubIcon from "@iconify-react/mdi/github";
 import LinkedinIcon from "@iconify-react/mdi/linkedin";
 import RadioTowerIcon from "@iconify-react/mdi/radio-tower";
 import { MorphingText } from "../components/ui/morphing-text";
-import tom_sabu from "../assets/tom_sabu.png";
+import tom_sabu from "../assets/tom_sabu.webp";
 
 function HomePage() {
   const currentYear = new Date().getFullYear().toString();
@@ -65,6 +65,10 @@ function HomePage() {
             <img
               src={tom_sabu}
               alt="Tom Sabu"
+              width={550}
+              height={689}
+              fetchPriority="high"
+              decoding="async"
               className="w-full h-auto object-contain drop-shadow-[6px_6px_0px_rgba(0,0,0,0.85)]"
             />
           </motion.div>
@@ -153,7 +157,7 @@ function HomePage() {
             </div>
           </motion.div>
 
-          {/* Hero Transparent Image Cutout (No rectangular box) */}
+          {/* Hero Transparent Image Cutout */}
           <motion.div
             className="relative w-52 sm:w-64 md:w-80 lg:w-[35%] shrink-0 flex justify-center"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -163,6 +167,10 @@ function HomePage() {
             <img
               src={tom_sabu}
               alt="Tom Sabu"
+              width={550}
+              height={689}
+              fetchPriority="high"
+              decoding="async"
               className="w-full h-auto object-contain drop-shadow-[6px_6px_0px_rgba(0,0,0,0.8)]"
             />
           </motion.div>
