@@ -9,7 +9,12 @@ function Footer() {
   };
 
   return (
-    <footer className="relative z-10 w-full border-t-4 border-foreground bg-white text-foreground py-5 px-4 md:px-8">
+    <footer className="relative z-10 w-full bg-white text-foreground py-5 px-4 md:px-8">
+      {/* Top Divider using clip-path */}
+      <div
+        className="absolute -top-2 left-0 w-full h-4 bg-foreground pointer-events-none z-20"
+        style={{ clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" }}
+      />
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-y-4 gap-x-2 md:flex-nowrap md:gap-6">
         {/* Left: Brand / Title Stamp */}
         <div className="flex flex-col items-start text-left gap-1 order-1 md:order-1">
