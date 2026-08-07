@@ -54,7 +54,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://linkedin.com/in/tomsabu"
+              href="https://linkedin.com/in/tomsabu444"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
