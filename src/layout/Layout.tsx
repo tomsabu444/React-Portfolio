@@ -32,7 +32,7 @@ function Layout({ children }: LayoutProps) {
         />
       </div>
       <Navbar />
-      <main className="relative z-10 pt-20 sm:pt-24">{children}</main>
+      <main className="relative z-10">{children}</main>
       <Footer />
     </div>
   );

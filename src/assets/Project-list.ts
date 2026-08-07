@@ -58,7 +58,7 @@ const Project_list_1: ProjectItem[] = [
     blog_title: "Cyberbullying Comment Detection",
     blog_text:
       "BullyBarrier is a proactive solution against cyberbullying, leveraging advanced technologies to identify and mitigate bullying comments in real-time. With automatic detection and user alerts,",
-    badge: "PROJECT: FIREWALL",
+    badge: "PROJECT: CYBER",
     icon: ShieldIcon,
     status: "COMPLETED",
     rotate: "rotate-2",

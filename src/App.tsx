@@ -4,7 +4,8 @@ import HomePage from "@/pages/HomePage";
 import LazySection from "@/components/ui/LazySection";
 
 const AboutPage = lazy(() => import("@/pages/AboutPage"));
-const TimelineSkillsPage = lazy(() => import("@/pages/TimelineSkillsPage"));
+const ExperiencePage = lazy(() => import("@/pages/ExperiencePage"));
+const SkillsPage = lazy(() => import("@/pages/SkillsPage"));
 const ProjectsPage = lazy(() => import("@/pages/ProjectsPage"));
 const ContactPage = lazy(() => import("@/pages/ContactPage"));
 
@@ -12,16 +13,19 @@ function App() {
   return (
     <Layout>
       <HomePage />
-      <LazySection minHeight="min-h-screen">
+      <LazySection id="about" minHeight="min-h-screen">
         <AboutPage />
       </LazySection>
-      <LazySection minHeight="min-h-screen">
-        <TimelineSkillsPage />
+      <LazySection id="experience" minHeight="min-h-[60vh]">
+        <ExperiencePage />
       </LazySection>
-      <LazySection minHeight="min-h-screen">
+      <LazySection id="skills" minHeight="min-h-[60vh]">
+        <SkillsPage />
+      </LazySection>
+      <LazySection id="projects" minHeight="min-h-screen">
         <ProjectsPage />
       </LazySection>
-      <LazySection minHeight="min-h-[50vh]">
+      <LazySection id="contact" minHeight="min-h-[50vh]">
         <ContactPage />
       </LazySection>
     </Layout>

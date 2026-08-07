@@ -17,12 +17,10 @@ import GithubIcon from "@iconify-react/mdi/github";
 import LinuxIcon from "@iconify-react/mdi/linux";
 import VsCodeIcon from "@iconify-react/mdi/microsoft-visual-studio-code";
 import PromptIcon from "@iconify-react/mdi/auto-fix";
-import PostmanIcon from "@iconify-react/mdi/api";
 import CloudflareIcon from "@iconify-react/mdi/cloud-outline";
 import KaliIcon from "@iconify-react/mdi/shield-lock-outline";
 import AfterEffectsIcon from "@iconify-react/mdi/movie-edit-outline";
 import FirebaseIcon from "@iconify-react/mdi/firebase";
-import TerminalIcon from "@iconify-react/mdi/terminal";
 import WrenchIcon from "@iconify-react/mdi/hammer-wrench";
 import ShieldIcon from "@iconify-react/mdi/shield-check-outline";
 import WebIcon from "@iconify-react/mdi/web";
@@ -30,27 +28,7 @@ import PaletteIcon from "@iconify-react/mdi/palette";
 import MonitorIcon from "@iconify-react/mdi/monitor";
 import RocketIcon from "@iconify-react/mdi/rocket-launch";
 
-function TimelineSkillsPage() {
-  const experience = [
-    {
-      title: "JUNIOR SOFTWARE ENGINEER",
-      company: "THOPPS TECHNOLOGIES",
-      period: "MAY 2025 – PRESENT",
-      current: true,
-      stamp: "ACTIVE_MISSION",
-      rotation: -2,
-      shadowDirection: "right",
-    },
-    {
-      title: "FREELANCE DEVELOPER",
-      company: "HULT INFOTECH",
-      period: "OCT 2024 – AUG 2025",
-      stamp: "MISSION_COMPLETE",
-      rotation: 3,
-      shadowDirection: "left",
-    },
-  ];
-
+function SkillsPage() {
   const coreSkills = [
     { name: "HTML5", icon: HtmlIcon, bg: "bg-foreground text-background", rotate: "rotate-2" },
     { name: "CSS3", icon: CssIcon, bg: "bg-background text-foreground", rotate: "-rotate-1" },
@@ -77,7 +55,7 @@ function TimelineSkillsPage() {
     { name: "Adobe After Effects", icon: AfterEffectsIcon, bg: "bg-foreground text-background", rotate: "rotate-2" },
     { name: "Firebase", icon: FirebaseIcon, bg: "bg-foreground text-background", rotate: "rotate-3" },
     { name: "Cloudflare", icon: CloudflareIcon, bg: "bg-background text-foreground", rotate: "-rotate-2" },
-    { name: "API Tools", icon: PostmanIcon, bg: "bg-foreground text-background", rotate: "rotate-1" },
+    // { name: "API Tools", icon: PostmanIcon, bg: "bg-foreground text-background", rotate: "rotate-1" },
     { name: "DevOps & CI/CD", icon: RocketIcon, bg: "bg-foreground text-background", rotate: "rotate-2" },
     { name: "Web Security", icon: ShieldIcon, bg: "bg-background text-foreground", rotate: "-rotate-1" },
     { name: "UI Design", icon: PaletteIcon, bg: "bg-foreground text-background", rotate: "rotate-3" },
@@ -85,111 +63,30 @@ function TimelineSkillsPage() {
 
   return (
     <section
-      id="timeline-skills"
-      className="relative flex min-h-screen w-full flex-col items-center justify-start py-12 text-foreground"
+      id="skills"
+      className="relative flex min-h-[60vh] w-full flex-col items-center justify-start py-12 text-foreground"
     >
       <div className="relative flex w-full max-w-7xl flex-col items-center px-4 md:px-8">
-        
         {/* Main Section Header Banner */}
-        <div className="relative mb-16 flex flex-col items-center text-center">
+        <div className="relative mb-12 flex flex-col items-center text-center">
           <motion.div
-            className="border-4 border-foreground bg-foreground px-8 py-4 text-background shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] -rotate-2"
+            className="border-4 border-foreground bg-foreground px-8 py-4 text-background shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rotate-1"
             style={{ clipPath: "polygon(2% 0%, 100% 1%, 98% 100%, 0% 99%)" }}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
           >
             <h2 className="font-secondary text-5xl font-bold uppercase tracking-tight md:text-7xl">
-              CAREER & SKILLS
+              SKILLS & TOOLS
             </h2>
           </motion.div>
 
-          <div className="mt-3 inline-block -rotate-1 border-2 border-foreground bg-background px-4 py-1 font-tertiary text-xs font-bold tracking-widest text-foreground shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] uppercase">
-            CLASSIFIED DOSSIER
+          <div className="mt-3 inline-block rotate-1 border-2 border-foreground bg-background px-4 py-1 font-tertiary text-xs font-bold tracking-widest text-foreground shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] uppercase">
+            TECHNICAL LOADOUT // STACK
           </div>
         </div>
 
-        {/* Part 1: Career Journey Timeline */}
-        <div className="mb-20 w-full">
-          <div className="mb-10 flex items-center justify-between pb-3">
-            <h3 className="font-secondary text-4xl text-foreground md:text-5xl flex items-center gap-3">
-              <TerminalIcon className="w-8 h-8 text-foreground" />
-              Career Journey
-            </h3>
-            <span className="font-tertiary text-xs font-bold uppercase tracking-wider text-foreground/70 hidden sm:inline-block">
-              [ CHRONOLOGY ]
-            </span>
-          </div>
-
-          <div className="relative flex w-full flex-col items-center justify-center py-6">
-            {/* Horizontal Axis Line (Desktop) */}
-            <motion.div
-              className="absolute inset-x-0 top-1/2 hidden h-1 -translate-y-1/2 rounded-full bg-foreground md:block"
-              style={{
-                clipPath: "polygon(0 100%, 0 0, 100% 50%, 100% 50%)",
-                transformOrigin: "right",
-              }}
-              initial={{ opacity: 0, scaleX: 0 }}
-              animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ duration: 0.4 }}
-            />
-
-            <div className="relative flex w-full max-w-6xl flex-col items-center justify-around gap-12 px-2 md:flex-row">
-              {experience.map((job, index) => (
-                <motion.div
-                  key={job.title}
-                  className={`group relative flex flex-col items-center ${
-                    index === 0 ? "md:mb-16" : "md:mt-16"
-                  }`}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  whileHover={{ scale: 1.04, y: -6 }}
-                  transition={{
-                    duration: 0.3,
-                    type: "spring",
-                    stiffness: 280,
-                    damping: 20,
-                  }}
-                >
-                  <motion.div
-                    className={`max-w-sm border-4 border-foreground bg-white p-6 ${
-                      job.shadowDirection === "right"
-                        ? "shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
-                        : "shadow-[-8px_8px_0px_0px_rgba(0,0,0,1)]"
-                    }`}
-                    animate={{ rotate: job.rotation }}
-                    whileHover={{ rotate: 0, scale: 1.02 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <div className="mb-3 flex items-center justify-between">
-                      <div className="inline-block border-2 border-foreground bg-foreground px-2 py-0.5 font-tertiary text-[11px] font-bold uppercase text-background">
-                        {job.stamp}
-                      </div>
-                      <span className="font-tertiary text-[10px] font-bold tracking-widest text-foreground/60 uppercase">
-                        MISSION_0{index + 1}
-                      </span>
-                    </div>
-
-                    <h4 className="font-secondary text-2xl font-bold text-foreground md:text-3xl">
-                      {job.title}
-                    </h4>
-                    <p className="mt-1 font-tertiary text-sm font-semibold uppercase text-foreground/80">
-                      @{job.company}
-                    </p>
-
-                    <div className="mt-4 border-t border-foreground/20 pt-3">
-                      <p className="font-tertiary text-[11px] font-bold uppercase tracking-[0.2em] text-foreground/60">
-                        {job.period}
-                      </p>
-                    </div>
-                  </motion.div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Part 2: Skills Section */}
+        {/* Skills Section */}
         <div className="w-full">
           <div className="mb-10 flex items-center justify-between pb-3">
             <h3 className="font-secondary text-4xl text-foreground md:text-5xl flex items-center gap-3">
@@ -202,7 +99,6 @@ function TimelineSkillsPage() {
           </div>
 
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
-            
             {/* Core Skills Panel */}
             <motion.div
               className="relative pt-3"
@@ -280,27 +176,11 @@ function TimelineSkillsPage() {
                 </div>
               </div>
             </motion.div>
-
           </div>
         </div>
-
-        {/* Mission Status Stamp Badge at Bottom */}
-        {/* <motion.div
-          className="mt-16 flex items-center justify-center"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-        >
-          <div className="relative border-4 border-foreground bg-background p-4 text-center shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] -rotate-3">
-            <div className="font-secondary text-2xl font-extrabold uppercase text-foreground md:text-3xl">
-              MISSION_READY // SYSTEMS ONLINE
-            </div>
-          </div>
-        </motion.div> */}
-
       </div>
     </section>
   );
 }
 
-export default TimelineSkillsPage;
+export default SkillsPage;
