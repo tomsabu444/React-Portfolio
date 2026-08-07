@@ -38,8 +38,8 @@ function AboutPage() {
         {/* Left Column: About Me */}
         <motion.div
           className="flex w-full flex-col items-center text-center lg:w-1/2 lg:items-start lg:text-left"
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         >
@@ -67,8 +67,8 @@ function AboutPage() {
         {/* Right Column: Hobbies & Passion */}
         <motion.div
           className="flex w-full flex-col items-center text-center lg:w-1/2 lg:items-start lg:text-left"
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.1 }}
         >

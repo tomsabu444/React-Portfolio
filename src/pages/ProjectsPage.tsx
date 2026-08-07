@@ -21,7 +21,8 @@ function ProjectsPage() {
             className="border-4 border-foreground bg-foreground px-8 py-4 text-background shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] -rotate-2"
             style={{ clipPath: "polygon(2% 0%, 100% 1%, 98% 100%, 0% 99%)" }}
             initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
             <h2 className="font-secondary text-5xl font-bold uppercase tracking-tight md:text-7xl">
@@ -55,7 +56,8 @@ function ProjectsPage() {
               <motion.div
                 className="relative md:col-span-8 pt-3"
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
               >
                 <div className={`absolute -top-3 left-4 z-10 ${projects[0].rotate} border-2 border-foreground bg-foreground px-3 py-1 text-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
@@ -119,7 +121,8 @@ function ProjectsPage() {
               <motion.div
                 className="relative md:col-span-4 pt-3"
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.1 }}
               >
                 <div className={`absolute -top-3 right-4 z-10 ${projects[1].rotate} border-2 border-foreground bg-white px-3 py-1 text-foreground shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
@@ -177,7 +180,8 @@ function ProjectsPage() {
               <motion.div
                 className="relative md:col-span-6 pt-3"
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.15 }}
               >
                 <div className={`absolute -top-3 left-4 z-10 ${projects[2].rotate} border-2 border-foreground bg-foreground px-3 py-1 text-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
@@ -235,7 +239,8 @@ function ProjectsPage() {
               <motion.div
                 className="relative md:col-span-6 pt-3"
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.2 }}
               >
                 <div className={`absolute -top-3 right-4 z-10 ${projects[3].rotate} border-2 border-foreground bg-white px-3 py-1 text-foreground shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
@@ -295,8 +300,9 @@ function ProjectsPage() {
                 key={project.title}
                 className="relative md:col-span-4 pt-3"
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.1 * index }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: Math.min(0.05 * index, 0.3) }}
               >
                 <div className={`absolute -top-3 left-4 z-10 ${project.rotate} border-2 border-foreground ${isLightBadge ? "bg-white text-foreground" : "bg-foreground text-background"} px-3 py-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
                   <span className="font-tertiary text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">

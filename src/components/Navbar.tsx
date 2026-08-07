@@ -202,15 +202,14 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
-    const sectionElements = NAV_ITEMS.map((item) =>
-      document.getElementById(item.id)
-    ).filter(Boolean) as HTMLElement[];
-
     const observerOptions: IntersectionObserverInit = {
       root: null,
       rootMargin: "-20% 0px -60% 0px",
       threshold: 0,
     };
+
+    // Track which section IDs are already being observed to avoid duplicates
+    const observedIds = new Set<string>();
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -221,11 +220,36 @@ export default function Navbar() {
       });
     }, observerOptions);
 
-    sectionElements.forEach((el) => observer.observe(el));
+    // Observe any section element that is already in the DOM
+    const tryObserve = () => {
+      NAV_ITEMS.forEach((item) => {
+        if (observedIds.has(item.id)) return;
+        const el = document.getElementById(item.id);
+        if (el) {
+          observer.observe(el);
+          observedIds.add(item.id);
+        }
+      });
+    };
+
+    // Initial pass — #home is in DOM immediately; lazy sections aren't yet
+    tryObserve();
+
+    // Watch for lazy sections being injected into the DOM
+    const mutationObserver = new MutationObserver(() => {
+      tryObserve();
+      // Stop watching once all sections are observed
+      if (observedIds.size === NAV_ITEMS.length) {
+        mutationObserver.disconnect();
+      }
+    });
+
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
       observer.disconnect();
+      mutationObserver.disconnect();
     };
   }, []);
 
@@ -253,10 +277,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 px-3 sm:px-6 py-3 transition-all duration-300 ease-in-out ${
+      className={`fixed top-0 left-0 right-0 z-50 px-3 sm:px-6 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))] transition-all duration-300 ease-in-out ${
         isScrolled
           ? "opacity-100 translate-y-0 pointer-events-auto"
-          : "opacity-0 -translate-y-10 pointer-events-none"
+          : "opacity-0 -translate-y-full pointer-events-none"
       }`}
     >
       <div className="mx-auto max-w-6xl transition-all duration-300 border-2 border-foreground bg-background px-4 py-2 sm:px-6 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] rounded-2xl">

@@ -34,7 +34,8 @@ function ExperiencePage() {
             className="border-4 border-foreground bg-foreground px-8 py-4 text-background shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] -rotate-2"
             style={{ clipPath: "polygon(2% 0%, 100% 1%, 98% 100%, 0% 99%)" }}
             initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
             <h2 className="font-secondary text-5xl font-bold uppercase tracking-tight md:text-7xl">
@@ -68,7 +69,8 @@ function ExperiencePage() {
                 transformOrigin: "top",
               }}
               initial={{ opacity: 0, scaleY: 0 }}
-              animate={{ opacity: 1, scaleY: 1 }}
+              whileInView={{ opacity: 1, scaleY: 1 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.4 }}
             />
 
@@ -76,7 +78,8 @@ function ExperiencePage() {
             <motion.div
               className="absolute left-0 top-1/2 hidden -translate-y-1/2 -translate-x-3 md:flex items-center justify-center border-2 border-foreground bg-background p-1.5 shadow-[-3px_0px_0px_0px_rgba(0,0,0,1)] rounded-full z-10"
               initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.3, delay: 0.2 }}
             >
               <div className="w-0 h-0 border-l-[5px] border-r-[5px] border-b-[9px] border-l-transparent border-r-transparent border-b-foreground -rotate-90" />
@@ -86,7 +89,8 @@ function ExperiencePage() {
             <motion.div
               className="absolute top-0 left-1/2 flex md:hidden -translate-x-1/2 -translate-y-3 items-center justify-center border-2 border-foreground bg-background p-1.5 shadow-[0px_-3px_0px_0px_rgba(0,0,0,1)] rounded-full z-10"
               initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.3, delay: 0.2 }}
             >
               <div className="w-0 h-0 border-l-[5px] border-r-[5px] border-b-[9px] border-l-transparent border-r-transparent border-b-foreground" />
@@ -100,7 +104,8 @@ function ExperiencePage() {
                 transformOrigin: "right",
               }}
               initial={{ opacity: 0, scaleX: 0 }}
-              animate={{ opacity: 1, scaleX: 1 }}
+              whileInView={{ opacity: 1, scaleX: 1 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.4 }}
             />
 
@@ -112,7 +117,8 @@ function ExperiencePage() {
                     index === 0 ? "md:mb-16" : "md:mt-16"
                   }`}
                   initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
                   whileHover={{ scale: 1.04, y: -6 }}
                   transition={{
                     duration: 0.3,

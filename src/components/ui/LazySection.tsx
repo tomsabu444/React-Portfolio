@@ -12,7 +12,7 @@ export function LazySection({
   children,
   id,
   minHeight = "min-h-[50vh]",
-  rootMargin = "300px 0px",
+  rootMargin = "500px 0px",
 }: LazySectionProps) {
   const [shouldRender, setShouldRender] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -50,7 +50,10 @@ export function LazySection({
   }, [shouldRender, rootMargin]);
 
   return (
-    <div id={id} ref={containerRef} className={`w-full ${!shouldRender ? minHeight : ""}`}>
+    // Always keep minHeight so the container height stays stable during load.
+    // The real content naturally overrides the height once rendered,
+    // preventing the abrupt reflow / scrollbar-width shift.
+    <div id={id} ref={containerRef} className={`w-full ${minHeight}`}>
       {shouldRender ? (
         <Suspense fallback={<Loading />}>{children}</Suspense>
       ) : (

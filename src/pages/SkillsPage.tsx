@@ -73,7 +73,8 @@ function SkillsPage() {
             className="border-4 border-foreground bg-foreground px-8 py-4 text-background shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rotate-1"
             style={{ clipPath: "polygon(2% 0%, 100% 1%, 98% 100%, 0% 99%)" }}
             initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
             <h2 className="font-secondary text-5xl font-bold uppercase tracking-tight md:text-7xl">
@@ -102,8 +103,9 @@ function SkillsPage() {
             {/* Core Skills Panel */}
             <motion.div
               className="relative pt-3"
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.4 }}
             >
               <div className="absolute -top-3 left-4 z-10 -rotate-1 border-2 border-foreground bg-foreground px-4 py-1 text-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
@@ -123,8 +125,8 @@ function SkillsPage() {
                     return (
                       <motion.div
                         key={skill.name}
-                        className={`flex items-center gap-2 border-2 border-foreground p-2.5 ${skill.bg} ${skill.rotate} shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] cursor-pointer transition-transform hover:scale-110 hover:rotate-0 hover:z-20`}
-                        whileHover={{ scale: 1.1 }}
+                        className={`flex items-center gap-2 border-2 border-foreground p-2.5 ${skill.bg} ${skill.rotate} shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] cursor-pointer`}
+                        whileHover={{ scale: 1.1, rotate: 0 }}
                         whileTap={{ scale: 0.95 }}
                       >
                         <Icon className="w-6 h-6 shrink-0" />
@@ -141,8 +143,9 @@ function SkillsPage() {
             {/* Field Gear & DevOps Panel */}
             <motion.div
               className="relative pt-3"
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
               <div className="absolute -top-3 right-4 z-10 rotate-2 border-2 border-foreground bg-background px-4 py-1 text-foreground shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
@@ -162,8 +165,8 @@ function SkillsPage() {
                     return (
                       <motion.div
                         key={gear.name}
-                        className={`flex items-center gap-2 border-2 border-foreground p-2.5 ${gear.bg} ${gear.rotate} shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] cursor-pointer transition-transform hover:scale-110 hover:rotate-0 hover:z-20`}
-                        whileHover={{ scale: 1.1 }}
+                        className={`flex items-center gap-2 border-2 border-foreground p-2.5 ${gear.bg} ${gear.rotate} shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] cursor-pointer`}
+                        whileHover={{ scale: 1.1, rotate: 0 }}
                         whileTap={{ scale: 0.95 }}
                       >
                         <Icon className="w-6 h-6 shrink-0" />
