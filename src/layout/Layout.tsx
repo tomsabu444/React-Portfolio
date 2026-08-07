@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import DotField from "@/components/ui/DotField/DotField";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 interface LayoutProps {
@@ -30,7 +31,8 @@ function Layout({ children }: LayoutProps) {
           interactive={false}
         />
       </div>
-      <main className="relative z-10">{children}</main>
+      <Navbar />
+      <main className="relative z-10 pt-20 sm:pt-24">{children}</main>
       <Footer />
     </div>
   );
