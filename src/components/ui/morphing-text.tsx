@@ -5,35 +5,58 @@ import { cn } from "@/lib/utils";
 const morphTime = 1.5;
 const cooldownTime = 1;
 
+const getBlur = (fraction: number) => {
+  if (fraction <= 0) return 100;
+  if (fraction >= 1) return 0;
+  return Math.min(8 / fraction - 8, 100);
+};
+
+const getOpacity = (fraction: number) => {
+  if (fraction <= 0) return 0;
+  if (fraction >= 1) return 100;
+  return Math.pow(fraction, 0.4) * 100;
+};
+
 const useMorphingText = (texts: string[]) => {
   const textIndexRef = useRef(0);
+  const activeRef = useRef<0 | 1>(0); // 0: text1 active/visible, 1: text2 active/visible
   const morphRef = useRef(0);
-  const cooldownRef = useRef(0);
-  const timeRef = useRef(new Date());
+  const cooldownRef = useRef(cooldownTime);
+  const timeRef = useRef(performance.now());
 
   const text1Ref = useRef<HTMLSpanElement>(null);
   const text2Ref = useRef<HTMLSpanElement>(null);
 
-  const setStyles = useCallback(
-    (fraction: number) => {
-      const [current1, current2] = [text1Ref.current, text2Ref.current];
-      if (!current1 || !current2) return;
+  // Initial text setup on mount
+  useEffect(() => {
+    if (texts.length === 0) return;
+    if (text1Ref.current) {
+      text1Ref.current.textContent = texts[0];
+      text1Ref.current.style.filter = "none";
+      text1Ref.current.style.opacity = "100%";
+    }
+    if (text2Ref.current) {
+      text2Ref.current.textContent = texts[1 % texts.length];
+      text2Ref.current.style.filter = "none";
+      text2Ref.current.style.opacity = "0%";
+    }
+  }, [texts]);
 
-      current2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
-      current2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+  const setStyles = useCallback((fraction: number) => {
+    const activeSpan = activeRef.current === 0 ? text1Ref.current : text2Ref.current;
+    const inactiveSpan = activeRef.current === 0 ? text2Ref.current : text1Ref.current;
 
-      const invertedFraction = 1 - fraction;
-      current1.style.filter = `blur(${Math.min(
-        8 / invertedFraction - 8,
-        100,
-      )}px)`;
-      current1.style.opacity = `${Math.pow(invertedFraction, 0.4) * 100}%`;
+    if (!activeSpan || !inactiveSpan) return;
 
-      current1.textContent = texts[textIndexRef.current % texts.length];
-      current2.textContent = texts[(textIndexRef.current + 1) % texts.length];
-    },
-    [texts],
-  );
+    // Active span fades OUT
+    const invFraction = 1 - fraction;
+    activeSpan.style.filter = `blur(${getBlur(invFraction)}px)`;
+    activeSpan.style.opacity = `${getOpacity(invFraction)}%`;
+
+    // Inactive span fades IN
+    inactiveSpan.style.filter = `blur(${getBlur(fraction)}px)`;
+    inactiveSpan.style.opacity = `${getOpacity(fraction)}%`;
+  }, []);
 
   const doMorph = useCallback(() => {
     morphRef.current -= cooldownRef.current;
@@ -41,28 +64,39 @@ const useMorphingText = (texts: string[]) => {
 
     let fraction = morphRef.current / morphTime;
 
-    if (fraction > 1) {
-      cooldownRef.current = cooldownTime;
+    if (fraction >= 1) {
       fraction = 1;
+      cooldownRef.current = cooldownTime;
     }
 
     setStyles(fraction);
 
     if (fraction === 1) {
-      textIndexRef.current++;
+      // Toggle active span & advance text index when morph completes
+      activeRef.current = activeRef.current === 0 ? 1 : 0;
+      textIndexRef.current = (textIndexRef.current + 1) % texts.length;
     }
-  }, [setStyles]);
+  }, [setStyles, texts.length]);
 
   const doCooldown = useCallback(() => {
     morphRef.current = 0;
-    const [current1, current2] = [text1Ref.current, text2Ref.current];
-    if (current1 && current2) {
-      current2.style.filter = "none";
-      current2.style.opacity = "100%";
-      current1.style.filter = "none";
-      current1.style.opacity = "0%";
+    const activeSpan = activeRef.current === 0 ? text1Ref.current : text2Ref.current;
+    const inactiveSpan = activeRef.current === 0 ? text2Ref.current : text1Ref.current;
+
+    if (activeSpan && inactiveSpan) {
+      activeSpan.style.filter = "none";
+      activeSpan.style.opacity = "100%";
+
+      inactiveSpan.style.filter = "none";
+      inactiveSpan.style.opacity = "0%";
+
+      // Pre-load next text string on hidden inactive span during cooldown
+      const nextTextIndex = (textIndexRef.current + 1) % texts.length;
+      if (inactiveSpan.textContent !== texts[nextTextIndex]) {
+        inactiveSpan.textContent = texts[nextTextIndex];
+      }
     }
-  }, []);
+  }, [texts]);
 
   useEffect(() => {
     let animationFrameId: number;
@@ -70,8 +104,8 @@ const useMorphingText = (texts: string[]) => {
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
 
-      const newTime = new Date();
-      const dt = (newTime.getTime() - timeRef.current.getTime()) / 1000;
+      const newTime = performance.now();
+      const dt = (newTime - timeRef.current) / 1000;
       timeRef.current = newTime;
 
       cooldownRef.current -= dt;
@@ -80,6 +114,7 @@ const useMorphingText = (texts: string[]) => {
       else doCooldown();
     };
 
+    timeRef.current = performance.now();
     animate();
     return () => {
       cancelAnimationFrame(animationFrameId);
@@ -99,11 +134,11 @@ const Texts: React.FC<Pick<MorphingTextProps, "texts">> = ({ texts }) => {
   return (
     <>
       <span
-        className="absolute inset-x-0 top-0 m-auto inline-block w-full"
+        className="absolute inset-x-0 top-0 m-auto inline-block w-full will-change-[filter,opacity] transform-gpu"
         ref={text1Ref}
       />
       <span
-        className="absolute inset-x-0 top-0 m-auto inline-block w-full"
+        className="absolute inset-x-0 top-0 m-auto inline-block w-full will-change-[filter,opacity] transform-gpu"
         ref={text2Ref}
       />
     </>
@@ -145,3 +180,4 @@ export const MorphingText: React.FC<MorphingTextProps> = ({
     <SvgFilters />
   </div>
 );
+

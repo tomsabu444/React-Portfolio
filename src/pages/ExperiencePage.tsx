@@ -25,7 +25,7 @@ function ExperiencePage() {
   return (
     <section
       id="experience"
-      className="relative flex min-h-[60vh] w-full flex-col items-center justify-start py-12 text-foreground"
+      className="relative flex min-h-[60vh] w-full flex-col items-center justify-start py-6 text-foreground"
     >
       <div className="relative flex w-full max-w-7xl flex-col items-center px-4 md:px-8">
         {/* Main Section Header Banner */}

@@ -11,7 +11,7 @@ function ProjectsPage() {
   return (
     <section
       id="projects"
-      className="relative flex min-h-screen w-full flex-col items-center justify-start py-12 text-foreground"
+      className="relative flex min-h-screen w-full flex-col items-center justify-start py-6 text-foreground"
     >
       <div className="relative flex w-full max-w-7xl flex-col items-center px-4 md:px-8">
 
