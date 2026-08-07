@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import TerminalIcon from "@iconify-react/mdi/terminal";
+// import TerminalIcon from "@iconify-react/mdi/terminal";
 
 function ExperiencePage() {
   const experience = [
@@ -49,7 +49,7 @@ function ExperiencePage() {
 
         {/* Career Journey Timeline */}
         <div className="w-full">
-          <div className="mb-10 flex items-center justify-between pb-3">
+          {/* <div className="mb-10 flex items-center justify-between pb-3">
             <h3 className="font-secondary text-4xl text-foreground md:text-5xl flex items-center gap-3">
               <TerminalIcon className="w-8 h-8 text-foreground" />
               Career Journey
@@ -57,7 +57,7 @@ function ExperiencePage() {
             <span className="font-tertiary text-xs font-bold uppercase tracking-wider text-foreground/70 hidden sm:inline-block">
               [ CHRONOLOGY ]
             </span>
-          </div>
+          </div> */}
 
           <div className="relative flex w-full flex-col items-center justify-center py-6">
             {/* Vertical Axis Line (Mobile) */}

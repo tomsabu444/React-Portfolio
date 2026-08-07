@@ -21,7 +21,7 @@ import CloudflareIcon from "@iconify-react/mdi/cloud-outline";
 import KaliIcon from "@iconify-react/mdi/shield-lock-outline";
 import AfterEffectsIcon from "@iconify-react/mdi/movie-edit-outline";
 import FirebaseIcon from "@iconify-react/mdi/firebase";
-import WrenchIcon from "@iconify-react/mdi/hammer-wrench";
+// import WrenchIcon from "@iconify-react/mdi/hammer-wrench";
 import ShieldIcon from "@iconify-react/mdi/shield-check-outline";
 import WebIcon from "@iconify-react/mdi/web";
 import PaletteIcon from "@iconify-react/mdi/palette";
@@ -88,7 +88,7 @@ function SkillsPage() {
 
         {/* Skills Section */}
         <div className="w-full">
-          <div className="mb-10 flex items-center justify-between pb-3">
+          {/* <div className="mb-10 flex items-center justify-between pb-3">
             <h3 className="font-secondary text-4xl text-foreground md:text-5xl flex items-center gap-3">
               <WrenchIcon className="w-8 h-8 text-foreground" />
               Skill Inventory
@@ -96,7 +96,7 @@ function SkillsPage() {
             <span className="font-tertiary text-xs font-bold uppercase tracking-wider text-foreground/70 hidden sm:inline-block">
               [ TECHNICAL_LOADOUT ]
             </span>
-          </div>
+          </div> */}
 
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
             {/* Core Skills Panel */}

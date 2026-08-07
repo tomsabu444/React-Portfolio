@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { Project_list_1, type ProjectItem } from "@/assets/Project-list";
 
 import OpenInNewIcon from "@iconify-react/mdi/open-in-new";
-import FolderIcon from "@iconify-react/mdi/folder-account-outline";
+// import FolderIcon from "@iconify-react/mdi/folder-account-outline";
 import { logProjectClick } from "@/services/firebase";
 
 const projects = Project_list_1 as ProjectItem[];
@@ -35,7 +35,7 @@ function ProjectsPage() {
         </div>
 
         {/* Section Title Bar */}
-        <div className="mb-10 w-full flex items-center justify-between pb-3">
+        {/* <div className="mb-10 w-full flex items-center justify-between pb-3">
           <h3 className="font-secondary text-4xl text-foreground md:text-5xl flex items-center gap-3">
             <FolderIcon className="w-8 h-8 text-foreground" />
             Selected Projects
@@ -43,7 +43,7 @@ function ProjectsPage() {
           <span className="font-tertiary text-xs font-bold uppercase tracking-wider text-foreground/70 hidden sm:inline-block">
             [ CLASSIFIED_ARCHIVE ]
           </span>
-        </div>
+        </div> */}
 
         {/* Graphic Novel Grid Layout */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-12 w-full">
