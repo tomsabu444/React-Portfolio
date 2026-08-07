@@ -16,7 +16,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon/favicon.ico', 'favicon/favicon.svg', 'favicon/favicon-96x96.png', 'favicon/apple-touch-icon.png', 'og-image.png'],
       manifest: {
-        name: 'TOM SABU PORTFOLIO',
+        name: 'Tom Sabu | Portfolio',
         short_name: 'Tom Sabu',
         description: 'Tom Sabu - Full Stack Developer & Software Engineer Portfolio',
         theme_color: '#151414',
