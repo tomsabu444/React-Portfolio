@@ -300,7 +300,7 @@ export default function Navbar() {
           </button>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+          <nav className="hidden md:flex items-center gap-1 lg:gap-2 ml-auto">
             {NAV_ITEMS.map((item) => (
               <NavButton
                 key={item.id}
