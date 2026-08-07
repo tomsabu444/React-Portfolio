@@ -62,6 +62,9 @@ export default defineConfig({
       '.ngrok-free.app'
     ]
   },
+  optimizeDeps: {
+    include: ['firebase/app', 'firebase/analytics']
+  },
   build: {
     rolldownOptions: {
       output: {

@@ -1,6 +1,7 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Home, User, Briefcase, Wrench, Code2, Mail } from "lucide-react";
+import { logSectionView } from "@/services/firebase";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -215,6 +216,7 @@ export default function Navbar() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
+          logSectionView(entry.target.id);
         }
       });
     }, observerOptions);
@@ -229,6 +231,7 @@ export default function Navbar() {
 
   const scrollToSection = (id: string) => {
     setMobileMenuOpen(false);
+    logSectionView(id);
     window.dispatchEvent(new CustomEvent("load-section", { detail: { id } }));
 
     const doScroll = () => {

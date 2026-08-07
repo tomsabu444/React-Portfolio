@@ -4,6 +4,7 @@ import LinkedinIcon from "@iconify-react/mdi/linkedin";
 import RadioTowerIcon from "@iconify-react/mdi/radio-tower";
 import { MorphingText } from "../components/ui/morphing-text";
 import tom_sabu from "../assets/tom_sabu.webp";
+import { logSocialClick } from "@/services/firebase";
 
 function HomePage() {
   const currentYear = new Date().getFullYear().toString();
@@ -87,6 +88,7 @@ function HomePage() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub profile"
+                onClick={() => logSocialClick("github")}
                 className="inline-flex text-foreground transition hover:text-neutral-700"
               >
                 <GithubIcon className="h-10 w-10 xs:h-11 xs:w-11 max-[320px]:h-8 max-[320px]:w-8" />
@@ -96,6 +98,7 @@ function HomePage() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn profile"
+                onClick={() => logSocialClick("linkedin")}
                 className="inline-flex text-foreground transition hover:text-neutral-700"
               >
                 <LinkedinIcon className="h-10 w-10 xs:h-11 xs:w-11 max-[320px]:h-8 max-[320px]:w-8" />
@@ -190,6 +193,7 @@ function HomePage() {
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub profile"
+              onClick={() => logSocialClick("github")}
               className="inline-flex text-foreground transition hover:text-neutral-700"
             >
               <GithubIcon className="h-12 w-12" />
@@ -199,6 +203,7 @@ function HomePage() {
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn profile"
+              onClick={() => logSocialClick("linkedin")}
               className="inline-flex text-foreground transition hover:text-neutral-700"
             >
               <LinkedinIcon className="h-12 w-12" />

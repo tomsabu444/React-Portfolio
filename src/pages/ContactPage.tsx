@@ -8,6 +8,7 @@ import SendIcon from "@iconify-react/mdi/send-outline";
 import GithubIcon from "@iconify-react/mdi/github";
 import LinkedinIcon from "@iconify-react/mdi/linkedin";
 import RadioTowerIcon from "@iconify-react/mdi/radio-tower";
+import { logSocialClick } from "@/services/firebase";
 
 function ContactPage() {
   const email = "contact@tomsabu.com";
@@ -88,7 +89,10 @@ function ContactPage() {
 
               <div className="flex flex-wrap gap-3 mt-4">
                 <button
-                  onClick={handleCopy}
+                  onClick={() => {
+                    handleCopy();
+                    logSocialClick("email_copy");
+                  }}
                   className="flex-1 inline-flex items-center justify-center gap-2 border-2 border-foreground bg-foreground px-4 py-2.5 font-tertiary text-xs font-bold text-background shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:bg-background hover:text-foreground transition-all cursor-pointer"
                 >
                   {copied ? (
@@ -106,6 +110,7 @@ function ContactPage() {
 
                 <a
                   href={`mailto:${email}`}
+                  onClick={() => logSocialClick("email_send")}
                   className="inline-flex items-center justify-center gap-2 border-2 border-foreground bg-background px-4 py-2.5 font-tertiary text-xs font-bold text-foreground shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:bg-foreground hover:text-background transition-all"
                 >
                   <SendIcon className="w-4 h-4" />
@@ -145,6 +150,7 @@ function ContactPage() {
                     href="https://github.com/tomsabu444"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => logSocialClick("github")}
                     className="flex items-center justify-between border-2 border-foreground bg-background p-3 font-tertiary text-sm font-bold text-foreground shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:bg-foreground hover:text-background transition-all group"
                   >
                     <span className="flex items-center gap-2.5">
@@ -160,6 +166,7 @@ function ContactPage() {
                     href="https://linkedin.com/in/tomsabu444"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => logSocialClick("linkedin")}
                     className="flex items-center justify-between border-2 border-foreground bg-background p-3 font-tertiary text-sm font-bold text-foreground shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:bg-foreground hover:text-background transition-all group"
                   >
                     <span className="flex items-center gap-2.5">

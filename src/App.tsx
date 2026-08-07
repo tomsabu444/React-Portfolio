@@ -1,7 +1,8 @@
-import { lazy } from "react";
+import { lazy, useEffect } from "react";
 import Layout from "@/layout/Layout";
 import HomePage from "@/pages/HomePage";
 import LazySection from "@/components/ui/LazySection";
+import { initAnalytics } from "@/services/firebase";
 
 const AboutPage = lazy(() => import("@/pages/AboutPage"));
 const ExperiencePage = lazy(() => import("@/pages/ExperiencePage"));
@@ -10,6 +11,10 @@ const ProjectsPage = lazy(() => import("@/pages/ProjectsPage"));
 const ContactPage = lazy(() => import("@/pages/ContactPage"));
 
 function App() {
+  useEffect(() => {
+    initAnalytics();
+  }, []);
+
   return (
     <Layout>
       <HomePage />

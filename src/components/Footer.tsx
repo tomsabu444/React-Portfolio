@@ -2,9 +2,11 @@ import GithubIcon from "@iconify-react/mdi/github";
 import LinkedinIcon from "@iconify-react/mdi/linkedin";
 import EmailIcon from "@iconify-react/mdi/email-outline";
 import ArrowUpIcon from "@iconify-react/mdi/arrow-up-bold";
+import { logSocialClick, logSectionView } from "@/services/firebase";
 
 function Footer() {
   const scrollToTop = () => {
+    logSectionView("home");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -45,6 +47,7 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub Profile"
+              onClick={() => logSocialClick("github")}
               className="border-2 border-foreground bg-background p-2 text-foreground shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-foreground hover:text-background transition-colors"
             >
               <GithubIcon className="w-5 h-5" />
@@ -55,6 +58,7 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
+              onClick={() => logSocialClick("linkedin")}
               className="border-2 border-foreground bg-background p-2 text-foreground shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-foreground hover:text-background transition-colors"
             >
               <LinkedinIcon className="w-5 h-5" />
@@ -63,6 +67,7 @@ function Footer() {
             <a
               href="mailto:contact@tomsabu.com"
               aria-label="Email Contact"
+              onClick={() => logSocialClick("email")}
               className="border-2 border-foreground bg-background p-2 text-foreground shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-foreground hover:text-background transition-colors"
             >
               <EmailIcon className="w-5 h-5" />

@@ -3,6 +3,7 @@ import { Project_list_1, type ProjectItem } from "@/assets/Project-list";
 
 import OpenInNewIcon from "@iconify-react/mdi/open-in-new";
 import FolderIcon from "@iconify-react/mdi/folder-account-outline";
+import { logProjectClick } from "@/services/firebase";
 
 const projects = Project_list_1 as ProjectItem[];
 
@@ -99,6 +100,7 @@ function ProjectsPage() {
                         href={projects[0].link}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => logProjectClick(projects[0].blog_title, "demo")}
                         className="inline-flex items-center gap-1 border-2 border-foreground bg-foreground px-3 py-1 font-tertiary text-xs font-bold text-background shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-background hover:text-foreground transition-colors"
                       >
                         VIEW <OpenInNewIcon className="w-3.5 h-3.5" />
@@ -157,6 +159,7 @@ function ProjectsPage() {
                       href={projects[1].link}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => logProjectClick(projects[1].blog_title, "demo")}
                       className="inline-flex items-center gap-1 border-2 border-foreground bg-foreground px-3 py-1 font-tertiary text-xs font-bold text-background shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-background hover:text-foreground transition-colors"
                     >
                       VIEW <OpenInNewIcon className="w-3.5 h-3.5" />
@@ -214,6 +217,7 @@ function ProjectsPage() {
                       href={projects[2].link}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => logProjectClick(projects[2].blog_title, "demo")}
                       className="inline-flex items-center gap-1 border-2 border-foreground bg-foreground px-3 py-1 font-tertiary text-xs font-bold text-background shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-background hover:text-foreground transition-colors"
                     >
                       VIEW <OpenInNewIcon className="w-3.5 h-3.5" />
@@ -271,6 +275,7 @@ function ProjectsPage() {
                       href={projects[3].link}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => logProjectClick(projects[3].blog_title, "demo")}
                       className="inline-flex items-center gap-1 border-2 border-foreground bg-foreground px-3 py-1 font-tertiary text-xs font-bold text-background shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-background hover:text-foreground transition-colors"
                     >
                       VIEW <OpenInNewIcon className="w-3.5 h-3.5" />
@@ -335,6 +340,7 @@ function ProjectsPage() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => logProjectClick(project.blog_title, "demo")}
                       className="inline-flex items-center gap-1 border-2 border-foreground bg-foreground px-2.5 py-0.5 font-tertiary text-[11px] font-bold text-background shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-background hover:text-foreground transition-colors"
                     >
                       VIEW <OpenInNewIcon className="w-3 h-3" />
