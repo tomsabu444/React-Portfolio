@@ -14,7 +14,7 @@ function ExperiencePage() {
       shadowDirection: "right",
     },
     {
-      title: "FREELANCER",
+      title: "FREELANCE DEVELOPER",
       company: "HULT INFOTECH",
       period: "OCT 2024 – AUG 2025",
       type: "PART-TIME",
