@@ -56,7 +56,7 @@ function SkillsPage() {
     { name: "Firebase", icon: FirebaseIcon, bg: "bg-foreground text-background", rotate: "rotate-3" },
     { name: "Cloudflare", icon: CloudflareIcon, bg: "bg-background text-foreground", rotate: "-rotate-2" },
     // { name: "API Tools", icon: PostmanIcon, bg: "bg-foreground text-background", rotate: "rotate-1" },
-    { name: "DevOps & CI/CD", icon: RocketIcon, bg: "bg-foreground text-background", rotate: "rotate-2" },
+    { name: "DevOps", icon: RocketIcon, bg: "bg-foreground text-background", rotate: "rotate-2" },
     { name: "Web Security", icon: ShieldIcon, bg: "bg-background text-foreground", rotate: "-rotate-1" },
     { name: "UI Design", icon: PaletteIcon, bg: "bg-foreground text-background", rotate: "rotate-3" },
   ];

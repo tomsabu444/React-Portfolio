@@ -82,6 +82,10 @@ export default defineConfig({
               name: 'vendor-icons',
               test: /[\\/]node_modules[\\/]@iconify-react[\\/]/,
             },
+            {
+              name: 'vendor-firebase',
+              test: /[\\/]node_modules[\\/](firebase|@firebase)[\\/]/,
+            },
           ],
         },
       },
