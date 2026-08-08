@@ -7,15 +7,17 @@ function ExperiencePage() {
       title: "JUNIOR SOFTWARE ENGINEER",
       company: "THOPPS TECHNOLOGIES",
       period: "MAY 2025 – PRESENT",
+      type: "FULL-TIME",
       current: true,
       stamp: "ACTIVE_MISSION",
       rotation: -2,
       shadowDirection: "right",
     },
     {
-      title: "FREELANCE DEVELOPER",
+      title: "FREELANCER",
       company: "HULT INFOTECH",
       period: "OCT 2024 – AUG 2025",
+      type: "PART-TIME",
       stamp: "MISSION_COMPLETE",
       rotation: 3,
       shadowDirection: "left",
@@ -148,7 +150,8 @@ function ExperiencePage() {
                         <span>{job.stamp}</span>
                       </div>
                       <span className="font-tertiary text-[10px] font-bold tracking-widest text-foreground/60 uppercase">
-                        MISSION_0{index + 1}
+                        MISSION_
+                        {String(experience.length - index).padStart(2, "0")}
                       </span>
                     </div>
 
@@ -159,10 +162,15 @@ function ExperiencePage() {
                       @{job.company}
                     </p>
 
-                    <div className="mt-4 border-t border-foreground/20 pt-3">
+                    <div className="mt-4 flex items-center justify-between border-t border-foreground/20 pt-3">
                       <p className="font-tertiary text-[11px] font-bold uppercase tracking-[0.2em] text-foreground/60">
                         {job.period}
                       </p>
+                      {job.type && (
+                        <span className="border-2 border-foreground bg-background px-2 py-0.5 font-tertiary text-[10px] font-bold uppercase tracking-wider text-foreground shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                          {job.type}
+                        </span>
+                      )}
                     </div>
                   </motion.div>
                 </motion.div>
