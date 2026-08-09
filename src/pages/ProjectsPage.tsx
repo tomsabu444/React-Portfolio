@@ -89,7 +89,7 @@ function ProjectsPage() {
                       <h4 className="font-secondary text-2xl md:text-3xl font-bold text-foreground mb-2">
                         {projects[0].blog_title}
                       </h4>
-                      <p className="font-tertiary text-xs leading-relaxed text-foreground/80 border-l-4 border-foreground pl-3 mb-4">
+                      <p className="font-tertiary text-xs sm:text-sm md:text-base leading-relaxed text-foreground/80 border-l-4 border-foreground pl-3 mb-4">
                         {projects[0].blog_text}
                       </p>
                     </div>
@@ -149,7 +149,7 @@ function ProjectsPage() {
                     <h4 className="font-secondary text-2xl font-bold text-foreground mb-2">
                       {projects[1].blog_title}
                     </h4>
-                    <p className="font-tertiary text-xs leading-relaxed text-foreground/80 mb-4">
+                    <p className="font-tertiary text-xs sm:text-sm md:text-base leading-relaxed text-foreground/80 mb-4">
                       {projects[1].blog_text}
                     </p>
                   </div>
@@ -208,7 +208,7 @@ function ProjectsPage() {
                     <h4 className="font-secondary text-2xl font-bold text-foreground mb-2">
                       {projects[2].blog_title}
                     </h4>
-                    <p className="font-tertiary text-xs leading-relaxed text-foreground/80 mb-4">
+                    <p className="font-tertiary text-xs sm:text-sm md:text-base leading-relaxed text-foreground/80 mb-4">
                       {projects[2].blog_text}
                     </p>
                   </div>
@@ -267,7 +267,7 @@ function ProjectsPage() {
                     <h4 className="font-secondary text-2xl font-bold text-foreground mb-2">
                       {projects[3].blog_title}
                     </h4>
-                    <p className="font-tertiary text-xs leading-relaxed text-foreground/80 mb-4">
+                    <p className="font-tertiary text-xs sm:text-sm md:text-base leading-relaxed text-foreground/80 mb-4">
                       {projects[3].blog_text}
                     </p>
                   </div>
@@ -333,7 +333,7 @@ function ProjectsPage() {
                     <h4 className="font-secondary text-xl font-bold text-foreground mb-1">
                       {project.blog_title}
                     </h4>
-                    <p className="font-tertiary text-[11px] leading-relaxed text-foreground/80 mb-3 line-clamp-3">
+                    <p className="font-tertiary text-xs sm:text-sm md:text-sm lg:text-base leading-relaxed text-foreground/80 mb-3 line-clamp-3 md:line-clamp-4">
                       {project.blog_text}
                     </p>
                   </div>

@@ -55,7 +55,7 @@ function AboutPage() {
             B.Tech graduate in Computer Science and Engineering with a deep
             passion for full-stack development and cybersecurity. Currently
             working as a Junior Software Engineer, I specialize in building
-            high-performance web applications using the PERN stack, Next.js, and
+            high-performance web applications using the MERN stack, PostgreSQL, Next.js, and
             AWS. My expertise spans across modern web frameworks, cloud
             technologies, and DevOps practices, with a strong focus on
             implementing CI/CD pipelines and SecOps workflows. I thrive on
@@ -98,7 +98,7 @@ function AboutPage() {
                       {hobby.title}
                     </h3>
 
-                    <p className="mt-1 font-tertiary text-xs md:text-sm leading-relaxed text-background/80">
+                    <p className="mt-1 font-tertiary text-xs sm:text-sm md:text-base leading-relaxed text-background/80">
                       {hobby.description}
                     </p>
                   </div>
