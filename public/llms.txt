@@ -1,0 +1,20 @@
+# Tom Sabu | Full Stack Developer Portfolio
+
+> Tom Sabu is a Software Engineer & Security Enthusiast specializing in backend development, AWS cloud infrastructure, and OWASP-based VAPT.
+
+This portfolio showcases projects, technical skills, background experience, and contact information.
+
+## Primary Pages & Sections
+
+- [Home](https://tomsabu.com/#home): Introduction and overview.
+- [About](https://tomsabu.com/#about): Professional summary and bio.
+- [Experience](https://tomsabu.com/#experience): Career journey, positions, and work history.
+- [Skills](https://tomsabu.com/#skills): Technical skills, frameworks, tools, and languages.
+- [Projects](https://tomsabu.com/#projects): Featured projects, live demos, and source code links.
+- [Contact](https://tomsabu.com/#contact): Contact details and inquiry submission form.
+
+## Optional Resources
+
+- [Sitemap](https://tomsabu.com/sitemap.xml): XML site map.
+- [GitHub Profile](https://github.com/tomsabu444): Official GitHub developer profile.
+- [LinkedIn Profile](https://www.linkedin.com/in/tomsabu444): Official LinkedIn professional profile.
