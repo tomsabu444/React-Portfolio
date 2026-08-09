@@ -1,10 +1,10 @@
 # React Portfolio
 
-Modern portfolio website with a desktop OS interface and hacker aesthetic.
+
 
 ## Tech Stack
 
-React 19 • Vite • Tailwind CSS • Framer Motion • Firebase
+
 
 ## Installation
 

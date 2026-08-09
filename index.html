@@ -1,54 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tom Sabu | Software Engineer &amp; Security Enthusiast</title>
 
-<head>
-  <meta charset="UTF-8" />
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Software Engineer &amp; Security Enthusiast specializing in backend development, AWS cloud infrastructure, and OWASP-based VAPT." />
+    <meta name="keywords" content="Tom Sabu, Portfolio, Software Engineer, Security Enthusiast, Backend Development, AWS Cloud Infrastructure, OWASP, VAPT, Penetration Testing, Pentester, Full Stack Developer, React, TypeScript" />
+    <meta name="author" content="Tom Sabu" />
+    <meta name="robots" content="index, follow" />
+    <meta name="google-site-verification" content="Gkuvr3V3kvrIynq-JJBSc0HKK7TMrRXtvguGtX662v0" />
+    <link rel="canonical" href="https://tomsabu.com/" />
 
-  <!-- Preconnect -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tomsabu.com/" />
+    <meta property="og:title" content="Tom Sabu | Software Engineer &amp; Security Enthusiast" />
+    <meta property="og:description" content="Software Engineer &amp; Security Enthusiast specializing in backend development, AWS cloud infrastructure, and OWASP-based VAPT." />
+    <meta property="og:image" content="https://tomsabu.com/og-image.webp" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Tom Sabu - Software Engineer &amp; Security Enthusiast Portfolio Card" />
+    <meta property="og:site_name" content="Tom Sabu | Portfolio" />
+    <meta property="og:locale" content="en_US" />
 
-  <!-- favicon & PWA  -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/favicon/site.webmanifest">
-  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#000000">
-  <meta name="theme-color" content="#ffffff">
-  <!-- favicon & PWA  -->
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@tomsabu444" />
+    <meta name="twitter:creator" content="@tomsabu444" />
+    <meta name="twitter:url" content="https://tomsabu.com/" />
+    <meta name="twitter:title" content="Tom Sabu | Software Engineer &amp; Security Enthusiast" />
+    <meta name="twitter:description" content="Software Engineer &amp; Security Enthusiast specializing in backend development, AWS cloud infrastructure, and OWASP-based VAPT." />
+    <meta name="twitter:image" content="https://tomsabu.com/og-image.webp" />
+    <meta name="twitter:image:alt" content="Tom Sabu - Software Engineer &amp; Security Enthusiast Portfolio Card" />
 
-  <!-- Search Engine Optimization -->
-  <meta name="description" content="My Personal portfolio developed on react">
-  <meta name="keywords" content="portfolio, web development, React, vite">
-  <meta name="author" content="TOM SABU">
+    <!-- PWA & Mobile Icons -->
+    <meta name="theme-color" content="#151414" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Tom Sabu" />
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <!-- Hero Image Preload for LCP Optimization -->
+    <link rel="preload" as="image" href="/src/assets/tom_sabu.webp" type="image/webp" fetchpriority="high" />
 
-  <meta name="google-site-verification" content="Gkuvr3V3kvrIynq-JJBSc0HKK7TMrRXtvguGtX662v0" />
-  <!-- Search Engine Optimization -->
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet" />
 
-  <!-- Open Graph tag -->
-  <meta name="msapplication-TileImage"
-    content="https://tomsabu.com/favicon/android-chrome-512x512.png">
-
-  <meta property="og:site_name" content="Tom Sabu Portfolio">
-  <meta property="og:title" content="TOM - Personal Portfolio">
-  <meta property="og:description" content="Modern portfolio website with desktop OS interface and hacker aesthetic">
-  <meta property="og:image" content="https://tomsabu.com/favicon/android-chrome-512x512.png">
-  <meta property="og:image:secure_url" content="https://tomsabu.com/favicon/android-chrome-512x512.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="512">
-  <meta property="og:image:height" content="512">
-  <meta property="og:image:alt" content="Tom Sabu Portfolio Logo">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tomsabu.com/">
-  <!-- Open Graph tag -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>TOM || Portfolio</title>
-</head>
-
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
-
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://tomsabu.com/#person",
+            "name": "Tom Sabu",
+            "jobTitle": ["Software Engineer", "Security Enthusiast", "Pentester"],
+            "url": "https://tomsabu.com/",
+            "sameAs": [
+              "https://github.com/tomsabu444"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://tomsabu.com/#website",
+            "url": "https://tomsabu.com/",
+            "name": "Tom Sabu | Portfolio",
+            "description": "Software Engineer & Security Enthusiast specializing in backend development, AWS cloud infrastructure, and OWASP-based VAPT.",
+            "publisher": {
+              "@id": "https://tomsabu.com/#person"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <h1 style="display:none">Tom Sabu - Software Engineer &amp; Security Enthusiast</h1>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
