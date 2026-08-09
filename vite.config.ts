@@ -14,11 +14,11 @@ export default defineConfig({
     // PWA - Progressive Web App.
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon/favicon.ico', 'favicon/favicon.svg', 'favicon/favicon-96x96.png', 'favicon/apple-touch-icon.png', 'og-image.png'],
+      includeAssets: ['favicon/favicon.ico', 'favicon/favicon.svg', 'favicon/favicon-96x96.png', 'favicon/apple-touch-icon.png', 'og-image.webp', 'llms.txt'],
       manifest: {
         name: 'Tom Sabu | Portfolio',
         short_name: 'Tom Sabu',
-        description: 'Tom Sabu - Full Stack Developer & Software Engineer Portfolio',
+        description: 'Software Engineer & Security Enthusiast specializing in backend development, AWS cloud infrastructure, and OWASP-based VAPT.',
         theme_color: '#151414',
         background_color: '#151414',
         display: 'standalone',
