@@ -8,6 +8,7 @@ import SendIcon from "@iconify-react/mdi/send-outline";
 import GithubIcon from "@iconify-react/mdi/github";
 import LinkedinIcon from "@iconify-react/mdi/linkedin";
 import RadioTowerIcon from "@iconify-react/mdi/radio-tower";
+import { TryHackMeIcon } from "@/components/icons/TryHackMeIcon";
 import { logSocialClick } from "@/services/firebase";
 
 function ContactPage() {
@@ -175,6 +176,22 @@ function ContactPage() {
                     <span className="flex items-center gap-2.5">
                       <LinkedinIcon className="w-5 h-5" />
                       LINKEDIN // @tomsabu444
+                    </span>
+                    <span className="text-xs group-hover:translate-x-1 transition-transform">
+                      &rarr;
+                    </span>
+                  </a>
+
+                  <a
+                    href="https://tryhackme.com/p/tomsabu444"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => logSocialClick("tryhackme")}
+                    className="flex items-center justify-between border-2 border-foreground bg-background p-3 font-tertiary text-sm font-bold text-foreground shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:bg-foreground hover:text-background transition-all group"
+                  >
+                    <span className="flex items-center gap-2.5">
+                      <TryHackMeIcon className="w-5 h-5" />
+                      TRYHACKME // @tomsabu444
                     </span>
                     <span className="text-xs group-hover:translate-x-1 transition-transform">
                       &rarr;

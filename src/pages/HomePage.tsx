@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import GithubIcon from "@iconify-react/mdi/github";
 import LinkedinIcon from "@iconify-react/mdi/linkedin";
 import RadioTowerIcon from "@iconify-react/mdi/radio-tower";
+import { TryHackMeIcon } from "../components/icons/TryHackMeIcon";
 import { MorphingText } from "../components/ui/morphing-text";
 import tom_sabu from "../assets/tom_sabu.webp";
 import { logSocialClick } from "@/services/firebase";
@@ -10,6 +11,7 @@ function HomePage() {
   const currentYear = new Date().getFullYear().toString();
   const githubUrl = "https://github.com/tomsabu444";
   const linkedinUrl = "https://www.linkedin.com/in/tomsabu444";
+  const tryhackmeUrl = "https://tryhackme.com/p/tomsabu444";
 
   return (
     <section
@@ -102,6 +104,16 @@ function HomePage() {
                 className="inline-flex text-foreground transition hover:text-neutral-700"
               >
                 <LinkedinIcon className="h-10 w-10 xs:h-11 xs:w-11 max-[320px]:h-8 max-[320px]:w-8" />
+              </a>
+              <a
+                href={tryhackmeUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="TryHackMe profile"
+                onClick={() => logSocialClick("tryhackme")}
+                className="inline-flex text-foreground transition hover:text-neutral-700"
+              >
+                <TryHackMeIcon className="h-10 w-10 xs:h-11 xs:w-11 max-[320px]:h-8 max-[320px]:w-8" />
               </a>
             </div>
 
@@ -207,6 +219,16 @@ function HomePage() {
               className="inline-flex text-foreground transition hover:text-neutral-700"
             >
               <LinkedinIcon className="h-12 w-12" />
+            </a>
+            <a
+              href={tryhackmeUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="TryHackMe profile"
+              onClick={() => logSocialClick("tryhackme")}
+              className="inline-flex text-foreground transition hover:text-neutral-700"
+            >
+              <TryHackMeIcon className="h-12 w-12" />
             </a>
           </div>
 
