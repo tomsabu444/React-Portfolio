@@ -2,6 +2,7 @@ import GithubIcon from "@iconify-react/mdi/github";
 import LinkedinIcon from "@iconify-react/mdi/linkedin";
 import EmailIcon from "@iconify-react/mdi/email-outline";
 import ArrowUpIcon from "@iconify-react/mdi/arrow-up-bold";
+import { TryHackMeIcon } from "@/components/icons/TryHackMeIcon";
 import { logSocialClick, logSectionView } from "@/services/firebase";
 
 function Footer() {
@@ -62,6 +63,17 @@ function Footer() {
               className="border-2 border-foreground bg-background p-2 text-foreground shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-foreground hover:text-background transition-colors"
             >
               <LinkedinIcon className="w-5 h-5" />
+            </a>
+
+            <a
+              href="https://tryhackme.com/p/tomsabu444"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TryHackMe Profile"
+              onClick={() => logSocialClick("tryhackme")}
+              className="border-2 border-foreground bg-background p-2 text-foreground shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-foreground hover:text-background transition-colors"
+            >
+              <TryHackMeIcon className="w-5 h-5" />
             </a>
 
             <a
